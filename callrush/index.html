@@ -132,6 +132,13 @@ h1 i{font-style:normal;color:var(--mint)}
 .work .k{font-family:var(--fm);font-size:11px;letter-spacing:.16em;color:var(--mint);
   display:block;margin-bottom:16px}
 .work p{font-size:15px;margin:0;line-height:1.9}
+.work>div{position:relative}
+.work .wl{display:inline-block;margin-top:16px;font-family:var(--fd);font-weight:700;font-size:14px;
+  color:var(--mint);text-decoration:none}
+.work .wl::after{content:" →"}
+.work .wl::before{content:"";position:absolute;inset:0}
+.work>div:has(.wl):hover{background:var(--panel)}
+.work .wl:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
 
 /* 料金 */
 .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;
@@ -213,7 +220,7 @@ footer p{max-width:none;margin:0 0 6px;color:var(--text-3)}
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <div class="brand">CALL<i>RUSH</i><small>テレアポ代行｜LEADING RUSHER</small></div>
+  <a class="brand" href="../" style="color:inherit;text-decoration:none">CALL<i>RUSH</i><small>テレアポ代行｜LEADING RUSHER</small></a>
   <a class="btn sm" href="#contact">相談する</a>
 </div></header>
 
@@ -382,11 +389,14 @@ footer p{max-width:none;margin:0 0 6px;color:var(--text-3)}
   </div>
   <div class="work">
     <div><span class="k">CALLRUSH</span><h3>コールラッシュ</h3>
-      <p>電話で新規開拓。月1,000件。このページのサービスです。</p></div>
+      <p>電話で新規開拓。月1,000件。このページのサービスです。</p>
+      <a class="wl" href="#price">料金を見る</a></div>
     <div><span class="k">MAILRUSH</span><h3>メールラッシュ</h3>
-      <p>問い合わせフォームとメールでの接点づくり。月1,000件。</p></div>
+      <p>問い合わせフォームとメールでの接点づくり。月1,000件。</p>
+      <a class="wl" href="../#price">LEADING RUSHERのページで見る</a></div>
     <div><span class="k">TENJI-HACK</span><h3>展示会ハック</h3>
-      <p>展示会の会場で、ブースに代わって商談相手を集めます。</p></div>
+      <p>展示会の会場で、ブースに代わって商談相手を集めます。</p>
+      <a class="wl" href="https://tenjihack.com/">展示会ハックのサイトへ</a></div>
   </div>
   <p style="margin-top:28px">まとめてご依頼いただく複合プランは、月50万円からの固定に、アポが取れた分の成果報酬を加える形です。</p>
   <p style="margin-top:12px"><a href="../">LEADING RUSHER（総合営業代行）のページへ →</a></p>
