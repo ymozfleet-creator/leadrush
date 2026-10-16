@@ -110,6 +110,15 @@ p{margin:0 0 18px;max-width:54ch;color:var(--ink-2)}
   line-height:1;color:#fff;letter-spacing:.01em}
 .facts dd em{font-style:normal;font-family:var(--fb);font-weight:500;font-size:13px;color:#B9CCE8;margin-left:3px}
 .facts dd b{color:var(--blue-2);font-weight:700}
+.promise{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;
+  margin:0 0 34px;padding:0;list-style:none;max-width:700px}
+.promise li{background:rgba(255,255,255,.07);border:1px solid rgba(146,184,246,.26);
+  border-radius:8px;padding:16px 16px 14px;min-width:0;backdrop-filter:blur(3px);
+  font-family:var(--fd);font-weight:700;font-size:17px;line-height:1.5;color:#fff}
+.promise li small{display:block;font-family:var(--fb);font-weight:500;font-size:12.5px;
+  line-height:1.7;color:#9EB8DC;margin-top:6px}
+@media (max-width:900px){.promise{grid-template-columns:1fr;max-width:none;gap:8px}
+  .promise li{padding:13px 16px}}
 .fv-cta{display:flex;flex-wrap:wrap;gap:14px 16px;align-items:center}
 .fv-note{margin:20px 0 0;font-size:13.5px;color:#8FA8CC;max-width:40em}
 @media (max-width:900px){
@@ -295,16 +304,16 @@ footer .fam{font-family:var(--fe);font-weight:700;font-size:14px;letter-spacing:
     <p class="eyebrow">法人向け営業代行</p>
     <h1>アポが取れるなら、<i>手段は問わない</i>はずです。</h1>
     <p class="fv-sub">電話、メール、展示会。3つの手段を1つの窓口で回します。固定費とアポの成果報酬だけで、新規開拓の入口を丸ごと引き受けます。</p>
-    <ul class="facts">
-      <li><dl><dt>使える手段</dt><dd><b>3</b><em>種類</em></dd></dl></li>
-      <li><dl><dt>毎月の接点</dt><dd>2,000<em>件</em></dd></dl></li>
-      <li><dl><dt>アポ成果報酬</dt><dd>2<em>万円/件</em></dd></dl></li>
+    <ul class="promise">
+      <li>月8万円から<small>1つの手段だけでもお受けします</small></li>
+      <li>アポは1件2万円<small>電話・メール・展示会、どれで取れても同じ金額です</small></li>
+      <li>全件の記録をお渡し<small>かけた先・送った先と、返ってきた言葉をそのまま</small></li>
     </ul>
     <div class="fv-cta">
       <a class="btn" href="#contact">30分、相談する</a>
       <a class="btn sm line" href="#price">料金を見る</a>
     </div>
-    <p class="fv-note">複合プランは月50万円から（税抜・1年契約）。1つの手段だけでもお受けします。</p>
+    <p class="fv-note">金額はすべて税抜です。単品は月8万円から、3つをまとめた複合プランは月50万円（1年契約）です。</p>
   </div>
 </section>
 
@@ -341,7 +350,7 @@ footer .fam{font-family:var(--fe);font-weight:700;font-size:14px;letter-spacing:
       <a class="wl" href="callrush/">コールラッシュのページへ</a></div>
     <div class="way"><span class="en">02 / MAILRUSH</span><h3>メールラッシュ</h3>
       <p>問い合わせフォームとメールで接点をつくります。文面の作成から返信対応、商談設定まで。</p>
-      <span class="v">1,000<em>件 / 月</em></span>
+      <span class="v">500–1,000<em>件 / 月</em></span>
       <a class="wl" href="mailrush/">メールラッシュのページへ</a></div>
     <div class="way"><span class="en">03 / TENJI-HACK</span><h3>展示会ハック</h3>
       <p>展示会の会場で、ブースに代わって商談相手を集めます。会期後のフォローまで行います。</p>
@@ -420,6 +429,22 @@ footer .fam{font-family:var(--fe);font-weight:700;font-size:14px;letter-spacing:
 
 <section class="band"><div class="wrap">
   <div class="hd">
+    <span class="en">DEFINITION</span>
+    <h2>何を「アポ」と数えるかを、<i>先に決めます。</i></h2>
+    <p>1件2万円をいただく以上、あとで「これはアポに入るのか」で揉めないように、意味をはっきりさせています。</p>
+  </div>
+  <div class="cases">
+    <div class="case"><span class="no">アポ獲得 ＝ 2万円</span>
+      <p>相手が打ち合わせに向けて、日程調整に進むことまで同意した場合。日程の確定は御社で行っていただきます。</p></div>
+    <div class="case"><span class="no">対象外 ＝ 0円</span>
+      <p>「資料だけ送って」「また連絡して」、受付止まり、名刺交換だけ。記録には残しますが、費用はかかりません。</p></div>
+    <div class="case"><span class="no">記録</span>
+      <p>電話・メール・展示会それぞれ、全件を月ごとにお渡しします。アポはどの手段で取れたかを1件ずつ明記します。</p></div>
+  </div>
+</div></section>
+
+<section class="band soft"><div class="wrap">
+  <div class="hd">
     <span class="en">SCOPE</span>
     <h2>どこまでやるかを、<i>先に決めます。</i></h2>
   </div>
@@ -439,10 +464,17 @@ footer .fam{font-family:var(--fe);font-weight:700;font-size:14px;letter-spacing:
         <li>アポ件数の保証</li>
         <li>御社の名義を使わない営業</li>
       </ul></div>
+    <div><h3>御社にお願いすること</h3>
+      <ul>
+        <li>最初に30分、商材と会いたい相手を教えていただく</li>
+        <li>商材がわかる資料をお渡しいただく</li>
+        <li>動き出す前に、リストと文面に目を通して承認いただく</li>
+        <li>アポが取れたら、商談に出ていただく</li>
+      </ul></div>
   </div>
 </div></section>
 
-<section class="band soft"><div class="wrap">
+<section class="band"><div class="wrap">
   <div class="hd">
     <span class="en">FLOW</span>
     <h2>ご相談から<i>1週間ほど</i>で、動き出せます。</h2>
@@ -459,7 +491,7 @@ footer .fam{font-family:var(--fe);font-weight:700;font-size:14px;letter-spacing:
   </ol>
 </div></section>
 
-<section class="band"><div class="wrap">
+<section class="band soft"><div class="wrap">
   <div class="hd">
     <span class="en">FAQ</span>
     <h2>先に聞かれることを、<i>まとめました。</i></h2>
@@ -476,6 +508,12 @@ footer .fam{font-family:var(--fe);font-weight:700;font-size:14px;letter-spacing:
 
   <details><summary>複合プランはなぜ1年契約なのですか。</summary>
   <p>展示会が年間の出展計画に紐づくためです。電話とメールは月単位で調整できますが、展示会は半年前から枠を押さえる必要があり、途中で抜けると計画が崩れます。</p></details>
+
+  <details><summary>どんな商材が向いていますか。</summary>
+  <p>法人向けで、電話やメールで担当者に届く商材であれば、業種は問いません。個人のお客様が対象の商材はお受けしていません。1件あたりの単価が小さく、商談の手間に見合わない商材は、ご相談の場でその旨をお伝えします。</p></details>
+
+  <details><summary>途中でやめられますか。</summary>
+  <p>コールラッシュの単品は6か月契約で、途中で解約される場合は残っている期間の月額合計の30%を解約料としていただきます。複合プランは1年契約です。メールラッシュの契約期間は、ご相談の際にご案内します。</p></details>
 
   <details><summary>商談には出てもらえますか。</summary>
   <p>アポのお取りつけまでが基本です。初回商談への同席をご希望の場合は、別途ご相談ください。</p></details>
