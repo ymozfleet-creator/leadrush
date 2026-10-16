@@ -3,410 +3,517 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>テレアポ代行｜リードラッシュ（RELIGHT）</title>
-<meta name="description" content="新規開拓の電話を月1,000件まるごと代行します。リストづくりから架電、アポのお取りつけまで。初月10万円（税抜）から、契約の縛りなしでお試しいただけます。">
+<title>営業代行｜LEADING RUSHER（リーディングラッシャー）</title>
+<meta name="description" content="電話、メール、展示会。3つの手段を1つの窓口で回す法人向け営業代行です。複合プランは月50万円から、アポの成果報酬は一律20,000円／件。1つの手段だけでもお受けします。">
 <link rel="canonical" href="https://ymozfleet-creator.github.io/leadrush/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="リードラッシュ">
-<meta property="og:title" content="テレアポ代行｜リードラッシュ（RELIGHT）">
-<meta property="og:description" content="新規開拓の電話を月1,000件まるごと代行します。リストづくりから架電、アポのお取りつけまで。初月10万円（税抜）から、契約の縛りなしでお試しいただけます。">
+<meta property="og:site_name" content="LEADING RUSHER">
+<meta property="og:title" content="営業代行｜LEADING RUSHER（リーディングラッシャー）">
+<meta property="og:description" content="電話、メール、展示会。3つの手段を1つの窓口で回す法人向け営業代行です。複合プランは月50万円から、アポの成果報酬は一律20,000円／件。1つの手段だけでもお受けします。">
 <meta property="og:url" content="https://ymozfleet-creator.github.io/leadrush/">
 <meta property="og:image" content="https://ymozfleet-creator.github.io/leadrush/hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Barlow+Condensed:wght@600;700&display=swap">
 <style>
 /* Artifactの実行環境が足していたリセット分をここで補う */
-html{color-scheme:light}
 body{margin:0}
 img{max-width:100%}
 [hidden]{display:none!important}
 </style>
 <style>
-/* 方針：読む前に分かる。1行で何のサービスかを言い、番号で順序を示し、料金を前に出す。
-   色は青1色＋白。文字を大きく、行間を広く、1行を短く。 */
+/* 日本のBtoB営業代行LPの文法に合わせた構成。
+   斜め分割のFV、数字を箱で3つ、濃紺と白の面を交互、キーワードに色を差す。
+   先進性はディグロス型（濃色＋大きな英字見出し＋全面ビジュアル）から取った。 */
 :root{
-  --bg:#FFFFFF; --wash:#F4F7FC; --card:#FFFFFF;
-  --ink:#192235; --ink-2:#4C5668; --ink-3:#78839A;
-  --line:#DDE4EF; --blue:#1256A8; --blue-dark:#0E4588; --blue-soft:#E7EFFA;
-  --good:#17784F; --shadow:0 1px 2px rgba(25,34,53,.05), 0 8px 24px rgba(25,34,53,.06);
+  color-scheme:light;
+  --navy:#061430; --navy-2:#0B2250; --navy-3:#123068;
+  --blue:#2E8BFF; --blue-2:#6FB2FF; --blue-pale:#EAF2FF;
+  --paper:#FFFFFF; --paper-2:#F3F6FB;
+  --ink:#0C1627; --ink-2:#48597A; --ink-3:#8696B1;
+  --line:#DCE4F0;
   --fd:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
   --fb:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0F1521; --wash:#151D2C; --card:#1A2435;
-  --ink:#EFF3F9; --ink-2:#B6C0D0; --ink-3:#8793A8;
-  --line:#2A3448; --blue:#7FB2F5; --blue-dark:#9CC5FA; --blue-soft:#1B2A42;
-  --good:#5CC694; --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.28);
-  color-scheme:dark;
-}}
-:root[data-theme="dark"]{
-  --bg:#0F1521; --wash:#151D2C; --card:#1A2435;
-  --ink:#EFF3F9; --ink-2:#B6C0D0; --ink-3:#8793A8;
-  --line:#2A3448; --blue:#7FB2F5; --blue-dark:#9CC5FA; --blue-soft:#1B2A42;
-  --good:#5CC694; --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.28);
-  color-scheme:dark;
+  --fe:"Barlow Condensed","Arial Narrow",sans-serif;
 }
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--fb);
-  font-size:17px;line-height:2.0;margin:0;-webkit-font-smoothing:antialiased}
-.wrap{max-width:980px;margin:0 auto;
-  padding-left:max(20px,env(safe-area-inset-left,0px));
-  padding-right:max(20px,env(safe-area-inset-right,0px))}
-.band{padding-block:clamp(58px,8vw,94px)}
-.wash{background:var(--wash)}
-h1,h2,h3{font-family:var(--fd);text-wrap:balance;margin:0;color:var(--ink)}
-p{margin:0 0 18px;max-width:52ch}
+body{background:var(--paper);color:var(--ink);font-family:var(--fb);
+  font-size:16px;line-height:1.95;margin:0;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:1140px;margin:0 auto;
+  padding-left:max(22px,env(safe-area-inset-left,0px));
+  padding-right:max(22px,env(safe-area-inset-right,0px))}
+.band{padding-block:clamp(66px,9vw,118px)}
+.dark{background:var(--navy);color:#fff}
+.dark p{color:#A9BDDC}
+.soft{background:var(--paper-2)}
+h1,h2,h3{font-family:var(--fd);text-wrap:balance;margin:0}
+p{margin:0 0 18px;max-width:54ch;color:var(--ink-2)}
 
-/* セクション見出し：番号＋見出し＋一行説明 */
-.head{margin-bottom:34px}
-.step-no{display:inline-block;font-family:var(--fd);font-weight:900;font-size:14px;
-  letter-spacing:.1em;color:var(--blue);background:var(--blue-soft);
-  border-radius:999px;padding:6px 16px;margin-bottom:16px}
-h2{font-weight:900;font-size:clamp(26px,4.6vw,40px);line-height:1.38;letter-spacing:-.01em}
-.head p{margin:14px 0 0;font-size:17px;color:var(--ink-2);max-width:48ch}
-h3{font-weight:700;font-size:19px;margin-bottom:10px;line-height:1.6}
+/* 見出し：英字ラベル＋極太和文 */
+.hd{text-align:center;margin-bottom:clamp(40px,5vw,62px)}
+.hd .en{font-family:var(--fe);font-weight:700;font-size:clamp(46px,8vw,86px);
+  line-height:.9;letter-spacing:.02em;color:var(--blue-pale);display:block;margin-bottom:-.38em}
+.dark .hd .en{color:rgba(110,160,235,.22)}
+.hd h2{position:relative;font-weight:900;font-size:clamp(25px,4.6vw,42px);
+  line-height:1.42;letter-spacing:-.01em;color:var(--ink)}
+.dark .hd h2{color:#fff}
+.hd h2 i{font-style:normal;color:var(--blue)}
+.hd p{margin:18px auto 0;max-width:46ch;font-size:16px}
+.hd.left{text-align:left}
+.hd.left p{margin-left:0}
 
 /* ヘッダー */
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--bg);
-  border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:13px}
-.brand{font-family:var(--fd);font-weight:900;font-size:18px;letter-spacing:.03em}
-.brand span{color:var(--blue)}
-.brand small{display:block;font-family:var(--fb);font-weight:500;font-size:11.5px;
-  letter-spacing:.02em;color:var(--ink-3);line-height:1.4}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:rgba(255,255,255,.94);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:12px;padding-block:12px}
+.logo{display:flex;align-items:center;gap:10px;margin-right:auto;color:var(--blue)}
+.logo svg{display:block;flex:none}
+.logo b{font-family:var(--fe);font-weight:700;font-size:25px;letter-spacing:.05em;color:var(--ink);line-height:1}
+.logo s{text-decoration:none;display:block;font-family:var(--fb);font-weight:500;
+  font-size:10.5px;letter-spacing:.04em;color:var(--ink-3);line-height:1.5;margin-top:1px}
+.tel{font-family:var(--fe);font-weight:700;font-size:25px;color:var(--ink);text-decoration:none;line-height:1}
+.tel s{text-decoration:none;display:block;font-family:var(--fb);font-weight:500;font-size:10px;
+  letter-spacing:.08em;color:var(--ink-3);line-height:1.4}
+@media (max-width:860px){.tel{display:none}}
 .btn{display:inline-block;font-family:var(--fd);font-weight:700;text-decoration:none;
-  background:var(--blue);color:#fff;border-radius:8px;padding:17px 36px;font-size:17px;
-  box-shadow:0 6px 18px rgba(18,86,168,.24)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{color:#0F1521;box-shadow:none}}
-:root[data-theme="dark"] .btn{color:#0F1521;box-shadow:none}
-.btn:hover{background:var(--blue-dark)}
-.btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-.btn.sm{padding:11px 20px;font-size:14.5px;box-shadow:none}
+  background:var(--blue);color:#fff;border-radius:6px;padding:16px 36px;font-size:16.5px;
+  box-shadow:0 8px 22px rgba(46,139,255,.3)}
+.btn:hover{background:#1A79F0}
+.btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.btn.sm{padding:11px 22px;font-size:14px;box-shadow:none}
+.btn.line{background:#fff;color:var(--navy);box-shadow:inset 0 0 0 2px var(--line)}
+.btn.line:hover{background:var(--blue-pale);box-shadow:inset 0 0 0 2px var(--blue)}
 
-/* ヒーロー：1行で何のサービスか */
-.hero{background:var(--wash);border-bottom:1px solid var(--line)}
-.hero .wrap{padding-block:clamp(44px,6vw,74px) clamp(40px,5vw,64px)}
-.kicker{display:inline-block;font-weight:700;font-size:14.5px;color:var(--blue);
-  background:var(--card);border:1px solid var(--line);border-radius:999px;
-  padding:7px 18px;margin:0 0 24px}
-h1{font-weight:900;font-size:clamp(31px,6.2vw,54px);line-height:1.34;letter-spacing:-.015em;margin:0 0 24px}
-h1 mark{background:none;color:var(--blue)}
-.sub{font-size:clamp(16.5px,2vw,19px);color:var(--ink-2);max-width:44ch;line-height:1.95;margin:0 0 30px}
-.cta-row{display:flex;flex-wrap:wrap;gap:16px 22px;align-items:center}
-.cta-note{font-size:14.5px;color:var(--ink-2);line-height:1.75;max-width:30ch;margin:0}
-.shot{width:100%;aspect-ratio:21/8;max-width:100%;object-fit:cover;object-position:58% 46%;display:block}
-@media (max-width:640px){.shot{aspect-ratio:16/9}}
+/* ファーストビュー：斜め分割 */
+.fv{position:relative;background:var(--navy);color:#fff;overflow:hidden;isolation:isolate}
+.fv::before{content:"";position:absolute;inset:0;z-index:-2;
+  background:radial-gradient(120% 90% at 8% 20%,#15356F 0%,#061430 62%)}
+.fv-photo{position:absolute;inset:0 0 0 auto;width:56%;z-index:-1;
+  clip-path:polygon(22% 0,100% 0,100% 100%,0 100%)}
+.fv-photo img{width:100%;height:100%;object-fit:cover;object-position:60% 44%;display:block}
+.fv-photo::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(95deg,var(--navy) 0%,rgba(6,20,48,.86) 26%,rgba(6,20,48,.08) 72%)}
+.fv .wrap{position:relative;padding-block:clamp(52px,7vw,96px)}
+.eyebrow{display:inline-block;font-family:var(--fd);font-weight:700;font-size:14px;
+  letter-spacing:.08em;color:#fff;background:var(--blue);padding:7px 18px;border-radius:3px;margin:0 0 24px}
+.fv h1{font-weight:900;font-size:clamp(27px,4.3vw,46px);line-height:1.34;
+  letter-spacing:-.03em;color:#fff;margin:0 0 22px;max-width:none}
+.fv h1 i{font-style:normal;color:var(--blue-2)}
+.fv-sub{color:#B9CCE8;font-size:clamp(15.5px,1.8vw,18px);max-width:34em;margin:0 0 34px;line-height:1.9}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;
+  margin:0 0 34px;padding:0;list-style:none;max-width:640px}
+.facts li{background:rgba(255,255,255,.07);border:1px solid rgba(146,184,246,.26);
+  border-radius:8px;padding:16px 14px;text-align:center;min-width:0;backdrop-filter:blur(3px)}
+.facts dt{font-size:11.5px;color:#9EB8DC;letter-spacing:.04em;margin-bottom:4px;font-weight:500}
+.facts dd{margin:0;font-family:var(--fe);font-weight:700;font-size:clamp(30px,4.6vw,46px);
+  line-height:1;color:#fff;letter-spacing:.01em}
+.facts dd em{font-style:normal;font-family:var(--fb);font-weight:500;font-size:13px;color:#B9CCE8;margin-left:3px}
+.facts dd b{color:var(--blue-2);font-weight:700}
+.fv-cta{display:flex;flex-wrap:wrap;gap:14px 16px;align-items:center}
+.fv-note{margin:20px 0 0;font-size:13.5px;color:#8FA8CC;max-width:40em}
+@media (max-width:900px){
+  .fv-photo{position:relative;width:100%;height:230px;clip-path:none;margin-bottom:-1px}
+  .fv-photo::after{background:linear-gradient(0deg,var(--navy) 0%,rgba(6,20,48,.25) 70%)}
+  .fv h1{max-width:none}
+  .facts{max-width:none;gap:8px}
+  .facts li{padding:13px 8px}
+}
 
-/* 3点まとめ */
-.facts .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;
-  padding-block:clamp(26px,4vw,38px)}
-.facts dl{margin:0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 24px}
-.facts dt{font-weight:700;font-size:14px;color:var(--ink-3)}
-.facts dd{margin:6px 0 0;font-family:var(--fd);font-weight:900;color:var(--ink);
-  font-size:clamp(26px,3.4vw,32px);font-variant-numeric:tabular-nums;line-height:1.2}
-.facts dd small{font-family:var(--fb);font-weight:500;font-size:15px;color:var(--ink-2)}
+/* 悩み */
+.cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(224px,1fr));gap:24px}
+.case{background:#fff;border-radius:12px;padding:30px 26px;min-width:0;
+  box-shadow:0 1px 2px rgba(12,22,39,.05),0 12px 30px rgba(12,22,39,.07);
+  border-top:4px solid var(--blue)}
+.case .no{font-family:var(--fe);font-weight:700;font-size:15px;letter-spacing:.1em;
+  color:var(--blue);display:block;margin-bottom:10px}
+.case p{margin:0;font-size:16px;color:var(--ink);font-weight:500;line-height:1.85}
+.answer{text-align:center;margin:clamp(42px,5vw,64px) auto 0;max-width:40em}
+.answer .bubble{display:inline-block;background:var(--navy);color:#fff;font-family:var(--fd);
+  font-weight:700;font-size:clamp(17px,2.4vw,22px);padding:16px 36px;border-radius:999px;position:relative}
+.answer .bubble i{font-style:normal;color:var(--blue-2)}
+.answer .bubble::after{content:"";position:absolute;left:50%;bottom:-11px;transform:translateX(-50%);
+  border:12px solid transparent;border-top-color:var(--navy);border-bottom:0}
 
-/* サービスの中身（3枚） */
-.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(262px,1fr));gap:18px}
-.work>div{min-width:0;background:var(--card);border:1px solid var(--line);
-  border-radius:14px;padding:28px 26px;box-shadow:var(--shadow)}
-.work .mark{display:grid;place-items:center;width:46px;height:46px;border-radius:12px;
-  background:var(--blue-soft);color:var(--blue);font-family:var(--fd);font-weight:900;
-  font-size:19px;margin-bottom:16px}
-.work p{color:var(--ink-2);font-size:16px;margin:0;line-height:1.9}
-.work .no{display:block;font-size:13px;font-weight:700;color:var(--blue);margin-bottom:6px}
-
-/* 比較 */
-.vs{display:grid;grid-template-columns:repeat(auto-fit,minmax(282px,1fr));gap:18px}
-.vs>div{min-width:0;border-radius:14px;padding:28px 26px;border:1px solid var(--line);background:var(--card)}
-.vs>div.pick{border:2px solid var(--blue);background:var(--blue-soft)}
-.vs h3{font-size:17.5px;color:var(--ink-3)}
-.vs>div.pick h3{color:var(--blue)}
-.vs ul{margin:16px 0 0;padding:0;list-style:none;font-size:16px}
-.vs li{margin-bottom:12px;padding-left:24px;position:relative;color:var(--ink-2);line-height:1.85}
-.vs li::before{content:"・";position:absolute;left:2px;color:var(--ink-3)}
-.vs>div.pick li::before{content:"";left:3px;top:.6em;position:absolute;width:12px;height:6px;
-  border-left:2.5px solid var(--blue);border-bottom:2.5px solid var(--blue);transform:rotate(-45deg)}
+/* 手段 */
+.ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:20px}
+.way{background:rgba(255,255,255,.05);border:1px solid rgba(146,184,246,.2);border-radius:12px;
+  padding:30px 26px;min-width:0}
+.way .en{font-family:var(--fe);font-weight:700;font-size:13px;letter-spacing:.14em;
+  color:var(--blue-2);display:block;margin-bottom:8px}
+.way h3{font-weight:900;font-size:22px;color:#fff;margin-bottom:12px;letter-spacing:-.01em}
+.way p{margin:0;font-size:14.5px;line-height:1.85}
+.way .v{display:block;margin-top:18px;padding-top:16px;border-top:1px solid rgba(146,184,246,.2);
+  font-family:var(--fe);font-weight:700;font-size:21px;color:#fff;letter-spacing:.02em}
+.way .v em{font-style:normal;font-family:var(--fb);font-weight:500;font-size:13px;color:#9EB8DC;margin-left:6px}
 
 /* 料金 */
-.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(296px,1fr));gap:20px;margin-bottom:24px}
-.plan{border-radius:16px;padding:30px 28px;min-width:0;background:var(--card);
-  border:1px solid var(--line);box-shadow:var(--shadow)}
-.plan.pick{border:2px solid var(--blue);background:var(--blue-soft);box-shadow:none}
-.plan .tag{font-weight:700;font-size:14.5px;color:var(--blue);margin:0 0 6px}
-.plan .for{font-size:14px;color:var(--ink-2);margin:0 0 16px;line-height:1.7}
-.price{font-family:var(--fd);font-weight:900;font-size:54px;line-height:1;
-  font-variant-numeric:tabular-nums;margin:0;letter-spacing:-.02em}
-.price small{font-family:var(--fb);font-weight:500;font-size:15.5px;color:var(--ink-2)}
-.term{margin:14px 0 0;font-size:15.5px;font-weight:700;color:var(--ink)}
-.plan ul{margin:18px 0 0;padding:0;list-style:none;font-size:15.5px;
-  border-top:1px solid var(--line);padding-top:18px}
-.plan li{margin-bottom:11px;padding-left:24px;position:relative;color:var(--ink-2);line-height:1.8}
-.plan li::before{content:"";position:absolute;left:2px;top:.62em;width:12px;height:6px;
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(312px,1fr));gap:22px;margin-bottom:24px}
+.plan{background:#fff;border-radius:16px;padding:clamp(30px,3.6vw,42px);min-width:0;
+  box-shadow:0 1px 2px rgba(12,22,39,.05),0 14px 36px rgba(12,22,39,.08);position:relative}
+.plan.pick{box-shadow:0 0 0 3px var(--blue),0 18px 44px rgba(46,139,255,.2)}
+.plan.pick::before{content:"おすすめ";position:absolute;top:-14px;left:clamp(30px,3.6vw,42px);
+  background:var(--blue);color:#fff;font-family:var(--fd);font-weight:700;font-size:13px;
+  padding:5px 18px;border-radius:999px}
+.plan .pn{font-family:var(--fe);font-weight:700;font-size:28px;color:var(--blue);letter-spacing:.03em;margin:0}
+.plan .pf{font-size:14px;color:var(--ink-3);margin:4px 0 22px;line-height:1.7}
+.price{font-family:var(--fe);font-weight:700;font-size:clamp(58px,8vw,82px);line-height:.95;
+  margin:0;color:var(--ink);letter-spacing:.01em}
+.price em{font-style:normal;font-family:var(--fd);font-weight:900;font-size:.36em;margin-left:2px}
+.price small{font-family:var(--fb);font-weight:400;font-size:15px;color:var(--ink-3);margin-left:8px}
+.save{margin:12px 0 0;display:inline-block;font-size:13.5px;font-weight:700;color:var(--blue);
+  background:var(--blue-pale);padding:5px 14px;border-radius:4px}
+.plan ul{margin:26px 0 0;padding:24px 0 0;list-style:none;font-size:15px;border-top:1px solid var(--line)}
+.plan li{margin-bottom:12px;padding-left:28px;position:relative;color:var(--ink-2);line-height:1.8}
+.plan li::before{content:"";position:absolute;left:4px;top:.5em;width:13px;height:7px;
   border-left:2.5px solid var(--blue);border-bottom:2.5px solid var(--blue);transform:rotate(-45deg)}
-.addon{background:var(--card);border:1px solid var(--line);border-radius:14px;
-  padding:4px 0;margin:0 0 20px;overflow:hidden}
-.addon div{display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between;
-  align-items:baseline;padding:16px 24px;font-size:16px}
-.addon div+div{border-top:1px solid var(--line)}
-.addon b{font-family:var(--fd);font-weight:700;white-space:nowrap}
-.addon span{color:var(--ink-2);font-size:15px;flex:1 1 14ch;min-width:0}
-.fineprint{font-size:14.5px;color:var(--ink-2);max-width:64ch;line-height:1.85}
+.plan li strong{color:var(--ink)}
+.feebar{background:var(--navy);color:#fff;border-radius:16px;padding:30px 34px;margin:0 0 22px;
+  display:flex;flex-wrap:wrap;gap:12px 30px;align-items:center;justify-content:space-between}
+.feebar b{font-family:var(--fd);font-weight:900;font-size:21px}
+.feebar span{color:#A9BDDC;font-size:14.5px;flex:1 1 20ch;min-width:0}
+.feebar em{font-style:normal;font-family:var(--fe);font-weight:700;font-size:40px;
+  color:var(--blue-2);white-space:nowrap;letter-spacing:.02em}
+.feebar em small{font-family:var(--fb);font-weight:500;font-size:14px;color:#A9BDDC;margin-left:6px}
+.fine{font-size:13.5px;color:var(--ink-3);max-width:66ch;line-height:1.85}
 
-/* ログ表 */
-.logwrap{overflow-x:auto;border-radius:14px;background:var(--card);
-  border:1px solid var(--line);box-shadow:var(--shadow)}
-table{border-collapse:collapse;width:100%;min-width:660px}
-th,td{text-align:left;padding:16px 20px;font-size:15.5px;vertical-align:top}
-thead th{font-weight:700;font-size:14px;color:var(--ink-3);white-space:nowrap;
-  background:var(--wash);border-bottom:1px solid var(--line)}
-tbody tr+tr td{border-top:1px solid var(--line)}
-td.num{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--ink-3)}
-.code{display:inline-block;font-weight:700;font-size:13.5px;border-radius:6px;
-  padding:3px 11px;white-space:nowrap}
-.code.talk{background:var(--blue-soft);color:var(--blue)}
-.code.appt{background:var(--good);color:#fff}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .code.appt{color:#0F1521}}
-:root[data-theme="dark"] .code.appt{color:#0F1521}
-.code.miss{background:var(--wash);color:var(--ink-3)}
-
-/* 用語 */
-.defs{margin:0;display:grid;gap:14px;font-size:16.5px}
-.defs div{background:var(--card);border:1px solid var(--line);border-radius:14px;
-  padding:24px 26px;display:grid;grid-template-columns:minmax(104px,140px) 1fr;gap:4px 26px}
-.defs dt{font-family:var(--fd);font-weight:700;color:var(--blue)}
-.defs dd{margin:0;color:var(--ink-2);min-width:0}
-@media (max-width:520px){.defs div{grid-template-columns:1fr}}
+/* 範囲 */
+.scope{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+.scope>div{background:#fff;border-radius:14px;padding:32px 30px;min-width:0;
+  box-shadow:0 1px 2px rgba(12,22,39,.05),0 12px 30px rgba(12,22,39,.06)}
+.scope h3{font-size:19px;font-weight:900;margin-bottom:16px;color:var(--blue)}
+.scope .off h3{color:var(--ink-3)}
+.scope ul{margin:0;padding:0;list-style:none;font-size:15.5px}
+.scope li{margin-bottom:11px;padding-left:26px;position:relative;color:var(--ink-2);line-height:1.8}
+.scope li::before{content:"";position:absolute;left:3px;top:.5em;width:12px;height:6px;
+  border-left:2.5px solid var(--blue);border-bottom:2.5px solid var(--blue);transform:rotate(-45deg)}
+.scope .off li::before{transform:none;top:.86em;height:2px;width:13px;border:0;background:var(--ink-3)}
 
 /* 進め方 */
-.flow{list-style:none;margin:0;padding:0;display:grid;gap:14px}
-.flow li{display:grid;grid-template-columns:76px 1fr;gap:4px 22px;align-items:start;
-  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px}
-.flow .d{font-family:var(--fd);font-weight:900;font-size:13.5px;color:var(--blue);
-  background:var(--blue-soft);border-radius:999px;padding:5px 0;text-align:center}
-.flow p{margin:0;color:var(--ink-2);font-size:16px;max-width:54ch}
-@media (max-width:520px){.flow li{grid-template-columns:1fr}.flow .d{width:78px;margin-bottom:10px}}
+.flow{list-style:none;margin:0;padding:0;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:20px}
+.flow li{background:#fff;border-radius:14px;padding:30px 26px;min-width:0;position:relative;
+  box-shadow:0 1px 2px rgba(12,22,39,.05),0 12px 30px rgba(12,22,39,.06)}
+.flow .d{font-family:var(--fe);font-weight:700;font-size:13px;letter-spacing:.12em;color:#fff;
+  background:var(--blue);display:inline-block;padding:4px 14px;border-radius:999px;margin-bottom:14px}
+.flow h3{font-size:18px;font-weight:900;margin-bottom:8px}
+.flow p{margin:0;font-size:14.5px;line-height:1.85}
 
-/* FAQ */
-details{background:var(--card);border:1px solid var(--line);border-radius:14px;
-  padding:20px 24px;margin-bottom:12px}
+details{background:#fff;border-radius:12px;padding:22px 26px;margin-bottom:12px;
+  box-shadow:0 1px 2px rgba(12,22,39,.05),0 8px 22px rgba(12,22,39,.05)}
 summary{font-family:var(--fd);font-weight:700;font-size:17.5px;cursor:pointer;
-  list-style:none;display:flex;gap:12px;align-items:baseline;line-height:1.7}
+  list-style:none;display:flex;gap:14px;align-items:baseline;line-height:1.7;color:var(--ink)}
 summary::-webkit-details-marker{display:none}
-summary::before{content:"Q";font-family:var(--fd);font-weight:900;font-size:15px;color:var(--blue)}
-details p{margin:12px 0 0 24px;color:var(--ink-2);font-size:16px}
-summary:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+summary::before{content:"Q";font-family:var(--fe);font-weight:700;font-size:20px;color:var(--blue)}
+details p{margin:14px 0 0 30px;font-size:15.5px}
+summary:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 
 /* 問い合わせ */
-.lines{display:grid;gap:12px;margin:28px 0 0;padding:0;list-style:none;font-size:16px}
-.lines li{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;background:var(--card);
-  border:1px solid var(--line);border-radius:12px;padding:17px 22px}
-.lines .k{font-weight:700;font-size:13.5px;color:var(--ink-3);min-width:48px}
-.lines .v{font-family:var(--fd);font-weight:700;font-size:18px;user-select:all}
-.copy{font-family:var(--fb);font-size:13.5px;border:1px solid var(--line);
-  background:var(--bg);color:var(--ink-2);border-radius:8px;padding:7px 15px;cursor:pointer}
-.copy:hover{color:var(--blue);border-color:var(--blue)}
-.copy:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.cta-box{text-align:center}
+.cta-box .lines{margin:38px auto 0;padding:0;list-style:none;display:grid;gap:10px;max-width:560px}
+.cta-box .lines li{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;justify-content:center;
+  padding:18px 24px;background:rgba(255,255,255,.07);border:1px solid rgba(146,184,246,.24);border-radius:10px}
+.cta-box .k{font-size:11.5px;letter-spacing:.14em;color:#9EB8DC;font-family:var(--fe);font-weight:700}
+.cta-box .v{font-family:var(--fe);font-weight:700;font-size:26px;user-select:all;color:#fff;letter-spacing:.02em}
+.cta-box .v.jp{font-family:var(--fb);font-size:16px;font-weight:500}
+.copy{font-family:var(--fb);font-size:12.5px;border:1px solid rgba(146,184,246,.4);
+  background:transparent;color:#B9CCE8;border-radius:999px;padding:7px 15px;cursor:pointer}
+.copy:hover{color:#fff;border-color:var(--blue-2)}
+.copy:focus-visible{outline:2px solid var(--blue-2);outline-offset:2px}
 a{color:var(--blue)}
-footer .wrap{padding-block:32px;font-size:13.5px;color:var(--ink-2);border-top:1px solid var(--line)}
-footer p{max-width:none;margin:0 0 6px}
+.dark a{color:var(--blue-2)}
+
+/* スマホ固定CTA */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:1px;
+  background:var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.sticky a{flex:1;text-align:center;padding:16px 8px;font-family:var(--fd);font-weight:700;
+  font-size:15px;text-decoration:none;background:#fff;color:var(--navy)}
+.sticky a.main{background:var(--blue);color:#fff}
+@media (max-width:760px){.sticky{display:flex} body{padding-bottom:62px}}
+
+footer{background:#04101F;color:#7C90B0}
+footer .wrap{padding-block:40px;font-size:13px}
+footer p{max-width:none;margin:0 0 7px;color:#7C90B0}
+footer .fam{font-family:var(--fe);font-weight:700;font-size:14px;letter-spacing:.1em;color:#A9BDDC}
+/* 単品価格 */
+.solo-hd{text-align:center;margin:clamp(50px,6vw,78px) 0 26px}
+.solo-hd h3{font-weight:900;font-size:clamp(20px,3vw,27px);color:var(--ink)}
+.solo-hd p{margin:12px auto 0;font-size:15px;max-width:44em}
+.solos{display:grid;grid-template-columns:repeat(auto-fit,minmax(264px,1fr));gap:18px;margin-bottom:26px}
+.solo{background:#fff;border-radius:14px;padding:28px 26px;min-width:0;
+  box-shadow:0 1px 2px rgba(12,22,39,.05),0 12px 30px rgba(12,22,39,.06)}
+.solo .sn{font-family:var(--fd);font-weight:900;font-size:19px;color:var(--ink);margin:0 0 2px}
+.solo .se{font-family:var(--fe);font-weight:700;font-size:12px;letter-spacing:.14em;
+  color:var(--blue);display:block;margin-bottom:18px}
+.solo ul{margin:0;padding:0;list-style:none}
+.solo li{padding:15px 0;border-top:1px solid var(--line)}
+.solo li:first-child{border-top:0;padding-top:0}
+.solo .q{display:block;font-size:13.5px;color:var(--ink-3);margin-bottom:3px;line-height:1.6}
+.solo .pz{display:block;font-family:var(--fe);font-weight:700;font-size:31px;color:var(--ink);
+  letter-spacing:.01em;line-height:1.1}
+.solo .pz small{font-family:var(--fb);font-weight:500;font-size:13px;color:var(--ink-3);margin-left:5px}
+.solo .cond{display:block;font-size:12.5px;color:var(--blue);margin-top:4px;line-height:1.6}
+.solo .add{margin:18px 0 0;font-size:12.5px;color:var(--ink-3);line-height:1.75;
+  padding-top:15px;border-top:1px solid var(--line)}
+/* 各サービスの個別ページへの導線 */
+.way .wl{display:inline-flex;align-items:center;gap:7px;margin-top:16px;
+  font-family:var(--fd);font-weight:700;font-size:14.5px;color:var(--blue-2);text-decoration:none}
+.way .wl::after{content:"→"}
+.way .wl:hover{color:#fff}
+.way .wl:focus-visible{outline:2px solid var(--blue-2);outline-offset:3px}
+.solo .sl{display:inline-block;margin-top:14px;font-family:var(--fd);font-weight:700;
+  font-size:14px;color:var(--blue);text-decoration:none}
+.solo .sl:hover{text-decoration:underline}
+/* 複合プランが1つのときは、幅を絞って中央に置く */
+.plans.single{max-width:620px;margin-left:auto;margin-right:auto}
+.plans.single .plan.pick::before{display:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <div class="brand">LEAD<span>RUSH</span><small>テレアポ代行｜RELIGHT</small></div>
+  <div class="logo">
+    <svg viewBox="0 0 26 16" width="24" height="15" aria-hidden="true">
+      <path d="M1.4 1.6 L8 8 L1.4 14.4" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9.4 1.6 L16 8 L9.4 14.4" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
+      <path d="M17.4 1.6 L24 8 L17.4 14.4" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" opacity=".25"/>
+    </svg>
+    <div><b>LEADING RUSHER</b><s>営業代行｜RELIGHT</s></div>
+  </div>
+  <a class="tel" href="tel:07084922277">070-8492-2277<s>平日 9:00–18:00</s></a>
   <a class="btn sm" href="#contact">相談する</a>
 </div></header>
 
-<section class="hero"><div class="wrap">
-  <p class="kicker">法人向けテレアポ代行</p>
-  <h1>新規開拓の電話を、<br>月1,000件<mark>まるごと代行</mark>します。</h1>
-  <p class="sub">リストづくりから架電、アポのお取りつけまで。御社の営業は、商談だけに集中してください。</p>
-  <div class="cta-row">
-    <a class="btn" href="#contact">お試しプランを相談する</a>
-    <p class="cta-note">初月10万円（税抜）から。<br>契約の縛りはありません。</p>
+<section class="fv">
+  <div class="fv-photo"><img src="hero.jpg" alt="ヘッドセットを着けて架電する担当者"></div>
+  <div class="wrap">
+    <p class="eyebrow">法人向け営業代行</p>
+    <h1>アポが取れるなら、<i>手段は問わない</i>はずです。</h1>
+    <p class="fv-sub">電話、メール、展示会。3つの手段を1つの窓口で回します。固定費とアポの成果報酬だけで、新規開拓の入口を丸ごと引き受けます。</p>
+    <ul class="facts">
+      <li><dl><dt>使える手段</dt><dd><b>3</b><em>種類</em></dd></dl></li>
+      <li><dl><dt>毎月の接点</dt><dd>2,000<em>件</em></dd></dl></li>
+      <li><dl><dt>アポ成果報酬</dt><dd>2<em>万円/件</em></dd></dl></li>
+    </ul>
+    <div class="fv-cta">
+      <a class="btn" href="#contact">30分、相談する</a>
+      <a class="btn sm line" href="#price">料金を見る</a>
+    </div>
+    <p class="fv-note">複合プランは月50万円から（税抜・1年契約）。1つの手段だけでもお受けします。</p>
+  </div>
+</section>
+
+<section class="band soft"><div class="wrap">
+  <div class="hd">
+    <span class="en">PROBLEM</span>
+    <h2>新規開拓で、<i>こんなこと</i>になっていませんか。</h2>
+  </div>
+  <div class="cases">
+    <div class="case"><span class="no">CASE 1</span>
+      <p>営業が既存のお客様で手一杯で、新規にかける時間がない</p></div>
+    <div class="case"><span class="no">CASE 2</span>
+      <p>代行会社に頼んだが「不在でした」ばかりで何も残らなかった</p></div>
+    <div class="case"><span class="no">CASE 3</span>
+      <p>電話だけ、メールだけでは、届かない相手がいる</p></div>
+    <div class="case"><span class="no">CASE 4</span>
+      <p>人を採りたいが、育つまでの数か月と固定給に踏み切れない</p></div>
+  </div>
+  <div class="answer">
+    <p class="bubble">リーディングラッシャーなら、<i>3つの手段</i>で解決できます。</p>
   </div>
 </div></section>
 
-<img class="shot" src="hero.jpg" alt="ヘッドセットを着けて架電する担当者">
-
-<div class="facts wash"><div class="wrap">
-  <dl><dt>毎月の架電数</dt><dd>1,000<small> 件</small></dd></dl>
-  <dl><dt>架電する時間</dt><dd>平日 9–17<small> 時</small></dd></dl>
-  <dl><dt>アポが取れたら</dt><dd>2<small> 万円 / 件</small></dd></dl>
-</div></div>
-
-<section class="band"><div class="wrap">
-  <div class="head">
-    <span class="step-no">01　サービスの中身</span>
-    <h2>やることは、この3つだけです。</h2>
-    <p>電話をかけるだけではありません。かける先を決めるところから、記録をお渡しするところまでを引き受けます。</p>
+<section class="band dark"><div class="wrap">
+  <div class="hd">
+    <span class="en">SERVICE</span>
+    <h2>1つの手段では、<i>届かない相手がいます。</i></h2>
+    <p>電話に出ない会社にはメールを送り、メールを読まない会社には展示会で会う。相手に合わせて手段を変えられることが、まとめてご依頼いただく理由です。</p>
   </div>
-  <div class="work">
-    <div><div class="mark">1</div><span class="no">かける先を決める</span>
-      <h3>リストをつくります</h3>
-      <p>業種・エリア・会社の規模などの条件をうかがって、企業名と電話番号まで揃えます。お持ちのリストがあれば、それを使います。</p></div>
-    <div><div class="mark">2</div><span class="no">電話をかける</span>
-      <h3>弊社のスタッフが架電します</h3>
-      <p>平日9〜17時に月1,000件。名乗りは御社の名義です。留守電にはメッセージを残し、折り返しのお電話も弊社で受けます。</p></div>
-    <div><div class="mark">3</div><span class="no">結果をお渡しする</span>
-      <h3>かけた全件を記録で返します</h3>
-      <p>何を言われたかを1件ずつ残します。アポが取れたら、担当者のお名前を添えてその日のうちにご連絡します。</p></div>
+  <div class="ways">
+    <div class="way"><span class="en">01 / CALLRUSH</span><h3>コールラッシュ</h3>
+      <p>電話で新規開拓。平日9〜17時に架電し、かけた全件の記録と言われた言葉をそのままお渡しします。</p>
+      <span class="v">500–1,000<em>件 / 月</em></span>
+      <a class="wl" href="callrush/">コールラッシュのページへ</a></div>
+    <div class="way"><span class="en">02 / MAILRUSH</span><h3>メールラッシュ</h3>
+      <p>問い合わせフォームとメールで接点をつくります。文面の作成から返信対応、商談設定まで。</p>
+      <span class="v">1,000<em>件 / 月</em></span></div>
+    <div class="way"><span class="en">03 / TENJI-HACK</span><h3>展示会ハック</h3>
+      <p>展示会の会場で、ブースに代わって商談相手を集めます。会期後のフォローまで行います。</p>
+      <span class="v">6–12<em>回 / 年</em></span>
+      <a class="wl" href="https://tenjihack.com/">展示会ハックのサイトへ</a></div>
   </div>
 </div></section>
 
-<section class="band wash"><div class="wrap">
-  <div class="head">
-    <span class="step-no">02　料金</span>
-    <h2>プランは2つだけです。</h2>
-    <p>まず1か月試して、続けるかをお決めいただく形にしています。どちらも月1,000件の架電が含まれます。</p>
+<section class="band soft" id="price"><div class="wrap">
+  <div class="hd">
+    <span class="en">PRICE</span>
+    <h2>固定費と、<i>アポが取れた分</i>だけ。</h2>
+    <p>月額の固定費に、アポが取れた件数分の成果報酬を加える形です。固定費の中に、電話とメールの月間件数、展示会の出展回数が含まれます。</p>
   </div>
-  <div class="plans">
+  <div class="plans single">
     <div class="plan pick">
-      <p class="tag">お試しプラン</p>
-      <p class="for">初めてご依頼される方。1社1回限りです。</p>
-      <p class="price">10<small>万円〜 / 初月</small></p>
-      <p class="term">契約の縛りなし。1か月で終われます。</p>
+      <p class="pn">LEADING RUSHER 50</p>
+      <p class="pf">3つの手段をひととおり回す、標準の形。</p>
+      <p class="price">50<em>万円</em><small>/ 月（税抜）</small></p>
+      <p class="save">単品で頼むと月60万円　月10万円お得</p>
       <ul>
-        <li>月1,000件まで架電</li>
-        <li>アポが取れたら20,000円／件</li>
-        <li>リストづくり、架電、記録のお渡しまで</li>
-      </ul>
-    </div>
-    <div class="plan">
-      <p class="tag">基本プラン</p>
-      <p class="for">お試しのあと、続けてご依頼される方。</p>
-      <p class="price">15<small>万円〜 / 月</small></p>
-      <p class="term">6か月契約。期間中の解約はできません。</p>
-      <ul>
-        <li>月1,000件まで架電</li>
-        <li>アポが取れたら20,000円／件</li>
-        <li>リストとトークを毎月直しながら精度を上げます</li>
+        <li><strong>コールラッシュ</strong>　月1,000件</li>
+        <li><strong>メールラッシュ</strong>　月1,000件</li>
+        <li><strong>展示会ハック</strong>　年12回</li>
+        <li>リスト作成、トーク・文面の作成を含む</li>
+        <li>1年契約</li>
       </ul>
     </div>
   </div>
-  <div class="addon">
-    <div><b>リストを弊社で作る場合</b><span>企業名・電話番号・業種まで。絞り込みの条件は3つほどまで</span><b>＋2万円 / 月</b></div>
-    <div><b>トークスクリプトをお持ちでない場合</b><span>ヒアリングのうえ弊社で作成。開始後の言い回しの調整も含みます</span><b>1万円 / 初回のみ</b></div>
-    <div><b>会話が月150件を超えた場合</b><span>月額に含むのは150件まで。超えた分のみ加算されます</span><b>250円 / 件</b></div>
+  <div class="feebar">
+    <b>アポが取れたら</b>
+    <span>電話・メール・展示会、どの手段で取れても同じ単価です</span>
+    <em>20,000<small>円 / 件</small></em>
   </div>
-  <p class="fineprint">金額はすべて税抜です。架電に使う電話番号は弊社で用意します。基本プランを途中で解約される場合は、残っている期間の月額合計の30%を解約料としていただきます（月15万円で3か月残っていれば13.5万円）。</p>
+  <div class="solo-hd">
+    <h3>1つの手段だけでご依頼いただく場合</h3>
+    <p>単品でもお受けします。まず1つ試していただいて、必要になったら手段を足す形でかまいません。</p>
+  </div>
+  <div class="solos">
+    <div class="solo">
+      <p class="sn">コールラッシュ</p><span class="se">CALLRUSH ／ 電話</span>
+      <ul>
+        <li><span class="q">月500件・基本</span><span class="pz">9<small>万円 / 月</small></span>
+          <span class="cond">6か月契約・1件あたり180円</span></li>
+        <li><span class="q">月1,000件・基本</span><span class="pz">15<small>万円 / 月</small></span>
+          <span class="cond">6か月契約・1件あたり150円</span></li>
+        <li><span class="q">月1,000件・お試し</span><span class="pz">10<small>万円 / 初月</small></span>
+          <span class="cond">新規のお客様、1社1回・縛りなし</span></li>
+      </ul>
+      <p class="add">リストを弊社で作る場合は＋2万円／月。トークスクリプトの作成は1万円（初回のみ）。</p>
+      <a class="sl" href="callrush/">コールラッシュのページへ →</a>
+    </div>
+    <div class="solo">
+      <p class="sn">メールラッシュ</p><span class="se">MAILRUSH ／ フォーム・メール</span>
+      <ul>
+        <li><span class="q">月500件</span><span class="pz">8<small>万円 / 月</small></span></li>
+        <li><span class="q">月1,000件</span><span class="pz">15<small>万円 / 月</small></span></li>
+      </ul>
+      <p class="add">ターゲットリストの作成、文面の作成、返信対応、商談設定までを含みます。</p>
+      <a class="sl" href="#contact">メールラッシュについて相談する →</a>
+    </div>
+    <div class="solo">
+      <p class="sn">展示会ハック</p><span class="se">TENJI-HACK ／ 展示会</span>
+      <ul>
+        <li><span class="q">現地接点のみ・3日</span><span class="pz">15<small>万円 / 1展示会</small></span>
+          <span class="cond">挨拶回りと名刺交換まで</span></li>
+        <li><span class="q">フルサービス・3日</span><span class="pz">25<small>万円 / 1展示会</small></span>
+          <span class="cond">会期後1か月のフォローと初回商談の同席付き</span></li>
+        <li><span class="q">年間6回／年12回</span><span class="pz">20–30<small>万円 / 月</small></span>
+          <span class="cond">1年契約・通年フォロー付き</span></li>
+      </ul>
+      <p class="add">フルサービスは有効名刺500円／社が別途かかります。</p>
+      <a class="sl" href="https://tenjihack.com/">展示会ハックのサイトへ →</a>
+    </div>
+  </div>
+  <p class="fine">金額はすべて税抜です。複合プランには電話月1,000件・メール月1,000件・展示会年12回が含まれます。初回商談の同席は含まれず、ご希望の場合は別途ご相談となります。展示会を年6回のペースでお使いの場合は、下記の単品を組み合わせる形になります。アポの成果報酬は単品・複合のどちらでも一律20,000円／件です。どの手段で取れたアポかは、月次の記録に1件ずつ明記します。</p>
 </div></section>
 
 <section class="band"><div class="wrap">
-  <div class="head">
-    <span class="step-no">03　お渡しするもの</span>
-    <h2>かけた1件ずつが、記録で残ります。</h2>
-    <p>「不在でした」では終わりません。断られた理由も溜まるので、次に何を直すかが見えます。</p>
+  <div class="hd">
+    <span class="en">SCOPE</span>
+    <h2>どこまでやるかを、<i>先に決めます。</i></h2>
   </div>
-  <div class="logwrap">
-    <table>
-      <thead><tr><th>日時</th><th>企業名</th><th>ご担当者</th><th>結果</th><th>言われたこと</th></tr></thead>
-      <tbody>
-        <tr><td class="num">10/20 10:14</td><td>◯◯製作所</td><td>製造部 課長</td>
-          <td><span class="code talk">会話成立</span></td><td>入れ替えたばかり。来期なら検討の余地あり</td></tr>
-        <tr><td class="num">10/20 10:22</td><td>△△商事</td><td>—</td>
-          <td><span class="code miss">受付止まり</span></td><td>担当者不在。木曜午後なら在席</td></tr>
-        <tr><td class="num">10/20 10:31</td><td>□□工業</td><td>代表取締役</td>
-          <td><span class="code appt">アポ獲得</span></td><td>人手が足りず新規開拓まで手が回らない。来週希望</td></tr>
-        <tr><td class="num">10/20 10:38</td><td>◇◇システムズ</td><td>—</td>
-          <td><span class="code miss">不通</span></td><td>留守電にメッセージを残した</td></tr>
-        <tr><td class="num">10/20 10:45</td><td>☆☆物流</td><td>営業部 部長</td>
-          <td><span class="code talk">会話成立</span></td><td>資料だけ送ってほしい。送付先のメールを取得</td></tr>
-      </tbody>
-    </table>
+  <div class="scope">
+    <div><h3>引き受けます</h3>
+      <ul>
+        <li>ターゲットリストの作成</li>
+        <li>トークスクリプトと送信文面の作成</li>
+        <li>電話・メール・展示会での接点づくり</li>
+        <li>返信対応と会期後のフォロー</li>
+        <li>アポイントのお取りつけ</li>
+      </ul></div>
+    <div class="off"><h3>行いません</h3>
+      <ul>
+        <li>クロージング、価格の提示、契約の交渉</li>
+        <li>個人のお客様が対象の商材</li>
+        <li>アポ件数の保証</li>
+        <li>御社の名義を使わない営業</li>
+      </ul></div>
   </div>
 </div></section>
 
-<section class="band wash"><div class="wrap">
-  <div class="head">
-    <span class="step-no">04　成果の数え方</span>
-    <h2>何を成果とするかを、先に決めます。</h2>
-    <p>あとで「これはアポに入るのか」で揉めないように、3つの言葉の意味をはっきりさせています。</p>
-  </div>
-  <dl class="defs">
-    <div><dt>アポ獲得</dt><dd>相手が打ち合わせに向けて日程調整に進むことまで同意した場合。これだけが20,000円の対象です。日程の確定は御社で行っていただきます。</dd></div>
-    <div><dt>会話成立</dt><dd>ご担当者か決裁者と話せた場合。不在・受付止まり・留守電は含みません。月150件までは月額に含まれます。</dd></div>
-    <div><dt>不通</dt><dd>応答がない、留守電、受付でお断りがあった場合。記録には残りますが、費用は発生しません。</dd></div>
-  </dl>
-</div></section>
-
-<section class="band"><div class="wrap">
-  <div class="head">
-    <span class="step-no">05　進め方</span>
-    <h2>ご相談から1週間ほどで、架電を始められます。</h2>
+<section class="band soft"><div class="wrap">
+  <div class="hd">
+    <span class="en">FLOW</span>
+    <h2>ご相談から<i>1週間ほど</i>で、動き出せます。</h2>
   </div>
   <ol class="flow">
-    <li><span class="d">1日目</span><div><h3>30分、オンラインでご相談</h3>
-      <p>商材、かけたい相手、リストの有無をうかがいます。この場で進め方と金額をご提示します。</p></div></li>
-    <li><span class="d">2〜5日目</span><div><h3>リストとトークスクリプトのご用意</h3>
-      <p>弊社で揃えて、架電前に必ずご承認をいただきます。勝手にかけ始めることはありません。</p></div></li>
-    <li><span class="d">6日目〜</span><div><h3>架電開始</h3>
-      <p>平日9〜17時に架電します。進み具合は随時ご確認いただけます。</p></div></li>
-    <li><span class="d">随時</span><div><h3>記録のお渡しとアポのご連絡</h3>
-      <p>アポが取れた時点で即日ご連絡します。商談は御社に出ていただきます。</p></div></li>
+    <li><span class="d">DAY 1</span><h3>30分、オンラインでご相談</h3>
+      <p>商材、会いたい相手、いま使っている手段をうかがいます。どの手段をどの比率で使うかを、この場でご提案します。</p></li>
+    <li><span class="d">DAY 2–5</span><h3>リストと文面のご用意</h3>
+      <p>ターゲットリスト、トークスクリプト、送信文面を揃えて、動き出す前に必ずご承認をいただきます。</p></li>
+    <li><span class="d">DAY 6 —</span><h3>接点づくりを開始</h3>
+      <p>電話とメールは当月から。展示会は会期に合わせて準備を進めます。</p></li>
+    <li><span class="d">MONTHLY</span><h3>記録のお渡しと組み替え</h3>
+      <p>手段ごとの結果を毎月お出しします。効いている手段に比率を寄せ、効いていない手段は中身を直します。</p></li>
   </ol>
 </div></section>
 
-<section class="band wash"><div class="wrap">
-  <div class="head">
-    <span class="step-no">06　よくあるご質問</span>
-    <h2>先に聞かれることを、まとめました。</h2>
+<section class="band"><div class="wrap">
+  <div class="hd">
+    <span class="en">FAQ</span>
+    <h2>先に聞かれることを、<i>まとめました。</i></h2>
   </div>
+
+  <details><summary>1つの手段だけでも頼めますか。</summary>
+  <p>お受けします。コールラッシュは月500件の9万円から、お試しプランは月1,000件で初月10万円から。まず1つ試していただいて、必要になったら手段を足す形でかまいません。</p></details>
 
   <details><summary>アポの件数は保証されますか。</summary>
   <p>保証はしていません。商材と相手で結果が大きく変わるためです。保証を付ける場合はアポの定義が緩くなるか、固定費に保証分が乗ります。弊社は定義を厳しくして、取れた分だけいただく形にしています。</p></details>
 
-  <details><summary>どこまでやってもらえますか。</summary>
-  <p>アポのお取りつけまでです。クロージング、価格の提示、契約の交渉は行いません。商談は御社に出ていただきます。</p></details>
+  <details><summary>どの手段で取れたアポか、分かりますか。</summary>
+  <p>月次の記録に1件ずつ明記します。単価は手段で変わらないので請求額には影響しませんが、どの手段が効いているかを見て、翌月の比率を組み替えるために使います。</p></details>
 
-  <details><summary>なぜ基本プランは6か月契約なのですか。</summary>
-  <p>テレアポは積み上げで効いてくるためです。最初の1か月は断られた理由を集める期間になり、2か月目以降にリストとトークを直しながら精度が上がります。1か月ごとの更新だと、毎月ゼロから作り直すことになります。</p></details>
+  <details><summary>複合プランはなぜ1年契約なのですか。</summary>
+  <p>展示会が年間の出展計画に紐づくためです。電話とメールは月単位で調整できますが、展示会は半年前から枠を押さえる必要があり、途中で抜けると計画が崩れます。</p></details>
 
-  <details><summary>誰がかけるのですか。</summary>
-  <p>弊社のスタッフがかけます。平日9〜17時。名乗りは御社の名義でお話しします。</p></details>
-
-  <details><summary>トークスクリプトは用意しないといけませんか。</summary>
-  <p>お持ちであればそれを使います。なければ、商材と断られやすい点をうかがったうえで弊社で作成し、1万円（初回のみ）をいただきます。架電を始めてからの言い回しの調整は、この費用に含めて随時行います。</p></details>
-
-  <details><summary>リストは自社で用意する必要がありますか。</summary>
-  <p>お持ちであればそのまま使います。その場合が表示の価格です。なければ業種・エリア・規模などの条件をうかがって弊社で作り、月額に2万円を加えます。</p></details>
+  <details><summary>商談には出てもらえますか。</summary>
+  <p>アポのお取りつけまでが基本です。初回商談への同席をご希望の場合は、別途ご相談ください。</p></details>
 </div></section>
 
-<section class="band" id="contact"><div class="wrap">
-  <div class="head">
-    <span class="step-no">お問い合わせ</span>
-    <h2>まず30分、商材のお話を<br>うかがわせてください。</h2>
-    <p>お試しプランの条件と、御社の商材でかけた場合の進め方をご案内します。</p>
+<section class="band dark cta-box" id="contact"><div class="wrap">
+  <div class="hd">
+    <span class="en">CONTACT</span>
+    <h2>まず30分、商材のお話をうかがわせてください。</h2>
+    <p>商材と会いたい相手をうかがったうえで、どの手段をどの比率で使うかをご提案します。</p>
   </div>
   <ul class="lines">
-    <li><span class="k">メール</span><span class="v">info@tenjihack.com</span>
+    <li><span class="k">MAIL</span><span class="v jp">info@tenjihack.com</span>
       <button class="copy" type="button" data-copy="info@tenjihack.com">コピー</button></li>
-    <li><span class="k">電話</span><span class="v">070-8492-2277</span>
+    <li><span class="k">TEL</span><span class="v">070-8492-2277</span>
       <button class="copy" type="button" data-copy="070-8492-2277">コピー</button></li>
-    <li><span class="k">LINE</span><span class="v"><a href="https://lin.ee/8sQwtMu">友だち追加はこちら</a></span></li>
+    <li><span class="k">LINE</span><span class="v jp"><a href="https://lin.ee/8sQwtMu">友だち追加はこちら</a></span></li>
   </ul>
 </div></section>
 
 <footer><div class="wrap">
-  <p><strong>LEADRUSH</strong>（リードラッシュ）／ RELIGHT　代表　茂住 雄太</p>
-  <p>〒165-0023 東京都中野区江原町2-13-13</p>
+  <p class="fam">CALLRUSH ／ MAILRUSH ／ TENJI-HACK</p>
+  <p style="margin-top:14px"><strong style="color:#A9BDDC">LEADING RUSHER</strong>（リーディングラッシャー）は、RELIGHT が提供する法人向け営業代行です。</p>
+  <p>RELIGHT　代表　茂住 雄太　／　〒165-0023 東京都中野区江原町2-13-13</p>
   <p>掲載の金額はすべて税抜です。</p>
 </div></footer>
+
+<nav class="sticky" aria-label="お問い合わせ">
+  <a href="tel:07084922277">電話で相談</a>
+  <a class="main" href="#contact">30分、相談する</a>
+</nav>
 
 <script>
 document.querySelectorAll(".copy").forEach(function(btn){
   btn.addEventListener("click",function(){
     var text=btn.getAttribute("data-copy");
-    function flash(msg){btn.textContent=msg;setTimeout(function(){btn.textContent="コピー"},1600)}
-    function select(){var el=btn.parentElement.querySelector(".v");if(!el)return flash("コピー");
+    function flash(m){btn.textContent=m;setTimeout(function(){btn.textContent="コピー"},1600)}
+    function sel(){var el=btn.parentElement.querySelector(".v");if(!el)return flash("コピー");
       var r=document.createRange();r.selectNodeContents(el);
       var s=window.getSelection();s.removeAllRanges();s.addRange(r);flash("選択しました")}
-    try{navigator.clipboard.writeText(text).then(function(){flash("コピーしました")},select)}
-    catch(e){select()}
+    try{navigator.clipboard.writeText(text).then(function(){flash("コピーしました")},sel)}
+    catch(e){sel()}
   });
 });
 </script>
