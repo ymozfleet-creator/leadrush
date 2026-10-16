@@ -240,6 +240,38 @@ body{padding-bottom:56px}}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
 </style>
+<style>
+/* readability */
+h1,h2,h3,.lead,.cmp th,.cmp td,.faq summary,.checks li{word-break:auto-phrase}
+h1,h2,h3{text-wrap:balance}
+p,li,dd{text-wrap:pretty}
+body{color:#222228}
+.card p,.row p,.big p,.step p,.fl p,.def p,.sc ul,.faq .a,.fm p,.ask p{font-size:15.5px;line-height:1.95}
+.str p{font-size:16px;line-height:1.95}
+.cmp{font-size:15px}.cmp td{line-height:1.8}
+.note,.pnote{font-size:13.5px}
+.plan ul{font-size:15px}.plan .unit{font-size:13.5px}.plan .for{font-size:14px}
+.opts{font-size:15px}.opts td small{font-size:13px}
+.faq summary{font-size:16.5px}
+.sec.dark .lead{color:#C8C8D2}
+@media (max-width:760px){
+ .cmp{min-width:0;font-size:14.5px}
+ .cmp thead{display:none}
+ .cmp,.cmp tbody,.cmp tr,.cmp th,.cmp td{display:block;width:100%}
+ .cmp tr{border-bottom:1.5px solid var(--ink)}.cmp tr:last-child{border-bottom:0}
+ .cmp tbody th{width:100%;padding:12px 16px;border-right:0;font-size:15px}
+ .cmp td{display:grid;grid-template-columns:7.5em 1fr;gap:12px;padding:12px 16px;border-right:0}
+ .cmp td::before{content:attr(data-l);font-weight:700;font-size:12.5px;color:var(--blue);line-height:1.6}
+ .cmp td.us::before{color:var(--ink)}
+ .cmp tr:last-child td{border-bottom:1px solid var(--line-2)}.cmp tr:last-child td:last-child{border-bottom:0}
+ .opts,.opts tbody,.opts tr,.opts th,.opts td{display:block;width:100%}
+ .opts tr{padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.12)}.opts tr:last-child{border-bottom:0}
+ .opts th,.opts td{padding:0;border:0}.opts th{margin:0 0 6px}
+ .opts td.v{text-align:left;margin-top:8px;font-size:17px}
+}
+.way b{word-break:normal;overflow-wrap:anywhere}
+@media (max-width:640px){.way{grid-template-columns:44px 1fr auto;gap:10px;padding:14px 14px}.way b{font-size:15.5px}.way .k{font-size:12px;letter-spacing:.08em}}
+</style>
 </head>
 <body>
 <div class="bar" aria-hidden="true"></div>
@@ -344,11 +376,11 @@ body{padding-bottom:56px}}
   <div class="cmp-scroll rv"><table class="cmp">
     <thead><tr><th></th><th>自社でテレアポ担当を採用</th><th>一般的なテレアポ代行</th><th class="us">コールラッシュ</th></tr></thead>
     <tbody>
-      <tr><th>始めるまで</th><td>求人・面接・入社・研修で数か月</td><td>会社により異なる</td><td class="us">ご相談から1週間ほど</td></tr>
-      <tr><th>毎月の固定費</th><td>給与＋社会保険＋採用費。成果に関係なく発生</td><td>固定費型・コール課金型など会社により様々</td><td class="us">月9.8万円（500件）／月15万円（1,000件）</td></tr>
-      <tr><th>成果報酬</th><td>なし（固定給）</td><td>アポの定義が会社によって異なる</td><td class="us">アポ1件20,000円。定義を契約前に文書で確定</td></tr>
-      <tr><th>手元に残るもの</th><td>担当者のメモ。退職すると引き継がれないことも</td><td>件数の報告が中心のことも</td><td class="us">全件の記録（相手・応対状況・結果）</td></tr>
-      <tr><th>やめるとき</th><td>解雇はできず、配置転換が必要</td><td>会社により異なる</td><td class="us">6か月契約。以降はいつでも終了可</td></tr>
+      <tr><th>始めるまで</th><td data-l="自社でテレアポ担当を採用">求人・面接・入社・研修で数か月</td><td data-l="一般的なテレアポ代行">会社により異なる</td><td class="us" data-l="コールラッシュ">ご相談から1週間ほど</td></tr>
+      <tr><th>毎月の固定費</th><td data-l="自社でテレアポ担当を採用">給与＋社会保険＋採用費。成果に関係なく発生</td><td data-l="一般的なテレアポ代行">固定費型・コール課金型など会社により様々</td><td class="us" data-l="コールラッシュ">月9.8万円（500件）／月15万円（1,000件）</td></tr>
+      <tr><th>成果報酬</th><td data-l="自社でテレアポ担当を採用">なし（固定給）</td><td data-l="一般的なテレアポ代行">アポの定義が会社によって異なる</td><td class="us" data-l="コールラッシュ">アポ1件20,000円。定義を契約前に文書で確定</td></tr>
+      <tr><th>手元に残るもの</th><td data-l="自社でテレアポ担当を採用">担当者のメモ。退職すると引き継がれないことも</td><td data-l="一般的なテレアポ代行">件数の報告が中心のことも</td><td class="us" data-l="コールラッシュ">全件の記録（相手・応対状況・結果）</td></tr>
+      <tr><th>やめるとき</th><td data-l="自社でテレアポ担当を採用">解雇はできず、配置転換が必要</td><td data-l="一般的なテレアポ代行">会社により異なる</td><td class="us" data-l="コールラッシュ">6か月契約。以降はいつでも終了可</td></tr>
     </tbody>
   </table></div>
 </div></section>
