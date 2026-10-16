@@ -298,6 +298,53 @@ body{padding-bottom:56px}}
 .sc.ng li::before{content:"×";color:var(--mute)}
 @media (max-width:900px){.scope{grid-template-columns:1fr}}
 </style>
+<style>
+/* readability */
+h1,h2,h3,.lead,.cmp th,.cmp td,.faq summary,.checks li,.sp dt{word-break:auto-phrase}
+h1,h2,h3{text-wrap:balance}
+p,li,dd{text-wrap:pretty}
+body{color:#222228}
+.card p,.row p,.big p,.step p,.fl p,.def p,.sc ul,.faq .a,.fm p,.ask p{font-size:15.5px;line-height:1.95}
+.str p{font-size:16px;line-height:1.95}
+.cmp{font-size:15px}.cmp td{line-height:1.8}
+.svc3 small{font-size:12.5px}
+.note,.pnote{font-size:13.5px}
+.bun ul{font-size:15px;gap:8px}.fee p{font-size:14.5px;line-height:1.9}
+.bun .for,.plan .for{font-size:14px}.inc dt{font-size:12.5px}
+.faq summary{font-size:16.5px}
+.sec.dark .lead{color:#C8C8D2}
+/* single-service price cards */
+.sp3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.sp{background:#fff;color:var(--txt);border:1px solid #fff;display:flex;flex-direction:column;min-width:0}
+.sp-hd{padding:18px 22px 14px;border-bottom:2px solid var(--ink)}
+.sp-hd b{display:block;font-size:19px;font-weight:900;color:var(--ink);line-height:1.4}
+.sp-hd small{display:block;font-family:var(--fe);font-weight:700;letter-spacing:.12em;font-size:12px;color:var(--blue)}
+.sp dl{margin:0;padding:0 22px;flex:1}
+.sp dl div{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:16px 0;border-bottom:1px solid var(--line-2)}
+.sp dl div:last-child{border-bottom:0}
+.sp dt{font-weight:700;color:var(--ink);font-size:15px;line-height:1.5;min-width:0}
+.sp dt small{display:block;font-weight:500;color:var(--mute);font-size:13px;margin-top:4px;line-height:1.6}
+.sp dd{margin:0;font-family:var(--fe);font-weight:700;font-size:32px;line-height:1;color:var(--ink);white-space:nowrap;text-align:right}
+.sp dd span{display:block;font-family:var(--fb);font-size:12px;font-weight:700;color:var(--mute);margin-top:6px}
+.sp-nt{margin:0 22px;padding:12px 14px;background:var(--sand);font-size:13px;line-height:1.7;color:var(--txt)}
+.sp a{display:block;margin:14px 22px 20px;font-weight:700;font-size:14.5px;color:var(--blue);text-decoration:none}
+.sp a::after{content:" →"}.sp a:hover{text-decoration:underline}
+@media (max-width:1000px){.sp3{grid-template-columns:1fr}}
+/* compare: stack on phones */
+@media (max-width:760px){
+ .cmp{min-width:0;font-size:14.5px}
+ .cmp thead{display:none}
+ .cmp,.cmp tbody,.cmp tr,.cmp th,.cmp td{display:block;width:100%}
+ .cmp tr{border-bottom:1.5px solid var(--ink)}.cmp tr:last-child{border-bottom:0}
+ .cmp tbody th{width:100%;padding:12px 16px;border-right:0;font-size:15px}
+ .cmp td{display:grid;grid-template-columns:7.5em 1fr;gap:12px;padding:12px 16px;border-right:0}
+ .cmp td::before{content:attr(data-l);font-weight:700;font-size:12.5px;color:var(--blue);line-height:1.6}
+ .cmp tr:last-child td{border-bottom:1px solid var(--line-2)}.cmp tr:last-child td:last-child{border-bottom:0}
+}
+/* contact: keep address on one line */
+.way b{word-break:normal;overflow-wrap:anywhere}
+@media (max-width:640px){.way{grid-template-columns:44px 1fr auto;gap:10px;padding:14px 14px}.way b{font-size:15.5px}.way .k{font-size:12px;letter-spacing:.08em}}
+</style>
 </head>
 <body>
 <div class="bar" aria-hidden="true"></div>
@@ -402,11 +449,11 @@ body{padding-bottom:56px}}
   <div class="cmp-scroll rv"><table class="cmp">
     <thead><tr><th></th><th>コールラッシュ（電話）</th><th>メールラッシュ（フォーム・メール）</th><th>展示会ハック（展示会）</th></tr></thead>
     <tbody>
-      <tr><th>届きやすい相手</th><td>電話に出る会社、担当者につながる会社</td><td>受付で止まる会社、フォームが担当部署に回る会社</td><td>その展示会に出展している会社の担当者・決裁者</td></tr>
-      <tr><th>月の件数</th><td>500件／1,000件</td><td>500件／1,000件</td><td>年6回／年12回（1展示会からも可）</td></tr>
-      <tr><th>固定費</th><td>月9.8万円／15万円</td><td>月8.8万円／15万円</td><td>1展示会15万円〜／年間契約は月20–30万円</td></tr>
-      <tr><th>アポの成果報酬</th><td>1件20,000円</td><td>1件20,000円</td><td>1件20,000円</td></tr>
-      <tr><th>手元に残るもの</th><td>かけた全件の記録（相手・応対状況・結果）</td><td>送った全件と返信の記録</td><td>交換した名刺と会話メモ、会期後のフォロー記録</td></tr>
+      <tr><th>届きやすい相手</th><td data-l="コールラッシュ">電話に出る会社、担当者につながる会社</td><td data-l="メールラッシュ">受付で止まる会社、フォームが担当部署に回る会社</td><td data-l="展示会ハック">その展示会に出展している会社の担当者・決裁者</td></tr>
+      <tr><th>月の件数</th><td data-l="コールラッシュ">500件／1,000件</td><td data-l="メールラッシュ">500件／1,000件</td><td data-l="展示会ハック">年6回／年12回（1展示会からも可）</td></tr>
+      <tr><th>固定費</th><td data-l="コールラッシュ">月9.8万円／15万円</td><td data-l="メールラッシュ">月8.8万円／15万円</td><td data-l="展示会ハック">1展示会15万円〜／年間契約は月20–30万円</td></tr>
+      <tr><th>アポの成果報酬</th><td data-l="コールラッシュ">1件20,000円</td><td data-l="メールラッシュ">1件20,000円</td><td data-l="展示会ハック">1件20,000円</td></tr>
+      <tr><th>手元に残るもの</th><td data-l="コールラッシュ">かけた全件の記録（相手・応対状況・結果）</td><td data-l="メールラッシュ">送った全件と返信の記録</td><td data-l="展示会ハック">交換した名刺と会話メモ、会期後のフォロー記録</td></tr>
     </tbody>
   </table></div>
 </div></section>
@@ -435,18 +482,36 @@ body{padding-bottom:56px}}
   </div>
   <h3 class="rv" style="color:#fff;font-size:20px;margin:36px 0 14px">1つの手段だけでご依頼いただく場合</h3>
   <p class="rv" style="color:#B6B6C2;font-size:14px;margin:0 0 18px">単品でもお受けします。まず1つ試していただいて、必要になったら手段を足す形でかまいません。</p>
-  <div class="cmp-scroll rv"><table class="single">
-    <thead><tr><th>サービス</th><th>プラン</th><th>月額</th><th>備考</th><th></th></tr></thead>
-    <tbody>
-      <tr><th rowspan="2">コールラッシュ<small>CALLRUSH ／ 電話</small></th><td>月500件</td><td><b>9.8万円 / 月</b></td><td>6か月契約・1件あたり196円<small>リストを当社で作る場合＋2万円／月。トークスクリプト作成は1万円（初回のみ）</small></td><td rowspan="2"><a href="callrush/">詳しく</a></td></tr>
-      <tr><td>月1,000件</td><td><b>15万円 / 月</b></td><td>6か月契約・1件あたり150円</td></tr>
-      <tr><th rowspan="2">メールラッシュ<small>MAILRUSH ／ フォーム・メール</small></th><td>月500件</td><td><b>8.8万円 / 月</b></td><td>1件あたり176円<small>ターゲットリストの作成、文面の作成、返信対応、商談設定までを含む</small></td><td rowspan="2"><a href="mailrush/">詳しく</a></td></tr>
-      <tr><td>月1,000件</td><td><b>15万円 / 月</b></td><td>1件あたり150円</td></tr>
-      <tr><th rowspan="3">展示会ハック<small>TENJI-HACK ／ 展示会</small></th><td>現地接点のみ・3日</td><td><b>15万円 / 1展示会</b></td><td>挨拶回りと名刺交換まで</td><td rowspan="3"><a href="https://tenjihack.com/">詳しく</a></td></tr>
-      <tr><td>フルサービス・3日</td><td><b>25万円 / 1展示会</b></td><td>会期後1か月のフォローと初回商談の同席付き<small>有効名刺500円／社が別途</small></td></tr>
-      <tr><td>年間6回／年12回</td><td><b>20–30万円 / 月</b></td><td>1年契約・通年フォロー付き</td></tr>
-    </tbody>
-  </table></div>
+  <div class="sp3">
+    <div class="sp rv">
+      <div class="sp-hd"><b>コールラッシュ</b><small>CALLRUSH ／ 電話</small></div>
+      <dl>
+        <div><dt>月500件<small>6か月契約・1件あたり196円</small></dt><dd>9.8<span>万円 / 月</span></dd></div>
+        <div><dt>月1,000件<small>6か月契約・1件あたり150円</small></dt><dd>15<span>万円 / 月</span></dd></div>
+      </dl>
+      <p class="sp-nt">リストを当社で作る場合＋2万円／月。トークスクリプト作成は1万円（初回のみ）</p>
+      <a href="callrush/">コールラッシュの詳細</a>
+    </div>
+    <div class="sp rv">
+      <div class="sp-hd"><b>メールラッシュ</b><small>MAILRUSH ／ フォーム・メール</small></div>
+      <dl>
+        <div><dt>月500件<small>1件あたり176円</small></dt><dd>8.8<span>万円 / 月</span></dd></div>
+        <div><dt>月1,000件<small>1件あたり150円</small></dt><dd>15<span>万円 / 月</span></dd></div>
+      </dl>
+      <p class="sp-nt">ターゲットリストの作成、文面の作成、返信対応、商談設定までを含む</p>
+      <a href="mailrush/">メールラッシュの詳細</a>
+    </div>
+    <div class="sp rv">
+      <div class="sp-hd"><b>展示会ハック</b><small>TENJI-HACK ／ 展示会</small></div>
+      <dl>
+        <div><dt>現地接点のみ・3日<small>挨拶回りと名刺交換まで</small></dt><dd>15<span>万円 / 1展示会</span></dd></div>
+        <div><dt>フルサービス・3日<small>会期後1か月のフォローと初回商談の同席付き</small></dt><dd>25<span>万円 / 1展示会</span></dd></div>
+        <div><dt>年間6回／年12回<small>1年契約・通年フォロー付き</small></dt><dd>20–30<span>万円 / 月</span></dd></div>
+      </dl>
+      <p class="sp-nt">フルサービスは有効名刺500円／社が別途</p>
+      <a href="https://tenjihack.com/">展示会ハックのサイト</a>
+    </div>
+  </div>
   <p class="pnote">金額はすべて税抜です。複合プランには電話月1,000件・メール月1,000件・展示会年12回が含まれます。初回商談の同席は含まれず、ご希望の場合は別途ご相談となります。展示会を年6回のペースでお使いの場合は、単品を組み合わせる形になります。アポの成果報酬は単品・複合のどちらでも一律20,000円／件です。</p>
 </div></section>
 
