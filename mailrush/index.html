@@ -256,6 +256,38 @@ body{padding-bottom:56px}}
 .mock .stat{position:static;border-top:2px solid var(--ink)}
 @media (max-width:900px){.mock{box-shadow:8px 8px 0 var(--blue)}}
 </style>
+<style>
+/* readability */
+h1,h2,h3,.lead,.cmp th,.cmp td,.faq summary,.checks li{word-break:auto-phrase}
+h1,h2,h3{text-wrap:balance}
+p,li,dd{text-wrap:pretty}
+body{color:#222228}
+.card p,.row p,.big p,.step p,.fl p,.def p,.sc ul,.faq .a,.fm p,.ask p{font-size:15.5px;line-height:1.95}
+.str p{font-size:16px;line-height:1.95}
+.cmp{font-size:15px}.cmp td{line-height:1.8}
+.note,.pnote{font-size:13.5px}
+.plan ul{font-size:15px}.plan .unit{font-size:13.5px}.plan .for{font-size:14px}
+.opts{font-size:15px}.opts td small{font-size:13px}
+.faq summary{font-size:16.5px}
+.sec.dark .lead{color:#C8C8D2}
+@media (max-width:760px){
+ .cmp{min-width:0;font-size:14.5px}
+ .cmp thead{display:none}
+ .cmp,.cmp tbody,.cmp tr,.cmp th,.cmp td{display:block;width:100%}
+ .cmp tr{border-bottom:1.5px solid var(--ink)}.cmp tr:last-child{border-bottom:0}
+ .cmp tbody th{width:100%;padding:12px 16px;border-right:0;font-size:15px}
+ .cmp td{display:grid;grid-template-columns:7.5em 1fr;gap:12px;padding:12px 16px;border-right:0}
+ .cmp td::before{content:attr(data-l);font-weight:700;font-size:12.5px;color:var(--blue);line-height:1.6}
+ .cmp td.us::before{color:var(--ink)}
+ .cmp tr:last-child td{border-bottom:1px solid var(--line-2)}.cmp tr:last-child td:last-child{border-bottom:0}
+ .opts,.opts tbody,.opts tr,.opts th,.opts td{display:block;width:100%}
+ .opts tr{padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.12)}.opts tr:last-child{border-bottom:0}
+ .opts th,.opts td{padding:0;border:0}.opts th{margin:0 0 6px}
+ .opts td.v{text-align:left;margin-top:8px;font-size:17px}
+}
+.way b{word-break:normal;overflow-wrap:anywhere}
+@media (max-width:640px){.way{grid-template-columns:44px 1fr auto;gap:10px;padding:14px 14px}.way b{font-size:15.5px}.way .k{font-size:12px;letter-spacing:.08em}}
+</style>
 </head>
 <body>
 <div class="bar" aria-hidden="true"></div>
@@ -363,11 +395,11 @@ body{padding-bottom:56px}}
   <div class="cmp-scroll rv"><table class="cmp">
     <thead><tr><th></th><th>自社で営業メールを送る</th><th>コールラッシュ（電話）</th><th class="us">メールラッシュ</th></tr></thead>
     <tbody>
-      <tr><th>届きやすい相手</th><td>送り先次第</td><td>電話に出る会社、担当者につながる会社</td><td class="us">受付で止まる会社、フォームが担当部署に回る会社</td></tr>
-      <tr><th>伝えられる内容</th><td>文面次第</td><td>短い一言。資料は後送</td><td class="us">資料やURLを添えて、読む時間に合わせて伝えられる</td></tr>
-      <tr><th>月の件数と費用</th><td>担当者の時間次第</td><td>500件 9.8万円／1,000件 15万円</td><td class="us">500件 8.8万円／1,000件 15万円</td></tr>
-      <tr><th>月額に含まれるもの</th><td>—</td><td>架電・記録（リスト作成とトーク作成は別途）</td><td class="us">リスト作成・文面作成・送信・返信対応・商談設定</td></tr>
-      <tr><th>成果報酬</th><td>—</td><td>アポ1件20,000円</td><td class="us">アポ1件20,000円（同じ定義・同じ単価）</td></tr>
+      <tr><th>届きやすい相手</th><td data-l="自社で営業メールを送る">送り先次第</td><td data-l="コールラッシュ">電話に出る会社、担当者につながる会社</td><td class="us" data-l="メールラッシュ">受付で止まる会社、フォームが担当部署に回る会社</td></tr>
+      <tr><th>伝えられる内容</th><td data-l="自社で営業メールを送る">文面次第</td><td data-l="コールラッシュ">短い一言。資料は後送</td><td class="us" data-l="メールラッシュ">資料やURLを添えて、読む時間に合わせて伝えられる</td></tr>
+      <tr><th>月の件数と費用</th><td data-l="自社で営業メールを送る">担当者の時間次第</td><td data-l="コールラッシュ">500件 9.8万円／1,000件 15万円</td><td class="us" data-l="メールラッシュ">500件 8.8万円／1,000件 15万円</td></tr>
+      <tr><th>月額に含まれるもの</th><td data-l="自社で営業メールを送る">—</td><td data-l="コールラッシュ">架電・記録（リスト作成とトーク作成は別途）</td><td class="us" data-l="メールラッシュ">リスト作成・文面作成・送信・返信対応・商談設定</td></tr>
+      <tr><th>成果報酬</th><td data-l="自社で営業メールを送る">—</td><td data-l="コールラッシュ">アポ1件20,000円</td><td class="us" data-l="メールラッシュ">アポ1件20,000円（同じ定義・同じ単価）</td></tr>
     </tbody>
   </table></div>
 </div></section>
