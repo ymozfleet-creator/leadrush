@@ -271,6 +271,15 @@ body{color:#222228}
 }
 .way b{word-break:normal;overflow-wrap:anywhere}
 @media (max-width:640px){.way{grid-template-columns:44px 1fr auto;gap:10px;padding:14px 14px}.way b{font-size:15.5px}.way .k{font-size:12px;letter-spacing:.08em}}
+/* hero title: one line on PC */
+.fv-head{grid-column:1/-1;min-width:0}
+.fv-head h1{margin:0 0 28px}
+@media (min-width:901px){
+ .fv .wrap{row-gap:8px;align-items:start}
+ .fv h1{white-space:nowrap;font-size:min(60px,calc((min(100vw,1120px) - 48px) / var(--n,16)))}
+ .fv h1 br{display:none}
+}
+@media (max-width:900px){.fv .wrap{row-gap:0}.fv-visual{margin-top:36px}}
 </style>
 </head>
 <body>
@@ -289,9 +298,11 @@ body{color:#222228}
 </div></header>
 <section class="fv">
   <div class="wrap">
-    <div>
+    <div class="fv-head">
       <p class="fv-label">BtoB企業向け｜テレアポ代行・アポ獲得</p>
-      <h1>電話をかける人を、<br><i>採用しないでください。</i></h1>
+      <h1 style="--n:20.6">電話をかける人を、<br><i>採用しないでください。</i></h1>
+    </div>
+    <div>
       <p class="lead">採用も教育もせずに、ご相談から<b>1週間ほどで架電を始められます</b>。リストづくりから架電、アポのお取りつけまで、当社のスタッフが御社の名義で引き受けます。</p>
       <ul class="checks">
         <li>月500件・9.8万円から。1,000件なら1件150円</li>
