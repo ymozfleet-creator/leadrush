@@ -259,6 +259,11 @@ footer .fam{font-family:var(--fe);font-weight:700;font-size:14px;letter-spacing:
 .way .wl{display:inline-flex;align-items:center;gap:7px;margin-top:16px;
   font-family:var(--fd);font-weight:700;font-size:14.5px;color:var(--blue-2);text-decoration:none}
 .way .wl::after{content:"→"}
+/* カード全体をクリックできるように（リンクをカードいっぱいに広げる） */
+.way,.solo{position:relative}
+.way .wl::before,.solo .sl::before{content:"";position:absolute;inset:0;border-radius:inherit}
+.way:has(.wl):hover{border-color:var(--blue-2)}
+.solo:has(.sl):hover{box-shadow:0 0 0 2px var(--blue),0 12px 30px rgba(12,22,39,.06)}
 .way .wl:hover{color:#fff}
 .way .wl:focus-visible{outline:2px solid var(--blue-2);outline-offset:3px}
 .solo .sl{display:inline-block;margin-top:14px;font-family:var(--fd);font-weight:700;
