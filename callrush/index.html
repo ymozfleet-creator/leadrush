@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>テレアポ代行｜コールラッシュ（LEADING RUSHER）</title>
+<meta name="description" content="新規開拓の電話を月500件または1,000件まるごと代行します。かけた全件の記録をお渡しします。月9万円から、アポの成果報酬は20,000円／件。お試しは初月10万円・契約の縛りなし。">
+<link rel="canonical" href="https://ymozfleet-creator.github.io/leadrush/callrush/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="コールラッシュ">
+<meta property="og:title" content="テレアポ代行｜コールラッシュ（LEADING RUSHER）">
+<meta property="og:description" content="新規開拓の電話を月500件または1,000件まるごと代行します。かけた全件の記録をお渡しします。月9万円から、アポの成果報酬は20,000円／件。お試しは初月10万円・契約の縛りなし。">
+<meta property="og:url" content="https://ymozfleet-creator.github.io/leadrush/callrush/">
+<meta property="og:image" content="https://ymozfleet-creator.github.io/leadrush/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+/* Artifactの実行環境が足していたリセット分をここで補う */
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<style>
+/* 一つの世界観に振り切ったダーク単一テーマ。
+   主役は架電ログ＝データ。数字はすべて等幅、構造は細い罫線だけで作る。 */
+:root{
+  color-scheme:dark;
+  --void:#07090D; --panel:#0E1219; --panel-2:#141A23; --edge:#1E2733; --edge-2:#2B3847;
+  --text:#F2F5F9; --text-2:#95A3B5; --text-3:#5E6B7C;
+  --mint:#3DE2A0; --amber:#FFBE4D; --dim:#4A5768;
+  --fd:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  --fb:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+  --fm:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{background:var(--void);color:var(--text);font-family:var(--fb);
+  font-size:16px;line-height:1.95;margin:0;-webkit-font-smoothing:antialiased;
+  background-image:linear-gradient(var(--edge) 1px,transparent 1px),
+                   linear-gradient(90deg,var(--edge) 1px,transparent 1px);
+  background-size:68px 68px;background-position:-1px -1px;background-attachment:fixed}
+.wrap{max-width:1080px;margin:0 auto;
+  padding-left:max(20px,env(safe-area-inset-left,0px));
+  padding-right:max(20px,env(safe-area-inset-right,0px))}
+.band{padding-block:clamp(60px,8vw,104px);position:relative}
+h1,h2,h3{font-family:var(--fd);text-wrap:balance;margin:0;color:var(--text)}
+p{margin:0 0 18px;max-width:54ch;color:var(--text-2)}
+.mono{font-family:var(--fm);font-variant-numeric:tabular-nums}
+
+/* 見出し：左に縦罫、ラベルは等幅 */
+.head{margin-bottom:38px;padding-left:20px;border-left:1px solid var(--mint)}
+.label{font-family:var(--fm);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--mint);margin:0 0 14px;display:block}
+h2{font-weight:900;font-size:clamp(25px,4.4vw,40px);line-height:1.38;letter-spacing:-.01em;color:var(--text)}
+.head p{margin:14px 0 0;max-width:46ch}
+h3{font-weight:700;font-size:18px;margin-bottom:10px;line-height:1.6}
+
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;
+  background:rgba(7,9,13,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--edge)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:14px}
+.brand{font-family:var(--fm);font-weight:700;font-size:16px;letter-spacing:.14em}
+.brand i{font-style:normal;color:var(--mint)}
+.brand small{display:block;font-family:var(--fb);font-weight:400;font-size:11px;
+  letter-spacing:.02em;color:var(--text-3);line-height:1.5}
+.btn{display:inline-block;font-family:var(--fd);font-weight:700;text-decoration:none;
+  background:var(--mint);color:#04140D;border-radius:2px;padding:16px 34px;font-size:16px}
+.btn:hover{background:#5DEDB4}
+.btn:focus-visible{outline:2px solid var(--text);outline-offset:3px}
+.btn.sm{padding:10px 18px;font-size:13.5px}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--edge-2)}
+.btn.ghost:hover{border-color:var(--mint);color:var(--mint);background:transparent}
+
+/* ヒーロー */
+.hero .wrap{padding-block:clamp(50px,7vw,86px) clamp(30px,4vw,44px)}
+.tagline{font-family:var(--fm);font-size:12px;letter-spacing:.18em;color:var(--text-3);
+  margin:0 0 26px;display:flex;align-items:center;gap:12px}
+.tagline::before{content:"";width:40px;height:1px;background:var(--mint)}
+h1{font-weight:900;font-size:clamp(32px,6.4vw,58px);line-height:1.3;letter-spacing:-.02em;margin:0 0 26px}
+h1 i{font-style:normal;color:var(--mint)}
+.sub{font-size:clamp(16px,2vw,18.5px);color:var(--text-2);max-width:46ch;line-height:1.95;margin:0 0 32px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px 18px;align-items:center}
+.cta-note{font-size:14px;color:var(--text-3);margin:0;max-width:30ch;line-height:1.7}
+
+/* 端末ふうログパネル */
+.term{border:1px solid var(--edge-2);border-radius:6px;background:var(--panel);
+  overflow:hidden;margin-top:clamp(40px,6vw,64px)}
+.term-bar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;
+  padding:12px 18px;border-bottom:1px solid var(--edge);background:var(--panel-2);
+  font-family:var(--fm);font-size:11.5px;color:var(--text-3);letter-spacing:.06em}
+.dot{width:7px;height:7px;border-radius:999px;background:var(--mint);flex:none;
+  box-shadow:0 0 0 3px rgba(61,226,160,.16)}
+.term-bar .spacer{margin-left:auto}
+.term-scroll{overflow-x:auto}
+.term table{border-collapse:collapse;width:100%;min-width:680px;font-family:var(--fm);font-size:13px}
+.term th{text-align:left;padding:11px 18px;font-weight:500;font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text-3);border-bottom:1px solid var(--edge);white-space:nowrap}
+.term td{padding:12px 18px;border-bottom:1px solid var(--edge);vertical-align:top;color:var(--text-2)}
+.term td.t{color:var(--text-3);white-space:nowrap}
+.term td.co{color:var(--text);font-family:var(--fb);font-size:13.5px;white-space:nowrap}
+.term td.said{font-family:var(--fb);font-size:13.5px;line-height:1.7}
+.term tbody tr{animation:in .34s ease-out both}
+@keyframes in{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;
+  padding:2px 9px;border-radius:2px;white-space:nowrap;border:1px solid}
+.tag.ok{color:var(--amber);border-color:rgba(255,190,77,.4);background:rgba(255,190,77,.08)}
+.tag.win{color:#04140D;border-color:var(--mint);background:var(--mint)}
+.tag.no{color:var(--text-3);border-color:var(--edge-2);background:transparent}
+.term-foot{padding:13px 18px;font-family:var(--fm);font-size:11.5px;color:var(--text-3);
+  border-top:1px solid var(--edge);background:var(--panel-2);letter-spacing:.04em}
+.cursor{display:inline-block;width:7px;height:13px;background:var(--mint);
+  vertical-align:-2px;margin-left:5px;animation:blink 1.1s step-end infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* 数値帯 */
+.stats .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  border-top:1px solid var(--edge);border-bottom:1px solid var(--edge)}
+.stats dl{margin:0;padding:30px 28px 30px 0;border-right:1px solid var(--edge)}
+.stats dl:last-child{border-right:0}
+.stats dt{font-family:var(--fm);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-3)}
+.stats dd{margin:10px 0 0;font-family:var(--fm);font-weight:700;color:var(--text);
+  font-size:clamp(28px,3.8vw,36px);line-height:1.1}
+.stats dd span{color:var(--mint)}
+.stats dd small{font-family:var(--fb);font-weight:400;font-size:14px;color:var(--text-3)}
+@media (max-width:560px){.stats dl{border-right:0;border-bottom:1px solid var(--edge);padding-right:0}
+  .stats dl:last-child{border-bottom:0}}
+
+/* 3つの役割 */
+.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(256px,1fr));gap:1px;
+  background:var(--edge);border:1px solid var(--edge)}
+.work>div{min-width:0;background:var(--void);padding:32px 28px}
+.work .k{font-family:var(--fm);font-size:11px;letter-spacing:.16em;color:var(--mint);
+  display:block;margin-bottom:16px}
+.work p{font-size:15px;margin:0;line-height:1.9}
+
+/* 料金 */
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;
+  background:var(--edge);border:1px solid var(--edge);margin-bottom:26px}
+.plan{background:var(--void);padding:34px 30px;min-width:0}
+.plan.pick{background:var(--panel);box-shadow:inset 2px 0 0 var(--mint)}
+.plan .pt{font-family:var(--fm);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--mint);margin:0 0 8px}
+.plan .pf{font-size:13.5px;color:var(--text-3);margin:0 0 20px;line-height:1.7}
+.price{font-family:var(--fm);font-weight:700;font-size:50px;line-height:1;margin:0;letter-spacing:-.03em}
+.price small{font-family:var(--fb);font-weight:400;font-size:15px;color:var(--text-3);letter-spacing:0}
+.term-line{margin:16px 0 0;font-size:15px;font-weight:700;color:var(--text);font-family:var(--fd)}
+.plan ul{margin:20px 0 0;padding:20px 0 0;list-style:none;font-size:14.5px;border-top:1px solid var(--edge)}
+.plan li{margin-bottom:11px;padding-left:20px;position:relative;color:var(--text-2);line-height:1.8}
+.plan li::before{content:"";position:absolute;left:0;top:.82em;width:8px;height:1px;background:var(--mint)}
+.rows{border:1px solid var(--edge);margin:0 0 22px}
+.rows>div{display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between;align-items:baseline;
+  padding:17px 24px;font-size:15px;border-bottom:1px solid var(--edge)}
+.rows>div:last-child{border-bottom:0}
+.rows b{font-family:var(--fd);font-weight:700;white-space:nowrap;color:var(--text)}
+.rows span{color:var(--text-3);font-size:14px;flex:1 1 15ch;min-width:0}
+.rows em{font-style:normal;font-family:var(--fm);font-weight:700;color:var(--mint);white-space:nowrap}
+.fine{font-size:14px;color:var(--text-3);max-width:64ch;line-height:1.85}
+
+/* 定義 */
+.defs{margin:0;border:1px solid var(--edge)}
+.defs>div{display:grid;grid-template-columns:minmax(104px,150px) 1fr;gap:4px 28px;
+  padding:24px 26px;border-bottom:1px solid var(--edge)}
+.defs>div:last-child{border-bottom:0}
+.defs dt{font-family:var(--fd);font-weight:700;color:var(--mint)}
+.defs dd{margin:0;color:var(--text-2);min-width:0;font-size:15.5px}
+@media (max-width:520px){.defs>div{grid-template-columns:1fr}}
+
+/* 進め方 */
+.flow{list-style:none;margin:0;padding:0;border-left:1px solid var(--edge-2)}
+.flow li{position:relative;padding:0 0 34px 32px}
+.flow li:last-child{padding-bottom:0}
+.flow li::before{content:"";position:absolute;left:-4.5px;top:9px;width:8px;height:8px;
+  border-radius:999px;background:var(--void);border:1px solid var(--mint)}
+.flow .d{font-family:var(--fm);font-size:11px;letter-spacing:.14em;color:var(--mint);display:block;margin-bottom:8px}
+.flow p{margin:0;font-size:15.5px;max-width:52ch}
+
+/* FAQ */
+details{border-bottom:1px solid var(--edge);padding:20px 0}
+details:first-of-type{border-top:1px solid var(--edge)}
+summary{font-family:var(--fd);font-weight:700;font-size:17px;cursor:pointer;
+  list-style:none;display:flex;gap:14px;align-items:baseline;line-height:1.7;color:var(--text)}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"Q";font-family:var(--fm);font-size:12px;color:var(--mint)}
+details p{margin:13px 0 0 26px;font-size:15.5px}
+summary:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
+
+/* 問い合わせ */
+.lines{margin:30px 0 0;padding:0;list-style:none;border:1px solid var(--edge)}
+.lines li{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;
+  padding:18px 24px;border-bottom:1px solid var(--edge)}
+.lines li:last-child{border-bottom:0}
+.lines .k{font-family:var(--fm);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--text-3);min-width:56px}
+.lines .v{font-family:var(--fm);font-size:16.5px;user-select:all;color:var(--text)}
+.copy{font-family:var(--fb);font-size:13px;border:1px solid var(--edge-2);
+  background:transparent;color:var(--text-2);border-radius:2px;padding:7px 15px;cursor:pointer}
+.copy:hover{color:var(--mint);border-color:var(--mint)}
+.copy:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
+a{color:var(--mint)}
+footer{border-top:1px solid var(--edge)}
+footer .wrap{padding-block:34px;font-size:13px;color:var(--text-3)}
+footer p{max-width:none;margin:0 0 6px;color:var(--text-3)}
+/* 写真：暗く加工せず、near-blackの中に明るい面として置く */
+.photo{margin:0;padding:0}
+.photo img{display:block;width:100%;max-width:100%;aspect-ratio:21/8;object-fit:cover;
+  object-position:58% 46%;border-top:1px solid var(--edge-2);border-bottom:1px solid var(--edge-2)}
+.photo figcaption{font-family:var(--fm);font-size:11.5px;letter-spacing:.1em;color:var(--text-3);
+  padding:16px 0 0;display:flex;align-items:center;gap:12px;line-height:1.7}
+.photo figcaption::before{content:"";width:28px;height:1px;background:var(--mint);flex:none}
+@media (max-width:640px){.photo img{aspect-ratio:16/9}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="brand">CALL<i>RUSH</i><small>テレアポ代行｜LEADING RUSHER</small></div>
+  <a class="btn sm" href="#contact">相談する</a>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <p class="tagline">LEADING RUSHER ／ コールラッシュ（法人向けテレアポ代行）</p>
+  <h1>電話をかける人を、<br><i>採用しないでください。</i></h1>
+  <p class="sub">月9万円から。採用も教育もせずに、来月から架電を始められます。リストづくりから架電、アポのお取りつけまでを引き受けます。</p>
+  <div class="cta-row">
+    <a class="btn" href="#contact">お試しプランを相談する</a>
+    <a class="btn sm ghost" href="#price">料金を見る</a>
+  </div>
+  <p class="cta-note" style="margin-top:18px">お試しプランは新規のお客様、1社1回限り。契約の縛りはありません（税抜）。</p>
+
+  <div class="term">
+    <div class="term-bar">
+      <span class="dot"></span><span>架電ログ</span>
+      <span class="spacer"></span><span id="clock">2026-10-20　10:00</span>
+    </div>
+    <div class="term-scroll">
+      <table>
+        <thead><tr><th>時刻</th><th>企業名</th><th>担当者</th><th>結果</th><th>言われたこと</th></tr></thead>
+        <tbody id="log"></tbody>
+      </table>
+    </div>
+    <div class="term-foot" id="foot">架電 0　／　会話成立 0　／　アポ 0<span class="cursor"></span></div>
+  </div>
+</div></section>
+
+<div class="stats"><div class="wrap">
+  <dl><dt>毎月の架電数（最大）</dt><dd><span>1,000</span><small> 件</small></dd></dl>
+  <dl><dt>架電する時間</dt><dd>平日 9–17<small> 時</small></dd></dl>
+  <dl><dt>アポが取れたら</dt><dd><span>20,000</span><small> 円 / 件</small></dd></dl>
+</div></div>
+
+<section class="band"><div class="wrap">
+  <div class="head">
+    <span class="label">01 — What we do</span>
+    <h2>やることは、この3つだけです。</h2>
+    <p>電話をかけるだけではありません。かける先を決めるところから、記録をお渡しするところまでを引き受けます。</p>
+  </div>
+  <div class="work">
+    <div><span class="k">01 / LIST</span><h3>リストをつくります</h3>
+      <p>業種・エリア・会社の規模などの条件をうかがって、企業名と電話番号まで揃えます。お持ちのリストがあれば、それを使います。</p></div>
+    <div><span class="k">02 / CALL</span><h3>弊社のスタッフが架電します</h3>
+      <p>平日9〜17時に、月500件または1,000件。名乗りは御社の名義です。留守電にはメッセージを残し、折り返しのお電話も弊社で受けます。</p></div>
+    <div><span class="k">03 / LOG</span><h3>かけた全件を記録で返します</h3>
+      <p>何を言われたかを1件ずつ残します。アポが取れたら、担当者のお名前を添えてその日のうちにご連絡します。</p></div>
+  </div>
+</div>
+
+<figure class="photo" style="margin-top:clamp(56px,7vw,84px)">
+  <img src="../hero.jpg" alt="ヘッドセットを着けて架電する担当者">
+  <div class="wrap"><figcaption>平日 9–17時。弊社のスタッフが、御社の名義で架電します。</figcaption></div>
+</figure>
+</section>
+
+<section class="band" id="price"><div class="wrap">
+  <div class="head">
+    <span class="label">02 — Price</span>
+    <h2>プランは3つです。</h2>
+    <p>まず1か月試して、続けるかをお決めいただく形にしています。続ける場合は、月の架電件数を2つからお選びいただけます。</p>
+  </div>
+  <div class="plans">
+    <div class="plan pick">
+      <p class="pt">Trial ／ 新規のお客様限定</p>
+      <p class="pf">初めてご依頼される方。1社1回限りです。</p>
+      <p class="price">10<small>万円〜 / 初月</small></p>
+      <p class="term-line">契約の縛りなし。1か月で終われます。</p>
+      <ul>
+        <li>月1,000件まで架電</li>
+        <li>アポが取れたら20,000円／件</li>
+        <li>リストづくり、架電、記録のお渡しまで</li>
+      </ul>
+    </div>
+    <div class="plan">
+      <p class="pt">Standard 500 ／ 6か月契約</p>
+      <p class="pf">まずは小さく始めたい方。</p>
+      <p class="price">9<small>万円〜 / 月</small></p>
+      <p class="term-line">6か月契約。期間中の解約はできません。</p>
+      <ul>
+        <li>月500件まで架電</li>
+        <li>アポが取れたら20,000円／件</li>
+        <li>1件あたり180円</li>
+      </ul>
+    </div>
+    <div class="plan">
+      <p class="pt">Standard 1000 ／ 6か月契約</p>
+      <p class="pf">件数を積んで精度を上げたい方。</p>
+      <p class="price">15<small>万円〜 / 月</small></p>
+      <p class="term-line">6か月契約。期間中の解約はできません。</p>
+      <ul>
+        <li>月1,000件まで架電</li>
+        <li>アポが取れたら20,000円／件</li>
+        <li>1件あたり150円。単価はこちらが安くなります</li>
+      </ul>
+    </div>
+  </div>
+  <div class="rows">
+    <div><b>リストを弊社で作る場合</b><span>企業名・電話番号・業種まで。絞り込みの条件は3つほどまで</span><em>＋2万円 / 月</em></div>
+    <div><b>トークスクリプトをお持ちでない場合</b><span>ヒアリングのうえ弊社で作成。開始後の言い回しの調整も含みます</span><em>1万円 / 初回のみ</em></div>
+    <div><b>会話が架電数の15%を超えた場合</b><span>1,000件プランなら150件、500件プランなら75件までを月額に含みます</span><em>250円 / 件</em></div>
+  </div>
+  <p class="fine">金額はすべて税抜です。架電に使う電話番号は弊社で用意します。1件あたりの単価は、500件プランが180円、1,000件プランが150円です。お試しプランは月1,000件のみで、500件版はございません。基本プランを途中で解約される場合は、残っている期間の月額合計の30%を解約料としていただきます（月15万円で3か月残っていれば13.5万円）。</p>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="head">
+    <span class="label">03 — Definitions</span>
+    <h2>何を成果とするかを、先に決めます。</h2>
+    <p>あとで「これはアポに入るのか」で揉めないように、3つの言葉の意味をはっきりさせています。</p>
+  </div>
+  <dl class="defs">
+    <div><dt>アポ獲得</dt><dd>相手が打ち合わせに向けて日程調整に進むことまで同意した場合。これだけが20,000円の対象です。日程の確定は御社で行っていただきます。</dd></div>
+    <div><dt>会話成立</dt><dd>ご担当者か決裁者と話せた場合。不在・受付止まり・留守電は含みません。架電数の15%（1,000件なら150件、500件なら75件）までは月額に含まれます。</dd></div>
+    <div><dt>不通</dt><dd>応答がない、留守電、受付でお断りがあった場合。記録には残りますが、費用は発生しません。</dd></div>
+  </dl>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="head">
+    <span class="label">04 — Flow</span>
+    <h2>ご相談から1週間ほどで、<br>架電を始められます。</h2>
+  </div>
+  <ol class="flow">
+    <li><span class="d">DAY 1</span><h3>30分、オンラインでご相談</h3>
+      <p>商材、かけたい相手、リストの有無をうかがいます。この場で進め方と金額をご提示します。</p></li>
+    <li><span class="d">DAY 2–5</span><h3>リストとトークスクリプトのご用意</h3>
+      <p>弊社で揃えて、架電前に必ずご承認をいただきます。勝手にかけ始めることはありません。</p></li>
+    <li><span class="d">DAY 6 —</span><h3>架電開始</h3>
+      <p>平日9〜17時に架電します。進み具合は随時ご確認いただけます。</p></li>
+    <li><span class="d">ANYTIME</span><h3>記録のお渡しとアポのご連絡</h3>
+      <p>アポが取れた時点で即日ご連絡します。商談は御社に出ていただきます。</p></li>
+  </ol>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="head">
+    <span class="label">05 — FAQ</span>
+    <h2>先に聞かれることを、まとめました。</h2>
+  </div>
+
+  <details><summary>アポの件数は保証されますか。</summary>
+  <p>保証はしていません。商材と相手で結果が大きく変わるためです。保証を付ける場合はアポの定義が緩くなるか、固定費に保証分が乗ります。弊社は定義を厳しくして、取れた分だけいただく形にしています。</p></details>
+
+  <details><summary>どこまでやってもらえますか。</summary>
+  <p>アポのお取りつけまでです。クロージング、価格の提示、契約の交渉は行いません。商談は御社に出ていただきます。</p></details>
+
+  <details><summary>なぜ基本プランは6か月契約なのですか。</summary>
+  <p>テレアポは積み上げで効いてくるためです。最初の1か月は断られた理由を集める期間になり、2か月目以降にリストとトークを直しながら精度が上がります。1か月ごとの更新だと、毎月ゼロから作り直すことになります。</p></details>
+
+  <details><summary>誰がかけるのですか。</summary>
+  <p>弊社のスタッフがかけます。平日9〜17時。名乗りは御社の名義でお話しします。</p></details>
+
+  <details><summary>トークスクリプトは用意しないといけませんか。</summary>
+  <p>お持ちであればそれを使います。なければ、商材と断られやすい点をうかがったうえで弊社で作成し、1万円（初回のみ）をいただきます。架電を始めてからの言い回しの調整は、この費用に含めて随時行います。</p></details>
+
+  <details><summary>リストは自社で用意する必要がありますか。</summary>
+  <p>お持ちであればそのまま使います。その場合が表示の価格です。なければ業種・エリア・規模などの条件をうかがって弊社で作り、月額に2万円を加えます。</p></details>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="head">
+    <span class="label">06 — LEADING RUSHER</span>
+    <h2>電話だけでは足りない場合は。</h2>
+    <p>コールラッシュは、営業代行「リーディングラッシャー」のテレアポ単体サービスです。ほかの手段と組み合わせてお使いいただけます。</p>
+  </div>
+  <div class="work">
+    <div><span class="k">CALLRUSH</span><h3>コールラッシュ</h3>
+      <p>電話で新規開拓。月1,000件。このページのサービスです。</p></div>
+    <div><span class="k">MAILRUSH</span><h3>メールラッシュ</h3>
+      <p>問い合わせフォームとメールでの接点づくり。月1,000件。</p></div>
+    <div><span class="k">TENJI-HACK</span><h3>展示会ハック</h3>
+      <p>展示会の会場で、ブースに代わって商談相手を集めます。</p></div>
+  </div>
+  <p style="margin-top:28px">まとめてご依頼いただく複合プランは、月50万円からの固定に、アポが取れた分の成果報酬を加える形です。</p>
+  <p style="margin-top:12px"><a href="../">LEADING RUSHER（総合営業代行）のページへ →</a></p>
+</div></section>
+
+<section class="band" id="contact"><div class="wrap">
+  <div class="head">
+    <span class="label">Contact</span>
+    <h2>まず30分、商材のお話を<br>うかがわせてください。</h2>
+    <p>お試しプランの条件と、御社の商材でかけた場合の進め方をご案内します。</p>
+  </div>
+  <ul class="lines">
+    <li><span class="k">Mail</span><span class="v">info@tenjihack.com</span>
+      <button class="copy" type="button" data-copy="info@tenjihack.com">コピー</button></li>
+    <li><span class="k">Tel</span><span class="v">070-8492-2277</span>
+      <button class="copy" type="button" data-copy="070-8492-2277">コピー</button></li>
+    <li><span class="k">LINE</span><span class="v"><a href="https://lin.ee/8sQwtMu">友だち追加はこちら</a></span></li>
+  </ul>
+</div></section>
+
+<footer><div class="wrap">
+  <p><strong>CALLRUSH</strong>（コールラッシュ）は、営業代行 <strong>LEADING RUSHER</strong>（リーディングラッシャー）のテレアポ単体サービスです。</p>
+  <p>RELIGHT　代表　茂住 雄太</p>
+  <p>〒165-0023 東京都中野区江原町2-13-13</p>
+  <p>掲載の金額はすべて税抜です。架電ログは記載例です。</p>
+</div></footer>
+
+<script>
+/* 架電ログを1行ずつ流す。実際の納品物の見え方をそのまま見せる意図。 */
+var ROWS=[
+ ["10:14","◯◯製作所","製造部 課長","ok","会話成立","入れ替えたばかり。来期なら検討の余地あり"],
+ ["10:22","△△商事","—","no","受付止まり","担当者不在。木曜午後なら在席"],
+ ["10:31","□□工業","代表取締役","win","アポ獲得","人手が足りず新規開拓まで手が回らない。来週希望"],
+ ["10:38","◇◇システムズ","—","no","不通","留守電にメッセージを残した"],
+ ["10:45","☆☆物流","営業部 部長","ok","会話成立","資料だけ送ってほしい。送付先のメールを取得"],
+ ["10:52","▽▽化成","購買 主任","no","受付止まり","取次ぎ不可。問い合わせフォーム経由の案内あり"],
+ ["11:03","◎◎フーズ","常務取締役","win","アポ獲得","今の取引先に不満あり。来月頭で日程調整へ"]
+];
+var body=document.getElementById("log"), foot=document.getElementById("foot");
+var i=0, calls=0, talks=0, appts=0;
+var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function esc(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML}
+function render(r){
+  var tr=document.createElement("tr");
+  tr.innerHTML="<td class='t'>"+esc(r[0])+"</td><td class='co'>"+esc(r[1])+"</td>"+
+    "<td class='t'>"+esc(r[2])+"</td><td><span class='tag "+r[3]+"'>"+esc(r[4])+"</span></td>"+
+    "<td class='said'>"+esc(r[5])+"</td>";
+  body.appendChild(tr);
+  calls++; if(r[3]==="ok"){talks++} if(r[3]==="win"){talks++;appts++}
+  foot.innerHTML="架電 "+calls+"　／　会話成立 "+talks+"　／　アポ "+appts+
+    "<span class='cursor'></span>";
+}
+function step(){
+  if(i>=ROWS.length){
+    setTimeout(function(){
+      body.innerHTML=""; i=0; calls=0; talks=0; appts=0; step();
+    },5200);
+    return;
+  }
+  render(ROWS[i++]);
+  if(body.children.length>5){body.removeChild(body.firstChild)}
+  setTimeout(step, 1150);
+}
+if(reduce){ROWS.forEach(render)}else{step()}
+
+document.querySelectorAll(".copy").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    var text=btn.getAttribute("data-copy");
+    function flash(m){btn.textContent=m;setTimeout(function(){btn.textContent="コピー"},1600)}
+    function sel(){var el=btn.parentElement.querySelector(".v");if(!el)return flash("コピー");
+      var r=document.createRange();r.selectNodeContents(el);
+      var s=window.getSelection();s.removeAllRanges();s.addRange(r);flash("選択しました")}
+    try{navigator.clipboard.writeText(text).then(function(){flash("コピーしました")},sel)}
+    catch(e){sel()}
+  });
+});
+</script>
+</body>
+</html>
