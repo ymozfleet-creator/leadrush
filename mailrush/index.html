@@ -297,6 +297,48 @@ body{color:#222228}
 }
 @media (max-width:900px){.fv .wrap{row-gap:0}.fv-visual{margin-top:36px}}
 </style>
+<style>
+/* v3: visuals */
+.svc3 small{word-break:auto-phrase}
+.diag{margin:0 0 44px;border:1.5px solid var(--ink);background:#fff;padding:22px 18px 12px}
+.diag svg{width:100%;height:auto;display:block;font-family:var(--fb)}
+.diag p{margin:10px 0 0;font-size:13px;color:var(--mute);text-align:center}
+.diag svg.m{display:none;max-width:360px;margin:0 auto}
+@media (max-width:760px){.diag svg.d{display:none}.diag svg.m{display:block}.diag{padding:16px 12px 10px}}
+.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.case{border:1.5px solid var(--ink);background:#fff;padding:26px 26px 22px;min-width:0}
+.case .tag{display:inline-block;background:var(--ink);color:#fff;font-size:12.5px;font-weight:700;padding:4px 10px;margin:0 0 12px}
+.case h3{font-size:19px;margin:0 0 14px}
+.case dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 14px}
+.case dl div{background:var(--sand);padding:12px 10px;min-width:0}
+.case dt{font-size:12px;color:var(--mute);margin:0 0 4px}
+.case dd{margin:0;font-family:var(--fe);font-weight:700;font-size:30px;line-height:1;color:var(--ink);white-space:nowrap}
+.case dd small{font-family:var(--fb);font-size:12.5px;font-weight:700;margin-left:3px}
+.case p{margin:0;font-size:14.5px;color:var(--txt)}
+.case-nt{font-size:13px;color:var(--mute);margin:18px 0 0}
+@media (max-width:760px){.cases{grid-template-columns:1fr}}
+.rec{margin:40px 0 0;border:1.5px solid var(--ink);background:#fff}
+.rec-hd{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 18px;background:var(--ink);color:#fff}
+.rec-hd b{font-size:15px}.rec-hd span{font-size:12px;background:var(--yel);color:var(--ink);font-weight:700;padding:3px 8px}
+.rec-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.rec table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:680px}
+.rec th,.rec td{padding:10px 14px;border-bottom:1px solid var(--line-2);text-align:left;vertical-align:top;white-space:nowrap}
+.rec th{background:var(--sand);font-size:12.5px;color:var(--mute);font-weight:700}
+.rec td.y{background:#FFF7B8;font-weight:700;color:var(--ink)}
+.rec tr:last-child td{border-bottom:0}
+.rec-nt{margin:0;padding:10px 18px;font-size:12.5px;color:var(--mute);border-top:1px solid var(--line-2)}
+.rec-sc{display:none;margin:0;padding:8px 18px;font-size:12px;color:var(--blue);font-weight:700;background:var(--sand)}
+@media (max-width:760px){.rec-sc{display:block}}
+.about{display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:start;border:1.5px solid var(--ink);background:#fff;padding:30px}
+.about .nm{font-family:var(--fe);font-weight:700;font-size:13px;letter-spacing:.14em;color:var(--blue)}
+.about .nm b{display:block;font-family:var(--fb);font-size:22px;letter-spacing:0;color:var(--ink);margin:6px 0 2px}
+.about .nm small{display:block;font-family:var(--fb);font-size:13px;letter-spacing:0;color:var(--mute);font-weight:500}
+.about p{margin:0 0 12px;font-size:15px}
+.about ul{margin:0;padding:0;list-style:none;display:grid;gap:6px;font-size:14.5px}
+.about li{display:flex;gap:10px}.about li::before{content:"";flex:none;width:8px;height:8px;background:var(--blue);margin-top:11px}
+@media (max-width:760px){.about{grid-template-columns:1fr;gap:18px;padding:22px 18px}}
+.ct .btn{margin:0 0 18px}
+</style>
 </head>
 <body>
 <div class="bar" aria-hidden="true"></div>
@@ -386,6 +428,12 @@ body{color:#222228}
     <div class="def y"><p class="k">アポ獲得<em>20,000円</em></p><p>相手が打ち合わせに向けて日程調整に進むことまで同意した場合。これだけが成果報酬の対象です。</p></div>
     <div class="def"><p class="k">返信<em class="z">月額に含む</em></p><p>送った文面に対して、相手から何らかの返事があった場合。お断りの返事も含めて記録に残し、当社が対応します。追加の費用はかかりません。</p></div>
     <div class="def"><p class="k">送信<em class="z">月額の件数</em></p><p>問い合わせフォームまたはメールで、1社に送り終えた場合を1件と数えます。月額の件数はこの送信の数です。</p></div>
+  </div>
+  <div class="rec rv">
+    <div class="rec-hd"><b>お渡しする記録のイメージ</b><span>毎月・全件</span></div>
+    <p class="rec-sc">← 横にスクロールできます →</p>
+    <div class="rec-scroll"><table><thead><tr><th>送信日</th><th>会社名</th><th>経路</th><th>返信</th><th>返信の内容</th><th>結果</th></tr></thead><tbody><tr><td>10/3</td><td>A株式会社（製造）</td><td>フォーム</td><td>返信あり</td><td>「資料を見て判断したい」</td><td class="y">アポ 10/15 14:00</td></tr><tr><td>10/3</td><td>B工業</td><td>フォーム</td><td>返信なし</td><td>—</td><td>追送 10/10</td></tr><tr><td>10/3</td><td>C株式会社</td><td>メール</td><td>返信あり</td><td>「今回は見送り」</td><td>記録のみ</td></tr><tr><td>10/4</td><td>D商事</td><td>メール</td><td>返信あり</td><td>担当部署を紹介いただく</td><td>再送 10/5</td></tr><tr><td>10/4</td><td>E精機</td><td>フォーム</td><td>返信なし</td><td>—</td><td>追送 10/11</td></tr></tbody></table></div>
+    <p class="rec-nt">※イメージです。実際はスプレッドシートで、全件を月ごとにお渡しします。</p>
   </div>
 </div></section>
 
@@ -477,12 +525,29 @@ body{color:#222228}
   </div>
   <p class="note" style="margin-top:22px">3つをまとめてご依頼いただく複合プランは月50万円（1年契約）。アポの成果報酬はどの手段でも一律20,000円／件です。<a href="../">LEADING RUSHER（総合営業代行）のページへ →</a></p>
 </div></section>
+<section class="sec sand" id="about"><div class="wrap">
+  <p class="eyebrow rv"><b>10</b>ABOUT</p>
+  <h2 class="t rv">運営しているのは、<i>こんな人間です。</i></h2>
+  <div class="about rv">
+    <div class="nm">RELIGHT<b>茂住 雄太</b><small>代表</small></div>
+    <div>
+      <p>トヨタ自動車に約10年在籍し、法人向けの事業企画と営業を担当。2025年に独立し、展示会ハックを立ち上げました。</p>
+      <ul>
+        <li>トヨタ生産方式（TPS）の考え方を営業の工程に応用し、トーク・判定基準を標準作業書に落とし込む</li>
+        <li>電話・メール・展示会の3つの手段を、1つの窓口でご提供</li>
+        <li>所在地：東京都中野区</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
 <section class="sec dark" id="contact"><div class="wrap ct">
   <div class="rv">
-    <p class="eyebrow"><b>10</b>CONTACT</p>
+    <p class="eyebrow"><b>11</b>CONTACT</p>
     <h2>まず30分、商材のお話を<br>うかがわせてください。</h2>
     <p>御社の商材で送った場合の進め方と金額を、その場でご案内します。リストも文面もない状態からで構いません。</p>
-    <p style="color:#9A9AA8;font-size:13px;margin:0">ご相談は無料・30分・オンライン完結。しつこい営業はしません。</p>
+    <a class="btn" href="mailto:info@tenjihack.com?subject=%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%E3%81%AE%E7%94%B3%E3%81%97%E8%BE%BC%E3%81%BF%EF%BC%88%E3%83%A1%E3%83%BC%E3%83%AB%E3%83%A9%E3%83%83%E3%82%B7%E3%83%A5%EF%BC%89&body=%E4%BC%9A%E7%A4%BE%E5%90%8D%EF%BC%9A%0A%E9%83%A8%E7%BD%B2%E3%83%BB%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E5%95%86%E6%9D%90%EF%BC%88%E4%B8%80%E8%A8%80%E3%81%A7%EF%BC%89%EF%BC%9A%0A%E4%BC%9A%E3%81%84%E3%81%9F%E3%81%84%E7%9B%B8%E6%89%8B%EF%BC%88%E6%A5%AD%E7%A8%AE%E3%83%BB%E5%BD%B9%E8%81%B7%EF%BC%89%EF%BC%9A%0A%E5%B8%8C%E6%9C%9B%E3%81%AE%E6%89%8B%E6%AE%B5%EF%BC%88%E9%9B%BB%E8%A9%B1%EF%BC%8F%E3%83%A1%E3%83%BC%E3%83%AB%EF%BC%8F%E5%B1%95%E7%A4%BA%E4%BC%9A%EF%BC%8F%E7%9B%B8%E8%AB%87%E3%81%97%E3%81%A6%E6%B1%BA%E3%82%81%E3%81%9F%E3%81%84%EF%BC%89%EF%BC%9A%0A%E5%B8%8C%E6%9C%9B%E6%97%A5%E6%99%82%EF%BC%882%E3%80%9C3%E5%80%99%E8%A3%9C%EF%BC%89%EF%BC%9A%0A">メールで相談を申し込む<span class="ar">→</span></a>
+    <p style="color:#9A9AA8;font-size:13px;margin:0">ご相談は無料・30分・オンライン完結。メールは項目を埋めて送るだけです。しつこい営業はしません。</p>
   </div>
   <div class="ways rv">
     <a class="way" href="mailto:info@tenjihack.com"><span class="k">MAIL</span><b>info@tenjihack.com<small>24時間受付</small></b><button class="cp" type="button" data-copy="info@tenjihack.com" onclick="event.preventDefault()">コピー</button></a>
