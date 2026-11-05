@@ -441,7 +441,7 @@ html.m .str .no,html.m .card .no,html.m .row .no{clip-path:inset(0 100% 0 0);tra
 html.m .str.in .no,html.m .card.in .no,html.m .row.in .no{clip-path:inset(0 0 0 0)}
 /* record rows logged one by one */
 html.m .rec tbody tr{opacity:0;transform:translateX(-14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
-.rec.in tbody tr{opacity:1;transform:none}
+html.m .rec.in tbody tr{opacity:1;transform:none}
 .rec.in tbody tr:nth-child(1){transition-delay:.35s}.rec.in tbody tr:nth-child(2){transition-delay:.55s}
 .rec.in tbody tr:nth-child(3){transition-delay:.75s}.rec.in tbody tr:nth-child(4){transition-delay:.95s}
 .rec.in tbody tr:nth-child(5){transition-delay:1.15s}
@@ -449,9 +449,9 @@ html.m .rec.in td.y{animation:hl 1.4s var(--ease) 1.3s both}
 @keyframes hl{0%{background:#fff}35%{background:var(--yel)}100%{background:#FFF7B8}}
 /* compare: our column highlight sweep */
 html.m .cmp-scroll.in td.us{animation:us .9s var(--ease) both}
-.cmp-scroll.in tr:nth-child(1) td.us{animation-delay:.3s}.cmp-scroll.in tr:nth-child(2) td.us{animation-delay:.42s}
-.cmp-scroll.in tr:nth-child(3) td.us{animation-delay:.54s}.cmp-scroll.in tr:nth-child(4) td.us{animation-delay:.66s}
-.cmp-scroll.in tr:nth-child(5) td.us{animation-delay:.78s}
+html.m .cmp-scroll.in tr:nth-child(1) td.us{animation-delay:.3s}html.m .cmp-scroll.in tr:nth-child(2) td.us{animation-delay:.42s}
+html.m .cmp-scroll.in tr:nth-child(3) td.us{animation-delay:.54s}html.m .cmp-scroll.in tr:nth-child(4) td.us{animation-delay:.66s}
+html.m .cmp-scroll.in tr:nth-child(5) td.us{animation-delay:.78s}
 @keyframes us{0%{background:#fff;box-shadow:inset 0 0 0 var(--blue)}50%{background:#D7DEFF;box-shadow:inset 5px 0 0 var(--blue)}100%{background:var(--blue-pale);box-shadow:inset 3px 0 0 var(--blue)}}
 /* pricing: per-call cost bars */
 .ubar{display:flex;align-items:center;gap:10px;margin:-8px 0 20px}
