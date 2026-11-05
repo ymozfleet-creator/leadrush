@@ -323,6 +323,159 @@ body{color:#222228}
 @media (max-width:760px){.about{grid-template-columns:1fr;gap:18px;padding:22px 18px}}
 .ct .btn{margin:0 0 18px}
 </style>
+<style>
+/* v4: motion — kinetic typography / UI animation / infographic animation */
+:root{--ease:cubic-bezier(.2,.8,.2,1);--spring:cubic-bezier(.34,1.56,.64,1);interpolate-size:allow-keywords}
+section[id]{scroll-margin-top:68px}
+.bar{background:linear-gradient(90deg,var(--blue),var(--blue-2),var(--yel));box-shadow:0 0 12px rgba(29,59,255,.5)}
+.stat .n,.plan .price b,.kv dd,.def .k em,.fm .v{font-variant-numeric:tabular-nums}
+
+/* --- reveal (stagger + blur) --- */
+html.m .rv{transform:translateY(28px);filter:blur(6px);transition:opacity .8s var(--ease),transform .9s var(--ease),filter .8s var(--ease);transition-delay:var(--rd,0s)}
+html.m .rv.in{transform:none;filter:none}
+html.m .rv.done{transition:transform .35s var(--spring),box-shadow .35s var(--ease),background .25s,border-color .25s;filter:none}
+
+/* --- kinetic typography --- */
+.kt .w{display:inline-block;white-space:nowrap}
+.kt .c{display:inline-block}
+html.m .kt .c{opacity:0;transform:translateY(.7em) rotate(8deg) scale(.9);filter:blur(8px);
+ transition:opacity .5s var(--ease),transform .8s var(--spring),filter .6s var(--ease);transition-delay:var(--cd,0ms)}
+html.m .kt.go .c,html.m .kt.in .c,html.m .in .kt .c{opacity:1;transform:none;filter:none}
+html.m .kt i{background-repeat:no-repeat;background-size:0% 100%;transition:background-size .9s var(--ease) var(--md,.5s)}
+html.m .kt.go i,html.m .kt.in i,html.m .in .kt i{background-size:100% 100%}
+.sec.dark .kt i{background:none}
+html.m .eyebrow b{transform:scale(0) rotate(-90deg);transition:transform .6s var(--spring) .1s}
+html.m .eyebrow.in b,html.m .in .eyebrow b{transform:none}
+
+/* hero sequence */
+.fv .wrap{position:relative;z-index:1}
+.fv{animation:grid 24s linear infinite}
+@keyframes grid{to{background-position:80px 0,0 80px}}
+.fv::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(460px circle at var(--mx,72%) var(--my,35%),rgba(29,59,255,.10),transparent 62%);transition:background .2s}
+html.m .mk .fv-label{clip-path:inset(0 100% 0 0);transition:clip-path .7s var(--ease)}
+html.m .mk.go .fv-label{clip-path:inset(0)}
+.fv-label::before{animation:ping 1.8s ease-out infinite}
+html.m .mk .lead b{background-repeat:no-repeat;background-size:0% 100%;transition:background-size .8s var(--ease) 1.5s}
+html.m .mk.go .lead b{background-size:100% 100%}
+html.m .mk .fv-head + div > *{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+html.m .mk .fv-head + div > :nth-child(1){transition-delay:.9s}
+html.m .mk .fv-head + div > :nth-child(2){transition-delay:1.05s}
+html.m .mk .fv-head + div > :nth-child(3){transition-delay:1.2s}
+html.m .mk .fv-head + div > :nth-child(4){transition-delay:1.3s}
+html.m .mk.go .fv-head + div > *{opacity:1;transform:none}
+html.m .mk .checks li::before{transform:scale(0) rotate(-45deg);transition:transform .5s var(--spring)}
+html.m .mk .checks li:nth-child(1)::before{transition-delay:1.3s}
+html.m .mk .checks li:nth-child(2)::before{transition-delay:1.42s}
+html.m .mk .checks li:nth-child(3)::before{transition-delay:1.54s}
+html.m .mk.go .checks li::before{transform:none}
+.fv-photo{overflow:hidden}
+html.m .fv-photo img{animation:kb 2.2s var(--ease) both}
+@keyframes kb{from{transform:scale(1.12)}to{transform:scale(1)}}
+.fv-photo .cap{display:inline-flex;align-items:center;gap:8px;z-index:2}
+.fv-photo .cap::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--yel);animation:ping 1.6s ease-out infinite}
+.stat .arrow{display:inline-block;animation:flow 1.8s var(--ease) infinite}
+.stat .arrow:nth-of-type(2){animation-delay:.2s}
+@keyframes flow{0%,100%{transform:translateX(0);opacity:.5}50%{transform:translateX(4px);opacity:1}}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(255,229,0,.75)}80%,100%{box-shadow:0 0 0 9px rgba(255,229,0,0)}}
+
+/* --- UI / UX animation --- */
+.btn,.hdr .cta,.mbar a,.way{position:relative;overflow:hidden;isolation:isolate}
+.btn{transition:background .2s,border-color .2s,color .2s,transform .3s var(--spring),box-shadow .3s var(--ease)}
+.btn .ar{display:inline-block;transition:transform .35s var(--spring)}
+.btn:not(.ghost)::after,.mbar .c::after,.hdr .cta::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+ background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.38) 50%,transparent 65%);transform:translateX(-120%);animation:shine 3.6s var(--ease) infinite}
+@keyframes shine{0%,62%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+@media (hover:hover){
+ .btn:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--ink)}
+ .sec.dark .btn:hover{box-shadow:5px 5px 0 var(--yel)}
+ .btn:hover .ar{transform:translateX(6px)}
+ .hdr .cta:hover{transform:translateY(-1px)}
+}
+.btn:active,.hdr .cta:active,.mbar a:active{transform:scale(.97);box-shadow:none;transition-duration:.08s}
+.hdr .cta{gap:8px;transition:background .2s,transform .25s var(--spring)}
+.hdr .cta::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--yel);animation:ping 1.8s ease-out infinite}
+.rp{position:absolute;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:rgba(255,255,255,.55);pointer-events:none;z-index:-1;animation:rp .65s var(--ease) forwards}
+.btn.ghost .rp,.mbar .t .rp{background:rgba(29,59,255,.22)}
+@keyframes rp{to{transform:scale(42);opacity:0}}
+/* nav underline + scrollspy */
+.nav a{position:relative;transition:color .2s}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
+.nav a:hover::after,.nav a.on::after{transform:scaleX(1);transform-origin:left}
+.nav a.on{color:var(--blue)}
+/* card interactions */
+.card,.fm,.plan,.way,.step,.case{transition:transform .35s var(--spring),box-shadow .35s var(--ease),background .25s,border-color .25s}
+.card .no,.row .no,.str .no{display:inline-block;transition:transform .45s var(--spring)}
+@media (hover:hover){
+ .card:hover,.fm:hover{transform:translate(-5px,-5px);box-shadow:8px 8px 0 var(--blue)}
+ .fm.me:hover{box-shadow:8px 8px 0 var(--yel)}
+ .card:hover .no{transform:translateY(-4px) rotate(-6deg)}
+ .row:hover .no,.str:hover .no{transform:translateX(6px)}
+ .plan:hover{transform:translateY(-6px);box-shadow:0 22px 44px -14px rgba(29,59,255,.6)}
+ .plan.hot:hover{box-shadow:0 22px 44px -14px rgba(255,229,0,.35)}
+ .way:hover{transform:translateX(6px);border-color:rgba(255,255,255,.4)}
+ .step:hover{background:var(--blue-pale)}
+}
+.row{transition:background .25s}
+@media (hover:hover){.row:hover{background:linear-gradient(90deg,var(--blue-pale),transparent 70%)}}
+/* FAQ: smooth open */
+.faq summary .pm{transition:transform .4s var(--spring)}
+.faq summary .q{transition:transform .3s var(--spring)}
+.faq summary:hover .q{transform:scale(1.15)}
+.faq details::details-content{block-size:0;overflow:hidden;transition:block-size .45s var(--ease),content-visibility .45s allow-discrete}
+.faq details[open]::details-content{block-size:auto}
+.faq details[open] .a{animation:fu .5s var(--ease)}
+@keyframes fu{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.way .cp.ok{background:var(--yel);color:var(--ink);border-color:var(--yel)}
+
+/* --- infographic animation --- */
+/* how: 3 steps progress line */
+.step{position:relative}
+.step::before{content:"";position:absolute;left:-1px;right:-1px;top:-1.5px;height:5px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)}
+.steps.in .step::before{transform:scaleX(1)}
+.steps.in .step:nth-child(1)::before{transition-delay:.3s}
+.steps.in .step:nth-child(2)::before{transition-delay:.85s}
+.steps.in .step:nth-child(3)::before{transition-delay:1.4s}
+html:not(.m) .step::before{transform:scaleX(1)}
+/* numbers wipe in */
+html.m .str .no,html.m .card .no,html.m .row .no{clip-path:inset(0 100% 0 0);transition:clip-path .9s var(--ease) calc(var(--rd,0s) + .25s),transform .45s var(--spring)}
+html.m .str.in .no,html.m .card.in .no,html.m .row.in .no{clip-path:inset(0 0 0 0)}
+/* record rows logged one by one */
+html.m .rec tbody tr{opacity:0;transform:translateX(-14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.rec.in tbody tr{opacity:1;transform:none}
+.rec.in tbody tr:nth-child(1){transition-delay:.35s}.rec.in tbody tr:nth-child(2){transition-delay:.55s}
+.rec.in tbody tr:nth-child(3){transition-delay:.75s}.rec.in tbody tr:nth-child(4){transition-delay:.95s}
+.rec.in tbody tr:nth-child(5){transition-delay:1.15s}
+html.m .rec.in td.y{animation:hl 1.4s var(--ease) 1.3s both}
+@keyframes hl{0%{background:#fff}35%{background:var(--yel)}100%{background:#FFF7B8}}
+/* compare: our column highlight sweep */
+html.m .cmp-scroll.in td.us{animation:us .9s var(--ease) both}
+.cmp-scroll.in tr:nth-child(1) td.us{animation-delay:.3s}.cmp-scroll.in tr:nth-child(2) td.us{animation-delay:.42s}
+.cmp-scroll.in tr:nth-child(3) td.us{animation-delay:.54s}.cmp-scroll.in tr:nth-child(4) td.us{animation-delay:.66s}
+.cmp-scroll.in tr:nth-child(5) td.us{animation-delay:.78s}
+@keyframes us{0%{background:#fff;box-shadow:inset 0 0 0 var(--blue)}50%{background:#D7DEFF;box-shadow:inset 5px 0 0 var(--blue)}100%{background:var(--blue-pale);box-shadow:inset 3px 0 0 var(--blue)}}
+/* pricing: per-call cost bars */
+.ubar{display:flex;align-items:center;gap:10px;margin:-8px 0 20px}
+.ubar i{flex:1;height:6px;background:rgba(255,255,255,.1);position:relative;overflow:hidden}
+.ubar i::after{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--w);background:var(--blue-2);transform-origin:left;transition:transform 1.3s var(--ease) .4s}
+.plan.hot .ubar i::after{background:var(--yel)}
+.ubar small{font-size:12px;color:#9A9AA8;white-space:nowrap}
+html.m .ubar i::after{transform:scaleX(0)}
+html.m .plan.in .ubar i::after{transform:scaleX(1)}
+/* flow timeline draws */
+html.m .fl .day{border-bottom-color:transparent;background:linear-gradient(var(--ink),var(--ink)) left bottom/0% 2px no-repeat;transition:background-size .7s var(--ease) calc(var(--rd,0s) + .2s)}
+html.m .fl.in .day{background-size:100% 2px}
+html.m .fl .day::after{transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease) calc(var(--rd,0s) + .85s)}
+html.m .fl.in .day::after{transform:scaleX(1)}
+.fl .day::before{content:"";position:absolute;left:0;bottom:-6px;width:10px;height:10px;background:var(--blue)}
+html.m .fl .day::before{transform:scale(0) rotate(45deg);transition:transform .5s var(--spring) calc(var(--rd,0s) + .15s)}
+html.m .fl.in .day::before{transform:none}
+
+@media (prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important}
+ .rv{filter:none!important}
+}
+</style>
+<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('m')</script>
 </head>
 <body>
 <div class="bar" aria-hidden="true"></div>
@@ -455,12 +608,12 @@ body{color:#222228}
   <div class="plans">
     <div class="plan rv">
       <span class="en">STANDARD 500</span><h3>月500件プラン</h3><p class="for">まずは小さく始めたい方。新しい商材の反応を見るのに向いています。</p>
-      <p class="price"><b>9.8</b><span>万円〜 / 月</span></p><p class="unit">1件あたり196円・6か月契約</p>
+      <p class="price"><b>9.8</b><span>万円〜 / 月</span></p><p class="unit">1件あたり196円・6か月契約</p><div class="ubar" aria-hidden="true"><small>1件単価</small><i style="--w:100%"></i><small>196円</small></div>
       <ul><li>月500件まで架電</li><li>アポが取れたら20,000円／件</li><li>かけた全件の記録をお渡し</li><li>架電用の電話番号は当社で用意</li></ul>
     </div>
     <div class="plan hot rv"><span class="tag">単価が安い</span>
       <span class="en">STANDARD 1000</span><h3>月1,000件プラン</h3><p class="for">件数を積んで精度を上げたい方。断られた理由が早く集まり、リストとトークの修正が速く回ります。</p>
-      <p class="price"><b>15</b><span>万円〜 / 月</span></p><p class="unit">1件あたり150円・6か月契約</p>
+      <p class="price"><b>15</b><span>万円〜 / 月</span></p><p class="unit">1件あたり150円・6か月契約</p><div class="ubar" aria-hidden="true"><small>1件単価</small><i style="--w:76.5%"></i><small>150円</small></div>
       <ul><li>月1,000件まで架電</li><li>アポが取れたら20,000円／件</li><li>かけた全件の記録をお渡し</li><li>架電用の電話番号は当社で用意</li></ul>
     </div>
   </div>
@@ -563,7 +716,80 @@ body{color:#222228}
   function prog(){var h=document.documentElement;var p=h.scrollTop/(h.scrollHeight-h.clientHeight);if(bar)bar.style.width=(p*100)+'%'}
   addEventListener('scroll',prog,{passive:true});prog();
   document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
-    navigator.clipboard&&navigator.clipboard.writeText(b.getAttribute('data-copy')).then(function(){var t=b.textContent;b.textContent='コピーしました';setTimeout(function(){b.textContent=t},1500)})})});
+    navigator.clipboard&&navigator.clipboard.writeText(b.getAttribute('data-copy')).then(function(){var t=b.textContent;b.textContent='コピーしました';b.classList.add('ok');setTimeout(function(){b.textContent=t;b.classList.remove('ok')},1500)})})});
+})();
+</script>
+<script>
+/* v4: motion */
+(function(){
+  var M=document.documentElement.classList.contains('m');
+  if(!M)return;
+  var $=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+
+  /* 1. kinetic typography: split headings into phrase-safe words + chars */
+  var seg=window.Intl&&Intl.Segmenter?new Intl.Segmenter('ja',{granularity:'word'}):null;
+  function split(el){
+    el.setAttribute('aria-label',el.textContent.replace(/\s+/g,''));
+    var texts=[],w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);
+    while(w.nextNode())if(w.currentNode.nodeValue.trim())texts.push(w.currentNode);
+    var chars=[];
+    texts.forEach(function(t){
+      var parts=seg?Array.from(seg.segment(t.nodeValue),function(x){return x.segment}):t.nodeValue.split('');
+      var f=document.createDocumentFragment();
+      parts.forEach(function(p){
+        var ws=document.createElement('span');ws.className='w';ws.setAttribute('aria-hidden','true');
+        Array.from(p).forEach(function(ch){var c=document.createElement('span');c.className='c';c.textContent=ch;ws.appendChild(c);chars.push(c)});
+        f.appendChild(ws);
+      });
+      t.parentNode.replaceChild(f,t);
+    });
+    var step=Math.min(32,750/Math.max(chars.length,1));
+    chars.forEach(function(c,i){c.style.setProperty('--cd',Math.round(i*step)+'ms')});
+    el.style.setProperty('--md',Math.round(chars.length*step+250)+'ms');
+    el.classList.add('kt');
+  }
+  $('.fv h1, h2.t, .ct h2').forEach(split);
+
+  /* hero intro */
+  var fv=document.querySelector('.fv');
+  if(fv){fv.classList.add('mk');
+    requestAnimationFrame(function(){setTimeout(function(){fv.classList.add('go');fv.querySelector('h1').classList.add('go')},120)});
+    if(matchMedia('(pointer:fine)').matches)fv.addEventListener('pointermove',function(e){var r=fv.getBoundingClientRect();fv.style.setProperty('--mx',(e.clientX-r.left)+'px');fv.style.setProperty('--my',(e.clientY-r.top)+'px')});
+  }
+
+  /* 2. stagger reveals among siblings, then switch to snappy hover transitions */
+  var groups=new Map();
+  $('.rv').forEach(function(el){var p=el.parentNode;var n=groups.get(p)||0;el.style.setProperty('--rd',Math.min(n*0.09,0.45)+'s');groups.set(p,n+1)});
+  var mo=new MutationObserver(function(ms){ms.forEach(function(m){var el=m.target;if(el.classList.contains('in')&&!el.dataset.d){el.dataset.d=1;setTimeout(function(){el.classList.add('done')},1500)}})});
+  $('.rv').forEach(function(el){mo.observe(el,{attributes:true,attributeFilter:['class']})});
+
+  /* 3. infographic: count-up numbers (ends on the exact original text) */
+  function fmt(v,dec,comma){return comma?v.toLocaleString('en-US',{minimumFractionDigits:dec,maximumFractionDigits:dec}):v.toFixed(dec)}
+  function count(el){
+    var tn=Array.prototype.find.call(el.childNodes,function(n){return n.nodeType===3&&/\d/.test(n.nodeValue)});
+    if(!tn)return;
+    var orig=tn.nodeValue,toks=[];
+    orig.replace(/\d[\d,]*(?:\.\d+)?/g,function(m){toks.push({s:m,v:parseFloat(m.replace(/,/g,'')),d:(m.split('.')[1]||'').length,c:m.indexOf(',')>-1})});
+    el.style.minWidth=el.getBoundingClientRect().width+'px';
+    var t0=null,D=1500;
+    function tick(t){if(!t0)t0=t;var k=Math.min((t-t0)/D,1),e=k===1?1:1-Math.pow(2,-10*k),i=0;
+      tn.nodeValue=orig.replace(/\d[\d,]*(?:\.\d+)?/g,function(){var o=toks[i++];return fmt(o.v*e,o.d,o.c)});
+      if(k<1)requestAnimationFrame(tick);else tn.nodeValue=orig;}
+    tn.nodeValue=orig.replace(/\d[\d,]*(?:\.\d+)?/g,function(m){return fmt(0,(m.split('.')[1]||'').length,m.indexOf(',')>-1)});
+    setTimeout(function(){requestAnimationFrame(tick)},250);
+  }
+  var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){cio.unobserve(e.target);count(e.target)}})},{threshold:.6});
+  $('.stat .n, .plan .price b, .kv div:not(:nth-child(2)) dd, .def .k em:not(.z), .fm .v').forEach(function(el){cio.observe(el)});
+
+  /* 4. UI: ripple on press */
+  $('.btn, .hdr .cta, .mbar a, .way').forEach(function(b){b.addEventListener('pointerdown',function(e){
+    var r=b.getBoundingClientRect(),s=document.createElement('span');s.className='rp';
+    s.style.left=(e.clientX-r.left)+'px';s.style.top=(e.clientY-r.top)+'px';b.appendChild(s);setTimeout(function(){s.remove()},700)})});
+
+  /* 5. UI: scrollspy on nav */
+  var links={};$('.nav a').forEach(function(a){links[a.getAttribute('href').slice(1)]=a});
+  var sio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){$('.nav a.on').forEach(function(a){a.classList.remove('on')});var a=links[e.target.id];if(a)a.classList.add('on')}})},{rootMargin:'-45% 0px -50% 0px'});
+  $('section[id]').forEach(function(s){sio.observe(s)});
 })();
 </script>
 </body>
