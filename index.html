@@ -11,6 +11,7 @@
 <meta property="og:description" content="電話と展示会。2つの手段を1つの窓口で回す法人向け営業代行です。複合プランは月50万円（限定10組）、アポの成果報酬は一律20,000円／件。1つの手段だけでもお受けします。">
 <meta property="og:url" content="https://ymozfleet-creator.github.io/leadrush/">
 <meta property="og:image" content="https://ymozfleet-creator.github.io/leadrush/hero.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ProfessionalService", "name": "LEADING RUSHER（リーディングラッシャー）", "url": "https://ymozfleet-creator.github.io/leadrush/", "description": "電話と展示会の2つの手段を1つの窓口で回す法人向け営業代行", "telephone": "070-8492-2277", "email": "info@tenjihack.com", "address": {"@type": "PostalAddress", "postalCode": "165-0023", "addressRegion": "東京都", "addressLocality": "中野区", "streetAddress": "江原町2-13-13", "addressCountry": "JP"}, "provider": {"@type": "Organization", "name": "RELIGHT"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "1つの手段だけでも頼めますか。", "acceptedAnswer": {"@type": "Answer", "text": "お受けします。コールラッシュは月500件・9.8万円から、展示会ハックは1展示会20万円からです。まず1つ試していただいて、必要になったら手段を足す形でかまいません。"}}, {"@type": "Question", "name": "アポの件数は保証されますか。", "acceptedAnswer": {"@type": "Answer", "text": "保証はしていません。商材と相手で結果が大きく変わるためです。保証を付ける場合はアポの定義が緩くなるか、固定費に保証分が乗ります。当社は定義を厳しくして、取れた分だけいただく形にしています。"}}, {"@type": "Question", "name": "どの手段で取れたアポか、分かりますか。", "acceptedAnswer": {"@type": "Answer", "text": "月次の記録に1件ずつ明記します。単価は手段で変わらないので請求額には影響しませんが、どの手段が効いているかを見て、翌月の比率を組み替えるために使います。"}}, {"@type": "Question", "name": "複合プランはなぜ1年契約なのですか。", "acceptedAnswer": {"@type": "Answer", "text": "展示会は開催時期が決まっているため、年間の稼働計画を立て、数か月前から対象の展示会と担当者を押さえる必要があるためです。電話は月単位で件数を調整できますが、展示会は途中で抜けると計画が崩れます。"}}, {"@type": "Question", "name": "どんな商材が向いていますか。", "acceptedAnswer": {"@type": "Answer", "text": "法人向けで、電話や展示会で担当者に届く商材であれば、業種は問いません。個人のお客様が対象の商材はお受けしていません。1件あたりの単価が小さく、商談の手間に見合わない商材は、ご相談の場でその旨をお伝えします。"}}, {"@type": "Question", "name": "途中でやめられますか。", "acceptedAnswer": {"@type": "Answer", "text": "コールラッシュの単品は6か月契約で、途中で解約される場合は残っている期間の月額合計の30%を解約料としていただきます。複合プランは1年契約です。"}}, {"@type": "Question", "name": "商談には出てもらえますか。", "acceptedAnswer": {"@type": "Answer", "text": "アポのお取りつけまでが基本です。展示会ハックのフルサービスには、初回商談への同席が含まれます。それ以外で同席をご希望の場合は、別途ご相談ください。"}}]}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Barlow+Condensed:wght@600;700&display=swap">
@@ -396,13 +397,126 @@ body{color:#222228}
 @media (max-width:760px){.about{grid-template-columns:1fr;gap:18px;padding:22px 18px}}
 .ct .btn{margin:0 0 18px}
 </style>
+<style>
+/* v4: finder / simulator / motion */
+.finder{background:var(--blue-pale);border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink)}
+.fd{background:#fff;border:1.5px solid var(--ink);box-shadow:10px 10px 0 var(--blue);padding:clamp(22px,4vw,40px);position:relative;overflow:hidden}
+.fd-prog{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:0 0 26px}
+.fd-prog span{height:6px;background:var(--line-2);position:relative;overflow:hidden}
+.fd-prog span::after{content:"";position:absolute;inset:0;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.fd-prog span.on::after{transform:scaleX(1)}
+.fd-body{min-height:300px}
+.fd-step{font-family:var(--fe);font-weight:700;letter-spacing:.16em;font-size:13px;color:var(--blue);margin:0 0 8px}
+.fd-q{font-size:clamp(20px,2.6vw,26px);margin:0 0 6px}
+.fd-hint{font-size:13.5px;color:var(--mute);margin:0 0 20px}
+.fd-opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.fd-o{font:inherit;text-align:left;cursor:pointer;background:#fff;border:1.5px solid var(--ink);padding:18px 18px 16px;display:flex;flex-direction:column;gap:4px;min-height:96px;transition:transform .15s,box-shadow .15s,background .15s;color:var(--ink)}
+.fd-o b,.fd-o small,.fd-q,.fd-main .nm{word-break:auto-phrase}
+.fd-o b{font-size:16px;font-weight:900;line-height:1.5}
+.fd-o small{font-size:13px;color:var(--mute);line-height:1.6}
+.fd-o:hover,.fd-o:focus-visible{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--blue);background:var(--blue-pale);outline:none}
+.fd-o.sel{background:var(--ink);color:#fff}.fd-o.sel small{color:#C8C8D2}
+.fd-nav{display:flex;gap:16px;align-items:center;margin:20px 0 0;min-height:24px}
+.fd-back{font:inherit;font-size:13.5px;font-weight:700;background:none;border:0;padding:0;cursor:pointer;color:var(--mute)}
+.fd-back:hover{color:var(--ink)}
+.fd-anim{animation:fdIn .45s cubic-bezier(.2,.7,.2,1) both}
+@keyframes fdIn{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+.fd-res{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;margin:18px 0 0}
+.fd-main{border:2px solid var(--ink);padding:24px;position:relative;background:#fff}
+.fd-main .badge{position:absolute;top:-2px;left:-2px;background:var(--yel);color:var(--ink);font-weight:900;font-size:12.5px;padding:5px 12px}
+.fd-main .nm{font-size:21px;font-weight:900;color:var(--ink);margin:18px 0 4px;line-height:1.4}
+.fd-main .pr{font-family:var(--fe);font-weight:700;font-size:48px;line-height:1;color:var(--ink);margin:10px 0 2px}
+.fd-main .pr small{font-family:var(--fb);font-size:14px;font-weight:700;margin-left:4px}
+.fd-main .pf{font-size:13px;color:var(--mute);margin:0 0 14px}
+.fd-main ul{list-style:none;margin:0 0 14px;padding:14px 0 0;border-top:1px solid var(--line-2);display:grid;gap:6px;font-size:14.5px}
+.fd-main li{display:flex;gap:10px}.fd-main li::before{content:"✓";color:var(--blue);font-weight:900;flex:none}
+.fd-why{margin:0;font-size:14px;background:var(--sand);padding:12px 14px;line-height:1.8}
+.fd-why b{color:var(--ink)}
+.fd-alt{border:1.5px dashed var(--ink);padding:20px;background:#fff;display:flex;flex-direction:column}
+.fd-alt .lb{font-size:12.5px;font-weight:700;color:var(--mute);margin:0 0 6px}
+.fd-alt .nm{font-weight:900;color:var(--ink);font-size:16.5px;line-height:1.5;margin:0 0 6px}
+.fd-alt .pr{font-family:var(--fe);font-weight:700;font-size:28px;color:var(--ink);line-height:1;margin:0 0 8px}
+.fd-alt .pr small{font-family:var(--fb);font-size:12.5px;font-weight:700;margin-left:3px}
+.fd-alt p{margin:0;font-size:13.5px}.fd-alt .ds{flex:1}
+.fd-alt a{margin-top:12px;font-weight:700;font-size:14px;color:var(--blue);text-decoration:none}
+.fd-cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 0;align-items:center}
+.fd-cta .btn{height:54px;font-size:15px}
+.fd-cta .re{font:inherit;font-size:13.5px;font-weight:700;background:none;border:0;cursor:pointer;color:var(--mute);text-decoration:underline}
+@media (max-width:760px){.fd-o{min-height:0;padding:14px 16px}.fd-body{min-height:0}.fd-res{grid-template-columns:1fr}.fd{box-shadow:6px 6px 0 var(--blue)}.fd-cta .btn{width:100%}}
+
+.sim{margin:44px 0 0;background:#fff;color:var(--txt);border:1px solid #fff}
+.sim-hd{padding:26px 28px 18px;border-bottom:2px solid var(--ink)}
+.sim-hd .en{font-family:var(--fe);font-weight:700;letter-spacing:.16em;font-size:13px;color:var(--blue)}
+.sec.dark .sim h3,.sim-hd h3{color:var(--ink);font-size:clamp(20px,2.4vw,24px);margin:4px 0 6px}.sim-hd p{margin:0;font-size:14.5px}
+.sim-grid{display:grid;grid-template-columns:1.1fr .9fr}
+.sim-in{padding:24px 28px;border-right:1px solid var(--line-2);min-width:0}
+.sim-out{padding:24px 28px;background:var(--sand);display:flex;flex-direction:column;min-width:0}
+.sim-lb{font-weight:700;color:var(--ink);font-size:14px;margin:0 0 10px}
+.sim-plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 0 18px}
+.sim-p{font:inherit;cursor:pointer;text-align:left;border:1.5px solid var(--ink);background:#fff;padding:10px 12px;color:var(--ink);transition:.15s;min-width:0}
+.sim-p b{display:block;font-size:14px;font-weight:900;line-height:1.4}
+.sim-p small{display:block;font-size:12px;color:var(--mute)}
+.sim-p:hover{background:var(--blue-pale)}
+.sim-p[aria-checked="true"]{background:var(--blue);border-color:var(--blue);color:#fff}.sim-p[aria-checked="true"] small{color:#DCE1FF}
+.sim-opts{display:grid;gap:8px;margin:0 0 18px}
+.ck{display:flex;gap:10px;align-items:flex-start;cursor:pointer;font-size:14.5px;font-weight:700;color:var(--ink)}
+.ck input{width:18px;height:18px;margin:3px 0 0;accent-color:var(--blue);flex:none}
+.ck small{display:block;font-weight:500;color:var(--mute);font-size:12.5px}
+.sim-rg{margin:0 0 18px}
+.sim-rg label{display:block;font-weight:700;color:var(--ink);font-size:14.5px;margin:0 0 6px}
+.sim-rg output{font-family:var(--fe);font-size:26px;color:var(--blue);margin:0 2px}
+.sim-rg input{width:100%;accent-color:var(--blue);height:28px}
+.sim-out dl{margin:0 0 14px}
+.sim-out dl div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line-2);font-size:14px}
+.sim-out dt{color:var(--txt)}.sim-out dd{margin:0;font-weight:700;color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums}
+.sim-tot{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;border-top:2px solid var(--ink);padding:14px 0 4px}
+.sim-tot span{font-weight:700;color:var(--ink);font-size:14px}
+.sim-tot b{font-family:var(--fe);font-weight:700;font-size:44px;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+.sim-sub{font-size:13px;color:var(--mute);margin:4px 0 16px;min-height:1.6em}
+.sim-out .btn{margin-top:auto;height:54px;font-size:15px}
+.sim-nt{margin:0;padding:12px 28px;font-size:12.5px;color:var(--mute);border-top:1px solid var(--line-2);line-height:1.8}
+@media (max-width:900px){.sim-grid{grid-template-columns:1fr}.sim-in{border-right:0;border-bottom:1px solid var(--line-2)}.sim-hd,.sim-in,.sim-out{padding-left:18px;padding-right:18px}.sim-nt{padding:12px 18px}.sim-tot b{font-size:38px}}
+
+/* motion */
+h2.t i,.fv h1 i{background-repeat:no-repeat;background-size:0% 100%;transition:background-size .9s .25s cubic-bezier(.2,.7,.2,1)}
+h2.t.in i,.fv h1.go i{background-size:100% 100%}
+.rv{transition-delay:var(--d,0s)}
+.fv-label,.fv h1{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.fv h1{transition-delay:.12s}
+.fv.go .fv-label,.fv.go h1{opacity:1;transform:none}
+.fv-photo{overflow:hidden}
+.fv-photo img{animation:kb 12s ease-out both}
+@keyframes kb{from{transform:scale(1.08)}to{transform:scale(1)}}
+.stat .pct{animation:pulse 2.6s 1.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(29,59,255,.0)}50%{box-shadow:0 0 0 6px rgba(255,229,0,.45)}}
+.btn .ar{transition:transform .2s}.btn:hover .ar{transform:translateX(4px)}
+.btn.ghost:hover .ar{transform:translateY(3px)}
+.card,.big,.case,.sc{transition:opacity .6s ease,transform .6s ease,box-shadow .2s}
+.card.in:hover,.big.in:hover,.case.in:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--blue)}
+.dw-l{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);transition:stroke-dashoffset .7s ease var(--dd,0s)}
+.dw-f{opacity:0;transition:opacity .5s ease var(--dd,0s)}
+.diag.in .dw-l{stroke-dashoffset:0}.diag.in .dw-f{opacity:1}
+.nav{gap:16px}.hdr .cta{white-space:nowrap;flex:none}.logo s{white-space:nowrap}.nav a{position:relative;padding:4px 0;white-space:nowrap}
+@media (max-width:1180px){.nav{display:none}}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--blue);transform:scaleX(0);transition:transform .25s}
+.nav a.on{color:var(--blue)}.nav a.on::after,.nav a:hover::after{transform:scaleX(1)}
+.faq .a{animation:faq .35s ease both}
+@keyframes faq{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.faq .pm{transition:transform .25s}
+@media (prefers-reduced-motion:reduce){
+ h2.t i,.fv h1 i{background-size:100% 100%;transition:none}
+ .fv-label,.fv h1{opacity:1;transform:none;transition:none}
+ .fv-photo img,.stat .pct,.fd-anim,.faq .a{animation:none}
+ .dw-l{stroke-dashoffset:0;transition:none}.dw-f{opacity:1;transition:none}
+}
+</style>
 </head>
 <body>
 <div class="bar" aria-hidden="true"></div>
 <header class="hdr"><div class="wrap">
   <a class="logo" href="./"><span class="sq"></span><b>LEADING RUSHER</b><s>by RELIGHT</s></a>
   <nav class="nav">
-    <a href="#problem">課題</a><a href="#how">仕組み</a><a href="#why">選ばれる理由</a><a href="#cases">実績</a><a href="#compare">比較</a><a href="#price">料金</a><a href="#flow">流れ</a><a href="#faq">FAQ</a>
+    <a href="#finder">プラン診断</a><a href="#problem">課題</a><a href="#how">仕組み</a><a href="#why">選ばれる理由</a><a href="#cases">実績</a><a href="#compare">比較</a><a href="#price">料金</a><a href="#flow">流れ</a><a href="#faq">FAQ</a>
   </nav>
   <a class="cta" href="#contact">無料相談</a>
   <div class="fam" aria-label="LEADING RUSHER のサービス">
@@ -414,7 +528,7 @@ body{color:#222228}
   <div class="wrap">
     <div class="fv-head">
       <p class="fv-label">BtoB企業向け｜総合営業代行・アポ獲得</p>
-      <h1 style="--n:15.6">相手に<i>届く手段</i>で、<br>アポを獲る。</h1>
+      <h1 id="h1" style="--n:15.6">相手に<i>届く手段</i>で、<br>アポを獲る。</h1>
     </div>
     <div>
       <p class="lead">電話と展示会。<b>2つの手段を1つの窓口で回し</b>、相手に合わせて届く手段を変えます。月額の固定費とアポの成果報酬を基本に、新規開拓の入口を丸ごと引き受けます。</p>
@@ -429,7 +543,7 @@ body{color:#222228}
       </ul>
       <div class="ctas">
         <a class="btn" href="#contact">まずは無料オンライン相談<span class="ar">→</span></a>
-        <a class="btn ghost" href="#price">料金を見る</a>
+        <a class="btn ghost" href="#finder">30秒でプラン診断<span class="ar">↓</span></a>
       </div>
       <p class="note">ご相談は無料・30分・オンライン完結。金額はすべて税抜です。</p>
     </div>
@@ -439,14 +553,24 @@ body{color:#222228}
         <img src="hero.jpg" alt="ヘッドセットを着けて架電する担当者" width="800" height="600">
         <div class="stat">
           <span class="ex">記載例</span>
-          <span class="n">10<small>件 電話</small></span><span class="arrow">+</span>
-          <span class="n">7<small>件 展示会</small></span>
+          <span class="n" data-count="10">10<small>件 電話</small></span><span class="arrow">+</span>
+          <span class="n" data-count="7">7<small>件 展示会</small></span>
           <span class="pct">月17件のアポ</span>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<section class="sec finder" id="finder"><div class="wrap">
+  <p class="eyebrow rv"><b>Q</b>PLAN FINDER</p>
+  <h2 class="t rv">3つの質問で、<i>合うプランがわかります。</i></h2>
+  <p class="lead rv">30秒で終わります。答えにあわせて、おすすめの手段と料金の目安をお出しします。結果はそのまま相談メールに入れられます。</p>
+  <div class="fd rv" id="fd">
+    <div class="fd-prog" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="fd-body" id="fdBody" aria-live="polite"></div>
+  </div>
+</div></section>
 
 <section class="sec sand" id="problem"><div class="wrap">
   <p class="eyebrow rv"><b>01</b>PROBLEM</p>
@@ -463,7 +587,7 @@ body{color:#222228}
   <p class="eyebrow rv"><b>02</b>SERVICE</p>
   <h2 class="t rv">1つの手段では、<i>届かない相手がいます。</i></h2>
   <p class="lead rv">電話で届かない相手には、展示会の会場で会う。会場で名刺交換した相手には、会期後に電話でフォローする。相手に合わせて手段を変えられることが、まとめてご依頼いただく理由です。2つとも単品でお受けします。</p>
-  <div class="diag rv">
+  <div class="diag rv" id="diag">
 <svg class="d" viewBox="0 0 1000 350" role="img" aria-label="御社から当社へ商材と会いたい相手を伝え、当社が電話・展示会で接点をつくり、アポを御社へ渡す流れ">
 <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#0A0A0B"/></marker></defs>
 <g font-size="15" fill="#2B2B30">
@@ -562,10 +686,10 @@ body{color:#222228}
   <p class="lead rv">展示会ハックでの実績例です。会場で名刺交換した企業を、会期後の架電とメールで商談につなげました。</p>
   <div class="cases">
     <div class="case rv"><span class="tag">展示会ハック｜美容用品メーカー様</span><h3>1展示会で名刺60社、受注1件</h3>
-      <dl><div><dt>名刺交換</dt><dd>60<small>社</small></dd></div><div><dt>うち決裁者</dt><dd>約3<small>割</small></dd></div><div><dt>見込み→受注</dt><dd>4→1<small>件</small></dd></div></dl>
+      <dl><div><dt>名刺交換</dt><dd data-count="60">60<small>社</small></dd></div><div><dt>うち決裁者</dt><dd>約3<small>割</small></dd></div><div><dt>見込み→受注</dt><dd>4→1<small>件</small></dd></div></dl>
       <p>会場で名刺交換した60社の約3割が決裁者。会期後のフォローで見込み4社まで絞り込み、うち1件が受注につながりました。</p></div>
     <div class="case rv"><span class="tag">展示会ハック｜AI研修・DX支援企業様</span><h3>1展示会で名刺98社、商談3件</h3>
-      <dl><div><dt>名刺交換</dt><dd>98<small>社</small></dd></div><div><dt>うち決裁者</dt><dd>約3<small>割</small></dd></div><div><dt>商談</dt><dd>3<small>件</small></dd></div></dl>
+      <dl><div><dt>名刺交換</dt><dd data-count="98">98<small>社</small></dd></div><div><dt>うち決裁者</dt><dd>約3<small>割</small></dd></div><div><dt>商談</dt><dd>3<small>件</small></dd></div></dl>
       <p>出展せずに会場を回って98社と名刺交換。会期後の架電で、商談3件を設定しました。</p></div>
   </div>
   <p class="case-nt rv">社名は伏せています。コールラッシュは新しいサービスのため、実績は順次掲載します。</p>
@@ -632,6 +756,28 @@ body{color:#222228}
     </div>
   </div>
   <p class="pnote">金額はすべて税抜です。複合プランには電話月1,000件・展示会年12回が含まれます。初回商談の同席は含まれず、ご希望の場合は別途ご相談となります。展示会を年6回のペースでお使いの場合は、単品を組み合わせる形になります。アポの成果報酬は単品・複合のどちらでも一律20,000円／件です。展示会ハックの年間プランは、成果報酬の形が異なります（詳しくは展示会ハックのサイトをご覧ください）。</p>
+  <div class="sim rv" id="sim">
+    <div class="sim-hd"><span class="en">SIMULATOR</span><h3>料金の目安を、その場で計算。</h3><p>プランと想定の件数を選ぶと、固定費と成果報酬の合計を表示します。</p></div>
+    <div class="sim-grid">
+      <div class="sim-in">
+        <p class="sim-lb">プランを選ぶ</p>
+        <div class="sim-plans" id="simPlans" role="radiogroup" aria-label="プラン"></div>
+        <div class="sim-opts" id="simOpts">
+          <label class="ck"><input type="checkbox" id="simList"><span>リストを当社で作る<small>＋20,000円／月</small></span></label>
+          <label class="ck"><input type="checkbox" id="simScript"><span>トークスクリプトを当社で作る<small>＋10,000円（初回のみ）</small></span></label>
+        </div>
+        <div class="sim-rg" id="simApoW"><label for="simApo">想定するアポ <output id="simApoV">3</output>件</label><input type="range" id="simApo" min="0" max="20" step="1" value="3"></div>
+        <div class="sim-rg" id="simCardW"><label for="simCard">有効名刺 <output id="simCardV">30</output>社</label><input type="range" id="simCard" min="0" max="80" step="5" value="30"></div>
+      </div>
+      <div class="sim-out">
+        <dl id="simRows"></dl>
+        <div class="sim-tot"><span id="simUnit">月の合計（税抜）</span><b id="simTot">0円</b></div>
+        <p class="sim-sub" id="simSub"></p>
+        <a class="btn" id="simMail" href="#contact">この条件で相談する<span class="ar">→</span></a>
+      </div>
+    </div>
+    <p class="sim-nt">入力した件数での試算です。アポ件数は保証していません。金額はすべて税抜です。展示会ハックの年間プランは成果報酬の形が異なるため、ここでは計算していません（展示会ハックのサイトをご覧ください）。</p>
+  </div>
 </div></section>
 
 <section class="sec sand" id="scope"><div class="wrap">
@@ -725,7 +871,7 @@ body{color:#222228}
     <a href="./">LEADING RUSHER</a><a href="callrush/">コールラッシュ</a><a href="https://tenjihack.com/">展示会ハック</a>
   </div>
 </div></footer>
-<div class="mbar"><a class="t" href="tel:07084922277">電話で相談</a><a class="c" href="#contact">30分、無料で相談する</a></div>
+<div class="mbar"><a class="t" href="#finder">プラン診断</a><a class="c" href="#contact">30分、無料で相談する</a></div>
 <script>
 (function(){
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
@@ -735,6 +881,190 @@ body{color:#222228}
   addEventListener('scroll',prog,{passive:true});prog();
   document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
     navigator.clipboard&&navigator.clipboard.writeText(b.getAttribute('data-copy')).then(function(){var t=b.textContent;b.textContent='コピーしました';setTimeout(function(){b.textContent=t},1500)})})});
+})();
+</script>
+<script>
+(function(){
+var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function yen(n){return n.toLocaleString('ja-JP')+'円'}
+function $(id){return document.getElementById(id)}
+
+/* ---------- hero entrance ---------- */
+var fv=document.querySelector('.fv'),h1=$('h1');
+requestAnimationFrame(function(){fv&&fv.classList.add('go');setTimeout(function(){h1&&h1.classList.add('go')},350)});
+
+/* ---------- stagger ---------- */
+['.cards','.strs','.big3','.cases','.flow','.scope','.sp3','.defs'].forEach(function(sel){
+  document.querySelectorAll(sel).forEach(function(g){
+    Array.prototype.forEach.call(g.children,function(c,i){c.style.setProperty('--d',(i*0.1)+'s')})})});
+
+/* ---------- count up ---------- */
+function countUp(el){
+  var t=el.getAttribute('data-count')*1,node=el.firstChild;if(!node||node.nodeType!==3)return;
+  if(RM){node.nodeValue=t;return}
+  var st=null,du=1100;
+  function f(ts){if(!st)st=ts;var p=Math.min((ts-st)/du,1),e=1-Math.pow(1-p,3);node.nodeValue=Math.round(t*e);if(p<1)requestAnimationFrame(f)}
+  requestAnimationFrame(f)}
+var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){countUp(e.target);cio.unobserve(e.target)}})},{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el)});
+
+/* ---------- diagram draw ---------- */
+document.querySelectorAll('#diag svg').forEach(function(svg){
+  var i=0;
+  svg.querySelectorAll('rect,text,line,path').forEach(function(el){
+    if(el.closest('defs'))return;
+    el.style.setProperty('--dd',(i++*0.035)+'s');
+    if(el.tagName==='line'||el.tagName==='path'){
+      var L=Math.ceil(el.getTotalLength?el.getTotalLength():200)+2;el.style.setProperty('--len',L);el.classList.add('dw-l');
+      var m=el.getAttribute('marker-end');if(m){el.dataset.m=m;el.removeAttribute('marker-end')}
+    }else el.classList.add('dw-f');
+  })});
+var diag=$('diag');
+if(diag){new MutationObserver(function(){if(diag.classList.contains('in')){
+  setTimeout(function(){diag.querySelectorAll('[data-m]').forEach(function(el){el.setAttribute('marker-end',el.dataset.m)})},RM?0:900)}}).observe(diag,{attributes:true,attributeFilter:['class']})}
+
+/* ---------- nav active ---------- */
+var links={};document.querySelectorAll('.nav a[href^="#"]').forEach(function(a){links[a.getAttribute('href').slice(1)]=a});
+var nio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+  for(var k in links)links[k].classList.remove('on');if(links[e.target.id])links[e.target.id].classList.add('on')}})},{rootMargin:'-45% 0px -50% 0px'});
+Object.keys(links).forEach(function(id){var s=$(id);s&&nio.observe(s)});
+
+/* ---------- plans (税抜) ---------- */
+var P={
+ CR500:{nm:'コールラッシュ 月500件',pr:'9.8',u:'万円 / 月',pf:'6か月契約・1件あたり196円',
+   pts:['御社名義で平日9〜17時に架電','かけた全件の応対状況を記録してお渡し','アポは1件20,000円'],link:'callrush/'},
+ CR1000:{nm:'コールラッシュ 月1,000件',pr:'15',u:'万円 / 月',pf:'6か月契約・1件あたり150円',
+   pts:['御社名義で平日9〜17時に架電','かけた全件の応対状況を記録してお渡し','アポは1件20,000円'],link:'callrush/'},
+ TH_LIGHT:{nm:'展示会ハック 現地接点のみ',pr:'20',u:'万円 / 1展示会',pf:'3日稼働・挨拶回りと名刺交換まで',
+   pts:['出展は不要。当社スタッフが会場を回る','交換した名刺をそのままお渡し','アポ取り・会期後の連絡は含みません'],link:'https://tenjihack.com/'},
+ TH_FULL:{nm:'展示会ハック フルサービス',pr:'30',u:'万円〜 / 1展示会',pf:'3日稼働＋有効名刺500円/社・アポ20,000円/件',
+   pts:['出展は不要。当社スタッフが会場を回る','会期後1か月のフォローで商談アポまで','初回商談の同席付き'],link:'https://tenjihack.com/'},
+ TH_Y6:{nm:'展示会ハック 年間6回',pr:'35',u:'万円 / 月',pf:'1年契約・通年フォロー付き',
+   pts:['年6回の展示会を通年で計画','名刺交換した相手を1年追いかける','成果報酬の形は展示会ハックのサイトをご覧ください'],link:'https://tenjihack.com/'},
+ TH_Y12:{nm:'展示会ハック 年間12回',pr:'45',u:'万円 / 月',pf:'1年契約・テレアポ月500件込み',
+   pts:['年12回の展示会を通年で計画','テレアポ月500件込み','成果報酬の形は展示会ハックのサイトをご覧ください'],link:'https://tenjihack.com/'},
+ LR50:{nm:'LEADING RUSHER 50（電話＋展示会）',pr:'50',u:'万円 / 月',pf:'1年契約・限定10組・アポ20,000円/件',
+   pts:['電話 月1,000件＋展示会 年12回','リスト・トークスクリプト作成込み','単品の組み合わせ（月60万円）より月10万円お得'],link:'#price'},
+ COMBO:{nm:'単品の組み合わせ（電話＋展示会スポット）',pr:'15',u:'万円 / 月 ＋ 展示会ごと',pf:'コールラッシュ月1,000件＋展示会ハック1展示会20万円〜',
+   pts:['電話は毎月、展示会は会期に合わせて','効いた手段に比率を寄せて組み替え','アポは手段を問わず1件20,000円'],link:'#price'}
+};
+
+/* ---------- finder ---------- */
+var Q=[
+ {q:'いちばん会いたいのは、どんな相手ですか。',h:'近いものを1つお選びください。',o:[
+   ['call','業種や地域のリストに、まとめて当たりたい','電話で数多く接点をつくる'],
+   ['show','特定の展示会に出ている企業と会いたい','会場で担当者・決裁者と名刺交換'],
+   ['both','両方／まだ決めていない','相手に合わせて組み合わせたい']]},
+ {q:'どのくらいの期間で考えていますか。',h:'あとから変えられます。',o:[
+   ['once','まず短く試したい','1回・数か月から'],
+   ['half','半年ほど続けたい','電話は6か月契約が基本です'],
+   ['year','1年を通して回したい','展示会の年間計画も含めて']]},
+ {q:'月あたりの固定費は、どのくらいを考えていますか。',h:'アポの成果報酬（1件20,000円）は別です。',o:[
+   ['b10','10万円前後',''],['b30','10〜30万円',''],['b50','30〜50万円',''],['b50p','50万円以上','']]}
+];
+function rec(a){
+ var g=a[0],t=a[1],b=a[2];
+ if(g==='call'){
+   if(b==='b10')return['CR500','CR1000','月10万円前後なら、月500件から始められます。リストへの反応を見て、1,000件に増やすこともできます。'];
+   return['CR1000','CR500','件数が多いほど、届く相手の母数が増えます。月1,000件は1件あたり150円で、500件より割安です。'];}
+ if(g==='show'){
+   if(t==='year'){
+     if(b==='b50p')return['TH_Y12','TH_Y6','年12回なら毎月どこかの展示会で接点をつくれます。テレアポ月500件も含まれます。'];
+     if(b==='b50')return['TH_Y6','TH_Y12','年6回の年間プランは月35万円。2か月に1回のペースで、名刺交換した相手を通年で追いかけます。'];
+     return['TH_FULL','TH_LIGHT','年間プランは月35万円からです。まずは1展示会ずつのスポットで試し、手応えを見てから年間に切り替える形がおすすめです。'];}
+   if(b==='b10'||b==='b30')return['TH_LIGHT','TH_FULL','展示会は1展示会20万円から。まずは名刺交換までをお任せいただき、会期後の連絡は御社で行う形です。'];
+   return['TH_FULL','TH_Y6','会期後1か月のフォローで商談アポまでつなげます。名刺だけで終わらせたくない場合はこちらです。'];}
+ if(t==='year'&&b==='b50p')return['LR50','TH_Y12','電話と展示会を通年で回すなら、単品を組み合わせるより月10万円お得な複合プランです（限定10組）。'];
+ if(b==='b10')return['CR500','TH_LIGHT','まずは電話から始め、会いたい企業が出る展示会があれば、そのときだけスポットで足す形がおすすめです。'];
+ if(t==='year'&&b==='b50')return['COMBO','LR50','電話は毎月、展示会は会期に合わせてスポットで。年間を通して回すなら、複合プランも候補です。'];
+ return['COMBO','CR1000','電話を軸に、会いたい企業が出る展示会だけスポットで足す形です。どちらが効いたかを見て比率を組み替えます。'];
+}
+var ans=[],body=$('fdBody'),bars=document.querySelectorAll('.fd-prog span');
+function prog(n){bars.forEach(function(s,i){s.classList.toggle('on',i<n)})}
+function esc(x){return String(x).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function renderQ(i){
+  prog(i);var q=Q[i],h='<div class="fd-anim"><p class="fd-step">QUESTION '+(i+1)+' / 3</p><h3 class="fd-q">'+q.q+'</h3><p class="fd-hint">'+q.h+'</p><div class="fd-opts">';
+  q.o.forEach(function(o){h+='<button type="button" class="fd-o'+(ans[i]===o[0]?' sel':'')+'" data-v="'+o[0]+'"><b>'+o[1]+'</b>'+(o[2]?'<small>'+o[2]+'</small>':'')+'</button>'});
+  h+='</div><div class="fd-nav">'+(i>0?'<button type="button" class="fd-back">← ひとつ戻る</button>':'')+'</div></div>';
+  body.innerHTML=h;
+  body.querySelectorAll('.fd-o').forEach(function(btn){btn.addEventListener('click',function(){
+    ans[i]=btn.getAttribute('data-v');btn.classList.add('sel');
+    setTimeout(function(){i<2?renderQ(i+1):renderR()},RM?0:180)})});
+  var bk=body.querySelector('.fd-back');bk&&bk.addEventListener('click',function(){renderQ(i-1)});
+}
+function card(k){return P[k]}
+function renderR(){
+  prog(3);var r=rec(ans),m=card(r[0]),al=card(r[1]);
+  var h='<div class="fd-anim"><p class="fd-step">RESULT</p><h3 class="fd-q">おすすめは「'+m.nm+'」です。</h3>'+
+  '<div class="fd-res"><div class="fd-main"><span class="badge">あなたにおすすめ</span><p class="nm">'+m.nm+'</p>'+
+  '<p class="pr">'+m.pr+'<small>'+m.u+'</small></p><p class="pf">'+m.pf+'（税抜）</p><ul>';
+  m.pts.forEach(function(p){h+='<li>'+p+'</li>'});
+  h+='</ul><p class="fd-why"><b>理由：</b>'+r[2]+'</p></div>'+
+  '<div class="fd-alt"><p class="lb">ほかの候補</p><p class="nm">'+al.nm+'</p><p class="pr">'+al.pr+'<small>'+al.u+'</small></p><p class="ds">'+al.pf+'（税抜）</p>'+
+  '<a href="'+al.link+'"'+(al.link.indexOf('http')===0?' target="_blank" rel="noopener"':'')+'>詳しく見る →</a></div></div>'+
+  '<div class="fd-cta"><a class="btn" id="fdMail" href="#">この結果で相談する<span class="ar">→</span></a>'+
+  (simKey(r[0])?'<a class="btn ghost" id="fdSim" href="#sim">料金を試算する</a>':'')+
+  '<button type="button" class="re" id="fdRe">最初からやり直す</button></div></div>';
+  body.innerHTML=h;
+  var lab=[];Q.forEach(function(q,i){q.o.forEach(function(o){if(o[0]===ans[i])lab.push(o[1])})});
+  $('fdMail').href=mail('検討中のプラン：'+m.nm+'（診断結果）\n診断での回答：'+lab.join('／'));
+  var fs=$('fdSim');fs&&fs.addEventListener('click',function(){setPlan(simKey(r[0]))});
+  $('fdRe').addEventListener('click',function(){ans=[];renderQ(0)});
+}
+function mail(extra){
+  var sub='無料相談の申し込み（LEADING RUSHER）';
+  var b='会社名：\n部署・お名前：\n商材（一言で）：\n会いたい相手（業種・役職）：\n'+extra+'\n希望日時（2〜3候補）：\n';
+  return 'mailto:info@tenjihack.com?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent(b);
+}
+if(body)renderQ(0);
+
+/* ---------- simulator ---------- */
+var S={
+ CR500:{lb:'コールラッシュ',sm:'月500件',fixed:98000,per:'月',months:6,apo:1,card:0,opt:1},
+ CR1000:{lb:'コールラッシュ',sm:'月1,000件',fixed:150000,per:'月',months:6,apo:1,card:0,opt:1},
+ TH_LIGHT:{lb:'展示会ハック',sm:'現地接点のみ',fixed:200000,per:'展示会',apo:0,card:0,opt:0},
+ TH_FULL:{lb:'展示会ハック',sm:'フルサービス',fixed:300000,per:'展示会',apo:1,card:1,opt:0},
+ LR50:{lb:'LEADING RUSHER 50',sm:'電話＋展示会',fixed:500000,per:'月',months:12,apo:1,card:0,opt:0}
+};
+function simKey(k){return S[k]?k:(k==='COMBO'?'CR1000':null)}
+var cur='CR500',plansEl=$('simPlans');
+if(plansEl){
+  Object.keys(S).forEach(function(k){var b=document.createElement('button');b.type='button';b.className='sim-p';b.setAttribute('role','radio');b.dataset.k=k;
+    b.innerHTML='<b>'+S[k].lb+'</b><small>'+S[k].sm+'</small>';b.addEventListener('click',function(){setPlan(k)});plansEl.appendChild(b)});
+  ['simList','simScript','simApo','simCard'].forEach(function(id){$(id).addEventListener('input',calc)});
+  setPlan('CR500',true);
+}
+function setPlan(k,init){cur=k;plansEl.querySelectorAll('.sim-p').forEach(function(b){b.setAttribute('aria-checked',b.dataset.k===k?'true':'false')});calc(init)}
+var shown=0;
+function tween(to){var el=$('simTot');if(RM){el.textContent=yen(to);shown=to;return}
+  var from=shown,st=null;function f(ts){if(!st)st=ts;var p=Math.min((ts-st)/450,1),e=1-Math.pow(1-p,3),v=Math.round(from+(to-from)*e);el.textContent=yen(v);if(p<1)requestAnimationFrame(f);else shown=to}
+  requestAnimationFrame(f)}
+function row(k,v){return '<div><dt>'+k+'</dt><dd>'+v+'</dd></div>'}
+function calc(init){
+  var s=S[cur];
+  $('simOpts').style.display=s.opt?'':'none';$('simApoW').style.display=s.apo?'':'none';$('simCardW').style.display=s.card?'':'none';
+  var apo=s.apo?$('simApo').value*1:0,cards=s.card?$('simCard').value*1:0;
+  $('simApoV').textContent=apo;$('simCardV').textContent=cards;
+  var list=(s.opt&&$('simList').checked)?20000:0,script=(s.opt&&$('simScript').checked)?10000:0;
+  var unitLb=s.per==='月'?'月':'1展示会';
+  var h=row((cur==='TH_FULL'?'設計費（30万円〜）':'固定費（'+unitLb+'）'),yen(s.fixed));
+  if(s.opt)h+=row('リスト作成（月）',list?yen(list):'—');
+  if(s.apo)h+=row('アポ成果報酬（20,000円×'+apo+'件）',yen(apo*20000));
+  if(s.card)h+=row('有効名刺（500円×'+cards+'社）',yen(cards*500));
+  if(cur==='TH_LIGHT')h+=row('アポ取り・会期後の連絡','含みません');
+  var tot=s.fixed+list+apo*20000+cards*500;
+  $('simRows').innerHTML=h;
+  $('simUnit').textContent=(s.per==='月'?'月の合計':'1展示会あたりの合計')+'（税抜）';
+  var sub='';
+  if(s.months)sub=s.months+'か月契約の固定費合計：'+yen((s.fixed+list)*s.months)+'（成果報酬は別）';
+  if(script)sub+=(sub?'／':'')+'初月のみトークスクリプト作成＋'+yen(script);
+  if(cur==='TH_FULL')sub='設計費は展示会の規模によって変わります。';
+  $('simSub').textContent=sub;
+  if(init===true){$('simTot').textContent=yen(tot);shown=tot}else tween(tot);
+  var cond='プラン：'+s.lb+' '+s.sm+(list?'＋リスト作成':'')+(script?'＋トークスクリプト作成':'')+
+    (s.apo?'／想定アポ'+apo+'件':'')+(s.card?'／有効名刺'+cards+'社':'');
+  $('simMail').href=mail('検討中のプラン：'+cond+'\n料金の目安（試算・税抜）：'+(s.per==='月'?'月':'1展示会あたり')+yen(tot));
+}
 })();
 </script>
 </body>
