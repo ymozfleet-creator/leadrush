@@ -272,7 +272,8 @@ body{padding-bottom:56px}}
 .bun .save{display:inline-block;background:var(--yel);color:var(--ink);font-weight:900;font-size:13px;padding:4px 10px;margin:0 0 18px}
 .inc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14);margin:0 0 18px}
 .inc div{background:#0A0A0B;padding:14px 16px}.inc dt{font-size:11.5px;color:#9A9AA8;margin:0 0 2px}
-.inc dd{margin:0;font-family:var(--fe);font-weight:700;font-size:26px;color:#fff;line-height:1.1}.inc dd small{font-family:var(--fb);font-size:12px;font-weight:700;margin-left:3px;color:#D6D6DC}
+.inc dd{margin:0;font-family:var(--fe);font-weight:700;font-size:26px;color:#fff;line-height:1.1}.inc-all{grid-column:1/-1}.inc-all dd{font-size:20px}
+.inc dd small{font-family:var(--fb);font-size:12px;font-weight:700;margin-left:3px;color:#D6D6DC}
 .bun ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:14px;color:#E6E6EC}
 .bun li{display:flex;gap:10px}.bun li::before{content:"✓";color:var(--yel);font-weight:900;flex:none}
 .fee{background:#121215;border:1px solid rgba(255,255,255,.14);padding:34px 32px;display:flex;flex-direction:column;justify-content:center}
@@ -373,6 +374,8 @@ body{color:#222228}
 .case dd{margin:0;font-family:var(--fe);font-weight:700;font-size:30px;line-height:1;color:var(--ink);white-space:nowrap}
 .case dd small{font-family:var(--fb);font-size:12.5px;font-weight:700;margin-left:3px}
 .case p{margin:0;font-size:14.5px;color:var(--txt)}
+.case-wide{grid-column:1/-1}
+@media (min-width:761px){.case-wide{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);column-gap:28px;align-items:center}.case-wide .tag,.case-wide h3{grid-column:1/-1;justify-self:start}.case-wide dl{margin:0}}
 .case-nt{font-size:13px;color:var(--mute);margin:18px 0 0}
 @media (max-width:760px){.cases{grid-template-columns:1fr}}
 .rec{margin:40px 0 0;border:1.5px solid var(--ink);background:#fff}
@@ -703,6 +706,9 @@ h2.t.in i,.fv h1.go i{background-size:100% 100%}
   <h2 class="t rv">1展示会で、<i>どれだけ取れたか。</i></h2>
   <p class="lead rv">展示会ハックでの実績例です。会場で名刺交換した企業を、会期後の架電とメールで商談につなげました。</p>
   <div class="cases">
+    <div class="case case-wide rv"><span class="tag">展示会ハック｜業務用精油・天然原料の輸入企業様</span><h3>1展示会で名刺100社、アポ7件</h3>
+      <dl><div><dt>名刺交換</dt><dd data-count="100">100<small>社</small></dd></div><div><dt>アポ</dt><dd data-count="7">7<small>件</small></dd></div><div><dt>名刺→アポ</dt><dd data-count="7">7<small>%</small></dd></div></dl>
+      <p>先方が指定した優先企業リストの順に、会場で担当者と名刺交換。会期後のメールと架電でフォローし、100社のうち7社とアポを設定しました。</p></div>
     <div class="case rv"><span class="tag">展示会ハック｜美容用品メーカー様</span><h3>1展示会で名刺60社、受注1件</h3>
       <dl><div><dt>名刺交換</dt><dd data-count="60">60<small>社</small></dd></div><div><dt>うち決裁者</dt><dd>約3<small>割</small></dd></div><div><dt>見込み→受注</dt><dd>4→1<small>件</small></dd></div></dl>
       <p>会場で名刺交換した60社の約3割が決裁者。会期後のフォローで見込み4社まで絞り込み、うち1件が受注につながりました。</p></div>
@@ -734,20 +740,21 @@ h2.t.in i,.fv h1.go i{background-size:100% 100%}
   <h2 class="t rv">固定費と、<i>アポが取れた分だけ。</i></h2>
   <p class="lead rv">月額の固定費に、アポが取れた件数分の成果報酬を加える形です。固定費の中に、電話の月間件数と展示会の稼働回数が含まれます。</p>
   <div class="bundle">
-    <div class="bun rv"><span class="tag">2つをまとめて｜限定10組</span>
-      <span class="en">BUNDLE ／ 1年契約</span><h3>LEADING RUSH 50</h3><p class="for">電話と展示会を通年で回す、標準の形。</p>
+    <div class="bun rv"><span class="tag">全手法でアポを最大化｜限定10組</span>
+      <span class="en">BUNDLE ／ 1年契約</span><h3>LEADING RUSH 50</h3><p class="for">電話・展示会に、メール・問い合わせフォーム・飛び込みまで。すべての手法を組み合わせ、アポの最大化を目指すプランです。</p>
       <p class="price"><b>50</b><span>万円 / 月（税抜）</span></p>
-      <span class="save">単品で頼むと月60万円 → 月10万円お得（限定10組）</span>
+      <span class="save">電話と展示会だけでも、単品で頼むと月60万円 → 月10万円お得（限定10組）</span>
       <dl class="inc">
         <div><dt>コールラッシュ</dt><dd>1,000<small>件 / 月</small></dd></div>
         <div><dt>展示会ハック</dt><dd>12<small>回 / 年</small></dd></div>
+        <div class="inc-all"><dt>メール・問い合わせフォーム・飛び込み</dt><dd>＋<small>相手に合わせて組み合わせ</small></dd></div>
       </dl>
-      <ul><li>リスト作成、トークスクリプトの作成を含む</li><li>手段ごとの結果を毎月お渡し。翌月の比率を組み替え</li><li>1年契約</li></ul>
+      <ul><li>リスト作成、トークスクリプトの作成を含む</li><li>手段ごとの結果を毎月お渡し。効いた手法に寄せて翌月を組み替え</li><li>1年契約</li></ul>
     </div>
     <div class="fee rv">
       <span class="en">PERFORMANCE FEE</span><h3>アポが取れたら</h3>
       <p class="price"><b>20,000</b><span>円 / 件</span></p>
-      <p>電話・展示会、どちらの手段で取れても同じ単価です。単品・複合のどちらでも一律。どの手段で取れたアポかは、月次の記録に1件ずつ明記します。</p>
+      <p>電話・展示会・メール・フォーム・飛び込み、どの手法で取れても同じ単価です。単品・複合のどちらでも一律。どの手段で取れたアポかは、月次の記録に1件ずつ明記します。</p>
     </div>
   </div>
   <h3 class="rv" style="color:#fff;font-size:20px;margin:36px 0 14px">1つの手段だけでご依頼いただく場合</h3>
@@ -773,7 +780,7 @@ h2.t.in i,.fv h1.go i{background-size:100% 100%}
       <a href="https://tenjihack.com/">展示会ハックのサイト</a>
     </div>
   </div>
-  <p class="pnote">金額はすべて税抜です。複合プランには電話月1,000件・展示会年12回が含まれます。初回商談の同席は含まれず、ご希望の場合は別途ご相談となります。展示会を年6回のペースでお使いの場合は、単品を組み合わせる形になります。アポの成果報酬は単品・複合のどちらでも一律20,000円／件です。展示会ハックの年間プランは、成果報酬の形が異なります（詳しくは展示会ハックのサイトをご覧ください）。</p>
+  <p class="pnote">金額はすべて税抜です。複合プラン（LEADING RUSH 50）は電話月1,000件・展示会年12回を土台に、メール・問い合わせフォーム・飛び込みも組み合わせて動きます。初回商談の同席は含まれず、ご希望の場合は別途ご相談となります。展示会を年6回のペースでお使いの場合は、単品を組み合わせる形になります。アポの成果報酬は単品・複合のどちらでも一律20,000円／件です。展示会ハックの年間プランは、成果報酬の形が異なります（詳しくは展示会ハックのサイトをご覧ください）。</p>
   <div class="sim rv" id="sim">
     <div class="sim-hd"><span class="en">SIMULATOR</span><h3>料金の目安を、その場で計算。</h3><p>プランと想定の件数を選ぶと、固定費と成果報酬の合計を表示します。</p></div>
     <div class="sim-grid">
@@ -961,8 +968,8 @@ var P={
    pts:['年6回の展示会を通年で計画','名刺交換した相手を1年追いかける','成果報酬の形は展示会ハックのサイトをご覧ください'],link:'https://tenjihack.com/'},
  TH_Y12:{nm:'展示会ハック 年間12回',pr:'45',u:'万円 / 月',pf:'1年契約・テレアポ月500件込み',
    pts:['年12回の展示会を通年で計画','テレアポ月500件込み','成果報酬の形は展示会ハックのサイトをご覧ください'],link:'https://tenjihack.com/'},
- LR50:{nm:'LEADING RUSH 50（電話＋展示会）',pr:'50',u:'万円 / 月',pf:'1年契約・限定10組・アポ20,000円/件',
-   pts:['電話 月1,000件＋展示会 年12回','リスト・トークスクリプト作成込み','単品の組み合わせ（月60万円）より月10万円お得'],link:'#price'},
+ LR50:{nm:'LEADING RUSH 50（全手法）',pr:'50',u:'万円 / 月',pf:'1年契約・限定10組・アポ20,000円/件',
+   pts:['電話 月1,000件＋展示会 年12回を土台に','メール・フォーム・飛び込みも組み合わせてアポを最大化','リスト・トークスクリプト作成込み'],link:'#price'},
  COMBO:{nm:'単品の組み合わせ（電話＋展示会スポット）',pr:'15',u:'万円 / 月 ＋ 展示会ごと',pf:'コールラッシュ月1,000件＋展示会ハック1展示会20万円〜',
    pts:['電話は毎月、展示会は会期に合わせて','効いた手段に比率を寄せて組み替え','アポは手段を問わず1件20,000円'],link:'#price'}
 };
@@ -992,9 +999,9 @@ function rec(a){
      return['TH_FULL','TH_LIGHT','年間プランは月35万円からです。まずは1展示会ずつのスポットで試し、手応えを見てから年間に切り替える形がおすすめです。'];}
    if(b==='b10'||b==='b30')return['TH_LIGHT','TH_FULL','展示会は1展示会20万円から。まずは名刺交換までをお任せいただき、会期後の連絡は御社で行う形です。'];
    return['TH_FULL','TH_Y6','会期後1か月のフォローで商談アポまでつなげます。名刺だけで終わらせたくない場合はこちらです。'];}
- if(t==='year'&&b==='b50p')return['LR50','TH_Y12','電話と展示会を通年で回すなら、単品を組み合わせるより月10万円お得な複合プランです（限定10組）。'];
+ if(t==='year'&&b==='b50p')return['LR50','TH_Y12','すべての手法を組み合わせ、アポの最大化を目指す複合プランです。電話と展示会だけでも単品より月10万円お得です（限定10組）。'];
  if(b==='b10')return['CR500','TH_LIGHT','まずは電話から始め、会いたい企業が出る展示会があれば、そのときだけスポットで足す形がおすすめです。'];
- if(t==='year'&&b==='b50')return['COMBO','LR50','電話は毎月、展示会は会期に合わせてスポットで。年間を通して回すなら、複合プランも候補です。'];
+ if(t==='year'&&b==='b50')return['COMBO','LR50','電話は毎月、展示会は会期に合わせてスポットで。年間を通して全手法でアポの最大化を狙うなら、複合プランも候補です。'];
  return['COMBO','CR1000','電話を軸に、会いたい企業が出る展示会だけスポットで足す形です。どちらが効いたかを見て比率を組み替えます。'];
 }
 var ans=[],body=$('fdBody'),bars=document.querySelectorAll('.fd-prog span');
@@ -1042,7 +1049,7 @@ var S={
  CR1000:{lb:'コールラッシュ',sm:'月1,000件',fixed:150000,per:'月',months:6,apo:1,card:0,opt:1},
  TH_LIGHT:{lb:'展示会ハック',sm:'現地接点のみ',fixed:200000,per:'展示会',apo:0,card:0,opt:0},
  TH_FULL:{lb:'展示会ハック',sm:'フルサービス',fixed:300000,per:'展示会',apo:1,card:1,opt:0},
- LR50:{lb:'LEADING RUSH 50',sm:'電話＋展示会',fixed:500000,per:'月',months:12,apo:1,card:0,opt:0}
+ LR50:{lb:'LEADING RUSH 50',sm:'全手法',fixed:500000,per:'月',months:12,apo:1,card:0,opt:0}
 };
 function simKey(k){return S[k]?k:(k==='COMBO'?'CR1000':null)}
 var cur='CR500',plansEl=$('simPlans');
